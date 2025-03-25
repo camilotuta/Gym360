@@ -1,0 +1,42 @@
+.qodo
+# Compiled class files
+*.class
+
+# Directorios de construcción (build)
+target/
+build/
+
+# Archivos y carpetas de IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Archivos de logs
+*.log
+logs/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno (variables sensibles)
+.env
+
+# Otros archivos generados
+*.jar
+*.war
+*.ear

@@ -118,3 +118,48 @@ CREATE TABLE Usuario (
     -- FK a la tabla Empleado (campo idEmpleado)
     FOREIGN KEY (idEmpleado) REFERENCES Empleado(idEmpleado)
 );
+
+
+-- =========================================
+-- Tabla Producto
+-- =========================================
+DROP TABLE IF EXISTS Producto;
+CREATE TABLE Producto (
+    idProducto INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre          TEXT NOT NULL,
+    descripcion     TEXT,
+    precioUnitario  REAL NOT NULL,
+    stock           INTEGER NOT NULL,
+    categoria       TEXT,
+    codigoBarras    TEXT UNIQUE
+);
+
+-- =========================================
+-- Tabla DetalleCompra
+-- Relaciona las compras con los productos adquiridos
+-- =========================================
+DROP TABLE IF EXISTS DetalleCompra;
+CREATE TABLE DetalleCompra (
+    idDetalleCompra INTEGER PRIMARY KEY AUTOINCREMENT,
+    idCompra        INTEGER NOT NULL,  -- FK a InventarioCompras
+    idProducto      INTEGER NOT NULL,  -- FK a Producto
+    cantidad        INTEGER NOT NULL,
+    precioUnitario  REAL NOT NULL,
+    FOREIGN KEY (idCompra) REFERENCES InventarioCompras(idCompra),
+    FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
+);
+
+-- =========================================
+-- Tabla DetalleVenta (modificada)
+-- Relaciona las ventas con los productos vendidos
+-- =========================================
+DROP TABLE IF EXISTS DetalleVenta;
+CREATE TABLE DetalleVenta (
+    idDetalleVenta INTEGER PRIMARY KEY AUTOINCREMENT,
+    idVenta        INTEGER NOT NULL,  -- FK a Venta
+    idProducto     INTEGER NOT NULL,  -- FK a Producto
+    cantidad       INTEGER NOT NULL,
+    precioUnitario REAL NOT NULL,
+    FOREIGN KEY (idVenta) REFERENCES Venta(idVenta),
+    FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
+);

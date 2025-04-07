@@ -9,6 +9,7 @@ import main.java.com.Gym360.util.ui.CambiarIU;
 import java.awt.Toolkit;
 import main.java.com.Gym360.view.Login;
 import main.java.com.Gym360.view.admin.inventory.ManageInventoryScreen;
+import main.java.com.Gym360.view.admin.payroll.PayrollManagementScreen;
 import main.java.com.Gym360.view.admin.users.CreateUser;
 import main.java.com.Gym360.view.admin.users.ManageUsersScreen;
 
@@ -142,6 +143,11 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 lbReportes.setForeground(new java.awt.Color(245, 245, 245));
                 lbReportes.setText("Reportes");
                 lbReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbReportes.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbReportesMouseClicked(evt);
+                        }
+                });
                 pMenu.add(lbReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, -1, -1));
 
                 lbNomina.setBackground(new java.awt.Color(0, 0, 0));
@@ -149,6 +155,11 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 lbNomina.setForeground(new java.awt.Color(245, 245, 245));
                 lbNomina.setText("Nómina");
                 lbNomina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbNomina.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbNominaMouseClicked(evt);
+                        }
+                });
                 pMenu.add(lbNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 20, -1, -1));
 
                 lbAlertas.setBackground(new java.awt.Color(0, 0, 0));
@@ -390,6 +401,18 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
 		mi.setVisible(true);
 		this.setVisible(false);
         }//GEN-LAST:event_lbInventarioMouseClicked
+
+        private void lbReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbReportesMouseClicked
+		FinancialReportScreen fr = new FinancialReportScreen();
+		fr.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_lbReportesMouseClicked
+
+        private void lbNominaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbNominaMouseClicked
+		PayrollManagementScreen pm = new PayrollManagementScreen();
+		pm.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_lbNominaMouseClicked
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

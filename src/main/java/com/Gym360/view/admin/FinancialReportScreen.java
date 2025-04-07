@@ -4,6 +4,13 @@
  */
 package main.java.com.Gym360.view.admin;
 
+import java.awt.Toolkit;
+import main.java.com.Gym360.util.ui.CambiarIU;
+import main.java.com.Gym360.view.Login;
+import main.java.com.Gym360.view.admin.inventory.ManageInventoryScreen;
+import main.java.com.Gym360.view.admin.users.CreateUser;
+import main.java.com.Gym360.view.admin.users.ManageUsersScreen;
+
 /**
  *
  * @author tutaa
@@ -15,6 +22,12 @@ public class FinancialReportScreen extends javax.swing.JFrame {
 	 */
 	public FinancialReportScreen() {
 		initComponents();
+		this.setTitle("Reportes Financieros");
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/main/resources/images/logo.png")));
+		new CambiarIU().setImageLabel(imgGrafica1, "/main/resources/images/ventasEgresosEjemplo.png");
+		new CambiarIU().setImageLabel(imgGrafica2, "/main/resources/images/distribucionMembresiasEjemplo.png");
 	}
 
 	/**
@@ -26,23 +39,210 @@ public class FinancialReportScreen extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                panelFinancialReport = new javax.swing.JPanel();
+                pMenu = new javax.swing.JPanel();
+                lbBackButton = new javax.swing.JLabel();
+                lbGestionUsuarios = new javax.swing.JLabel();
+                pGrafica1 = new javax.swing.JPanel();
+                imgGrafica1 = new javax.swing.JLabel();
+                pGrafica2 = new javax.swing.JPanel();
+                imgGrafica2 = new javax.swing.JLabel();
+                lbResumenFinanciero = new javax.swing.JLabel();
+                pResumenFinanciero = new javax.swing.JPanel();
+                lbClientesActivos = new javax.swing.JLabel();
+                lbClientesActivos1 = new javax.swing.JLabel();
+                lbClientesActivos2 = new javax.swing.JLabel();
+                lbClientesActivos3 = new javax.swing.JLabel();
+                lbClientesActivos4 = new javax.swing.JLabel();
+                lbClientesActivos5 = new javax.swing.JLabel();
+                imgPDF = new javax.swing.JLabel();
+                btnExportarPDF = new javax.swing.JButton();
+                imgExcel = new javax.swing.JLabel();
+                btnExportarExcel = new javax.swing.JButton();
+
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+                panelFinancialReport.setBackground(new java.awt.Color(245, 245, 245));
+                panelFinancialReport.setMaximumSize(new java.awt.Dimension(1467, 800));
+                panelFinancialReport.setMinimumSize(new java.awt.Dimension(1467, 800));
+                panelFinancialReport.setPreferredSize(new java.awt.Dimension(1467, 800));
+                panelFinancialReport.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                pMenu.setBackground(new java.awt.Color(93, 0, 0));
+                pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbBackButtonMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
+
+                lbGestionUsuarios.setBackground(new java.awt.Color(0, 0, 0));
+                lbGestionUsuarios.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbGestionUsuarios.setForeground(new java.awt.Color(245, 245, 245));
+                lbGestionUsuarios.setText("Gestión de Empleados");
+                lbGestionUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbGestionUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbGestionUsuariosMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbGestionUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, -1, -1));
+
+                panelFinancialReport.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                pGrafica1.setBackground(new java.awt.Color(245, 245, 245));
+                pGrafica1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 240, 240)));
+                pGrafica1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+                pGrafica1.add(imgGrafica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 340));
+
+                panelFinancialReport.add(pGrafica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 430, 340));
+
+                pGrafica2.setBackground(new java.awt.Color(245, 245, 245));
+                pGrafica2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 240, 240)));
+                pGrafica2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+                pGrafica2.add(imgGrafica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 340));
+
+                panelFinancialReport.add(pGrafica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 120, 430, 340));
+
+                lbResumenFinanciero.setBackground(new java.awt.Color(0, 0, 0));
+                lbResumenFinanciero.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbResumenFinanciero.setForeground(new java.awt.Color(20, 20, 20));
+                lbResumenFinanciero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbResumenFinanciero.setText("Resumen Financiero");
+                panelFinancialReport.add(lbResumenFinanciero, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 1180, 40));
+
+                pResumenFinanciero.setBackground(new java.awt.Color(245, 245, 245));
+                pResumenFinanciero.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pResumenFinanciero.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbClientesActivos.setBackground(new java.awt.Color(0, 0, 0));
+                lbClientesActivos.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbClientesActivos.setForeground(new java.awt.Color(20, 20, 20));
+                lbClientesActivos.setText("Egresos Totales:");
+                pResumenFinanciero.add(lbClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
+
+                lbClientesActivos1.setBackground(new java.awt.Color(0, 0, 0));
+                lbClientesActivos1.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbClientesActivos1.setForeground(new java.awt.Color(255, 51, 51));
+                lbClientesActivos1.setText("$100.000.000");
+                pResumenFinanciero.add(lbClientesActivos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, -1));
+
+                lbClientesActivos2.setBackground(new java.awt.Color(0, 0, 0));
+                lbClientesActivos2.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbClientesActivos2.setForeground(new java.awt.Color(20, 20, 20));
+                lbClientesActivos2.setText("Utilidad Neta:");
+                pResumenFinanciero.add(lbClientesActivos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+                lbClientesActivos3.setBackground(new java.awt.Color(0, 0, 0));
+                lbClientesActivos3.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbClientesActivos3.setForeground(new java.awt.Color(20, 20, 20));
+                lbClientesActivos3.setText("Ingresos Totales:");
+                pResumenFinanciero.add(lbClientesActivos3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+                lbClientesActivos4.setBackground(new java.awt.Color(0, 0, 0));
+                lbClientesActivos4.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbClientesActivos4.setForeground(new java.awt.Color(51, 204, 0));
+                lbClientesActivos4.setText("$300.000.000");
+                pResumenFinanciero.add(lbClientesActivos4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
+
+                lbClientesActivos5.setBackground(new java.awt.Color(0, 0, 0));
+                lbClientesActivos5.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbClientesActivos5.setForeground(new java.awt.Color(255, 204, 0));
+                lbClientesActivos5.setText("$100.000.000");
+                pResumenFinanciero.add(lbClientesActivos5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, -1, -1));
+
+                panelFinancialReport.add(pResumenFinanciero, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 660, 140));
+
+                imgPDF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/pdf.png"))); // NOI18N
+                panelFinancialReport.add(imgPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 690, -1, 50));
+
+                btnExportarPDF.setBackground(new java.awt.Color(93, 0, 0));
+                btnExportarPDF.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnExportarPDF.setForeground(new java.awt.Color(200, 200, 200));
+                btnExportarPDF.setText("Exportar a PDF");
+                btnExportarPDF.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnExportarPDF.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnExportarPDFActionPerformed(evt);
+                        }
+                });
+                panelFinancialReport.add(btnExportarPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 690, 250, 50));
+
+                imgExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/excel.png"))); // NOI18N
+                panelFinancialReport.add(imgExcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 690, -1, 50));
+
+                btnExportarExcel.setBackground(new java.awt.Color(93, 0, 0));
+                btnExportarExcel.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnExportarExcel.setForeground(new java.awt.Color(200, 200, 200));
+                btnExportarExcel.setText("Exportar a Excel");
+                btnExportarExcel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnExportarExcel.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnExportarExcelActionPerformed(evt);
+                        }
+                });
+                panelFinancialReport.add(btnExportarExcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 690, 260, 50));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+                        .addComponent(panelFinancialReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+                        .addComponent(panelFinancialReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+		// TODO add your handling code here:
+		DashboardAdminScreen dashboard = new DashboardAdminScreen();
+		dashboard.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_lbBackButtonMouseClicked
+
+        private void btnExportarExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarExcelActionPerformed
+
+        }//GEN-LAST:event_btnExportarExcelActionPerformed
+
+        private void btnExportarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarPDFActionPerformed
+		// TODO add your handling code here:
+        }//GEN-LAST:event_btnExportarPDFActionPerformed
+
+        private void lbGestionUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbGestionUsuariosMouseClicked
+                ManageUsersScreen mus = new ManageUsersScreen();
+                mus.setVisible(true);
+                this.setVisible(false);
+        }//GEN-LAST:event_lbGestionUsuariosMouseClicked
+
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnExportarExcel;
+        private javax.swing.JButton btnExportarPDF;
+        private javax.swing.JLabel imgExcel;
+        private javax.swing.JLabel imgGrafica1;
+        private javax.swing.JLabel imgGrafica2;
+        private javax.swing.JLabel imgPDF;
+        private javax.swing.JLabel lbBackButton;
+        private javax.swing.JLabel lbClientesActivos;
+        private javax.swing.JLabel lbClientesActivos1;
+        private javax.swing.JLabel lbClientesActivos2;
+        private javax.swing.JLabel lbClientesActivos3;
+        private javax.swing.JLabel lbClientesActivos4;
+        private javax.swing.JLabel lbClientesActivos5;
+        private javax.swing.JLabel lbGestionUsuarios;
+        private javax.swing.JLabel lbResumenFinanciero;
+        private javax.swing.JPanel pGrafica1;
+        private javax.swing.JPanel pGrafica2;
+        private javax.swing.JPanel pMenu;
+        private javax.swing.JPanel pResumenFinanciero;
+        private javax.swing.JPanel panelFinancialReport;
         // End of variables declaration//GEN-END:variables
 }

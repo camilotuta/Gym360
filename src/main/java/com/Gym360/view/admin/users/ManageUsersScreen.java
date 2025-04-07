@@ -41,6 +41,7 @@ public class ManageUsersScreen extends javax.swing.JFrame {
                 lbBackButton = new javax.swing.JLabel();
                 lbBuscar = new javax.swing.JLabel();
                 tfBucar = new javax.swing.JTextField();
+                lbUsuarios = new javax.swing.JLabel();
                 spTablaUsuarios = new javax.swing.JScrollPane();
                 tUsuarios = new javax.swing.JTable();
                 imgAgregarUsuario = new javax.swing.JLabel();
@@ -84,6 +85,14 @@ public class ManageUsersScreen extends javax.swing.JFrame {
                 pMenu.add(tfBucar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 330, 30));
 
                 panelGestionUsuarios.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                lbUsuarios.setBackground(new java.awt.Color(0, 0, 0));
+                lbUsuarios.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbUsuarios.setForeground(new java.awt.Color(93, 0, 0));
+                lbUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbUsuarios.setText("Usuarios");
+                lbUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelGestionUsuarios.add(lbUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 1230, 50));
 
                 tUsuarios.setBackground(new java.awt.Color(232, 232, 232));
                 tUsuarios.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
@@ -199,6 +208,7 @@ public class ManageUsersScreen extends javax.swing.JFrame {
         private javax.swing.JLabel imgEliminarUsuario;
         private javax.swing.JLabel lbBackButton;
         private javax.swing.JLabel lbBuscar;
+        private javax.swing.JLabel lbUsuarios;
         private javax.swing.JPanel pMenu;
         private javax.swing.JPanel panelGestionUsuarios;
         private javax.swing.JScrollPane spTablaUsuarios;

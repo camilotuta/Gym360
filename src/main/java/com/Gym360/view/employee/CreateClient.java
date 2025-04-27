@@ -1,15 +1,11 @@
+// cSpell:ignore telefono
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package main.java.com.Gym360.view.employee;
 
-import main.java.com.Gym360.view.admin.inventory.*;
-import main.java.com.Gym360.view.admin.users.*;
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import java.awt.EventQueue;
 import java.awt.Toolkit;
-import javax.swing.UIManager;
 
 /**
  *
@@ -173,16 +169,16 @@ public class CreateClient extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-                // TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+                
                 ClientManagementScreen cm = new ClientManagementScreen();
                 cm.setVisible(true);
                 this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnCrearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearClienteActionPerformed
-                // TODO add your handling code here:
-        }//GEN-LAST:event_btnCrearClienteActionPerformed
+        private void btnCrearClienteActionPerformed(java.awt.event.ActionEvent evt) {
+                
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

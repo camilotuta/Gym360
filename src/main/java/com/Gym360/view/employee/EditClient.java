@@ -1,10 +1,10 @@
+// cSpell:ignore telefono
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package main.java.com.Gym360.view.employee;
 
-import main.java.com.Gym360.view.admin.inventory.*;
 import java.awt.Toolkit;
 
 /**
@@ -169,17 +169,17 @@ public class EditClient extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
-                // TODO add your handling code here:
+        private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {
+                
 		
-        }//GEN-LAST:event_btnEditarClienteActionPerformed
+        }
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-                // TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+                
 		ClientManagementScreen cm = new ClientManagementScreen();
                 cm.setVisible(true);
                 this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
 
 

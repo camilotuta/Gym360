@@ -1,3 +1,4 @@
+// cSpell:ignore recuerdame recuérdame
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -46,7 +47,7 @@ public class Login extends javax.swing.JFrame {
                 lbCorreo = new javax.swing.JLabel();
                 tfCorreo = new javax.swing.JTextField();
                 lbContraseña = new javax.swing.JLabel();
-                pfCotnraseña = new javax.swing.JPasswordField();
+                pfContraseña = new javax.swing.JPasswordField();
                 cbRecuerdame = new javax.swing.JCheckBox();
                 btnIngresar = new javax.swing.JButton();
                 lbOlvidasteContraseña = new javax.swing.JLabel();
@@ -65,7 +66,7 @@ public class Login extends javax.swing.JFrame {
                 lbCorreo.setBackground(new java.awt.Color(0, 0, 0));
                 lbCorreo.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
                 lbCorreo.setForeground(new java.awt.Color(20, 20, 20));
-                lbCorreo.setText("Correo electronico:");
+                lbCorreo.setText("Correo electrónico:");
                 PanelLogin.add(lbCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
                 tfCorreo.setBackground(new java.awt.Color(231, 231, 231));
@@ -80,11 +81,11 @@ public class Login extends javax.swing.JFrame {
                 lbContraseña.setText("Contraseña:");
                 PanelLogin.add(lbContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
 
-                pfCotnraseña.setBackground(new java.awt.Color(231, 231, 231));
-                pfCotnraseña.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
-                pfCotnraseña.setForeground(new java.awt.Color(20, 20, 20));
-                pfCotnraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-                PanelLogin.add(pfCotnraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 330, 50));
+                pfContraseña.setBackground(new java.awt.Color(231, 231, 231));
+                pfContraseña.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                pfContraseña.setForeground(new java.awt.Color(20, 20, 20));
+                pfContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                PanelLogin.add(pfContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 330, 50));
 
                 cbRecuerdame.setBackground(new java.awt.Color(245, 245, 245));
                 cbRecuerdame.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
@@ -162,7 +163,7 @@ public class Login extends javax.swing.JFrame {
         private javax.swing.JLabel lbImagenFondo;
         private javax.swing.JLabel lbImagenLogo;
         private javax.swing.JLabel lbOlvidasteContraseña;
-        private javax.swing.JPasswordField pfCotnraseña;
+        private javax.swing.JPasswordField pfContraseña;
         private javax.swing.JTextField tfCorreo;
         // End of variables declaration//GEN-END:variables
 }

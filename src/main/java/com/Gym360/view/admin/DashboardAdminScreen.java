@@ -1,3 +1,4 @@
+// cSpell:ignore grafica egresos distribucion membresias gestion rapidas
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -52,8 +53,8 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 lbNotificaciones = new javax.swing.JLabel();
                 lbDashboardAdmin = new javax.swing.JLabel();
                 pMembresiasActivas = new javax.swing.JPanel();
-                lbMembreciasActivas = new javax.swing.JLabel();
-                lbPonerMembreciasActivas = new javax.swing.JLabel();
+                lbMembresiasActivas = new javax.swing.JLabel();
+                lbPonerMembresiasActivas = new javax.swing.JLabel();
                 lbClientes = new javax.swing.JLabel();
                 lbActivos = new javax.swing.JLabel();
                 pIngresosMes = new javax.swing.JPanel();
@@ -189,17 +190,17 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 pMembresiasActivas.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
                 pMembresiasActivas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-                lbMembreciasActivas.setBackground(new java.awt.Color(0, 0, 0));
-                lbMembreciasActivas.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
-                lbMembreciasActivas.setForeground(new java.awt.Color(20, 20, 20));
-                lbMembreciasActivas.setText("Membresías Activas");
-                pMembresiasActivas.add(lbMembreciasActivas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+                lbMembresiasActivas.setBackground(new java.awt.Color(0, 0, 0));
+                lbMembresiasActivas.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbMembresiasActivas.setForeground(new java.awt.Color(20, 20, 20));
+                lbMembresiasActivas.setText("Membresías Activas");
+                pMembresiasActivas.add(lbMembresiasActivas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-                lbPonerMembreciasActivas.setBackground(new java.awt.Color(0, 0, 0));
-                lbPonerMembreciasActivas.setFont(new java.awt.Font("Inter", 1, 30)); // NOI18N
-                lbPonerMembreciasActivas.setForeground(new java.awt.Color(20, 20, 20));
-                lbPonerMembreciasActivas.setText("325");
-                pMembresiasActivas.add(lbPonerMembreciasActivas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+                lbPonerMembresiasActivas.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerMembresiasActivas.setFont(new java.awt.Font("Inter", 1, 30)); // NOI18N
+                lbPonerMembresiasActivas.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerMembresiasActivas.setText("325");
+                pMembresiasActivas.add(lbPonerMembresiasActivas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
                 lbClientes.setBackground(new java.awt.Color(0, 0, 0));
                 lbClientes.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
@@ -282,7 +283,7 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 lbPonerProducto1.setBackground(new java.awt.Color(0, 0, 0));
                 lbPonerProducto1.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
                 lbPonerProducto1.setForeground(new java.awt.Color(20, 20, 20));
-                lbPonerProducto1.setText("Cinturón de levantammiento: -4 unidades");
+                lbPonerProducto1.setText("Cinturón de levantamiento: -4 unidades");
                 pInventarioFaltante.add(lbPonerProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 250, -1));
 
                 lbPonerProducto2.setBackground(new java.awt.Color(0, 0, 0));
@@ -379,62 +380,62 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarVentaActionPerformed
-	    // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarVentaActionPerformed
+    private void btnRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {
+	    
+    }
 
-    private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
+    private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {
 	    FinancialReportScreen fr = new FinancialReportScreen();
 	    fr.setVisible(true);
 	    this.setVisible(false);
-    }//GEN-LAST:event_btnGenerarReporteActionPerformed
+    }
 
-    private void btnAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioActionPerformed
+    private void btnAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {
 	    CreateUser cu = new CreateUser();
 	    cu.setVisible(true);
 	    this.setVisible(false);
-    }//GEN-LAST:event_btnAgregarUsuarioActionPerformed
+    }
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-		// TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+		
 		Login login = new Login();
 		login.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void lbDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDashboardMouseClicked
+        private void lbDashboardMouseClicked(java.awt.event.MouseEvent evt) {
 
-        }//GEN-LAST:event_lbDashboardMouseClicked
+        }
 
-        private void lbGestionUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbGestionUsuariosMouseClicked
+        private void lbGestionUsuariosMouseClicked(java.awt.event.MouseEvent evt) {
 		ManageUsersScreen mus = new ManageUsersScreen();
 		mus.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbGestionUsuariosMouseClicked
+        }
 
-        private void lbInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInventarioMouseClicked
+        private void lbInventarioMouseClicked(java.awt.event.MouseEvent evt) {
 		ManageInventoryScreen mi = new ManageInventoryScreen();
 		mi.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbInventarioMouseClicked
+        }
 
-        private void lbReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbReportesMouseClicked
+        private void lbReportesMouseClicked(java.awt.event.MouseEvent evt) {
 		FinancialReportScreen fr = new FinancialReportScreen();
 		fr.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbReportesMouseClicked
+        }
 
-        private void lbNominaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbNominaMouseClicked
+        private void lbNominaMouseClicked(java.awt.event.MouseEvent evt) {
 		PayrollManagementScreen pm = new PayrollManagementScreen();
 		pm.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbNominaMouseClicked
+        }
 
-        private void lbNotificacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbNotificacionesMouseClicked
+        private void lbNotificacionesMouseClicked(java.awt.event.MouseEvent evt) {
                NotificationsScreen ns = new NotificationsScreen();
 		ns.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbNotificacionesMouseClicked
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -458,13 +459,13 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
         private javax.swing.JLabel lbIngresosMes;
         private javax.swing.JLabel lbInventario;
         private javax.swing.JLabel lbInventarioFaltante;
-        private javax.swing.JLabel lbMembreciasActivas;
+        private javax.swing.JLabel lbMembresiasActivas;
         private javax.swing.JLabel lbMes;
         private javax.swing.JLabel lbNomina;
         private javax.swing.JLabel lbNotificaciones;
         private javax.swing.JLabel lbPonerContadorClientesActivos;
         private javax.swing.JLabel lbPonerIngresosMes;
-        private javax.swing.JLabel lbPonerMembreciasActivas;
+        private javax.swing.JLabel lbPonerMembresiasActivas;
         private javax.swing.JLabel lbPonerPorcentajeClientesActivos;
         private javax.swing.JLabel lbPonerProducto1;
         private javax.swing.JLabel lbPonerProducto2;

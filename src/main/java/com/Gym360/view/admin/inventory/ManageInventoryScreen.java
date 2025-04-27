@@ -1,3 +1,4 @@
+//cSpell:ignore gestion
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -6,8 +7,6 @@ package main.java.com.Gym360.view.admin.inventory;
 
 import java.awt.Toolkit;
 import main.java.com.Gym360.view.admin.DashboardAdminScreen;
-import main.java.com.Gym360.view.admin.users.CreateUser;
-import main.java.com.Gym360.view.admin.users.EditUser;
 
 /**
  *
@@ -39,13 +38,13 @@ public class ManageInventoryScreen extends javax.swing.JFrame {
                 pMenu = new javax.swing.JPanel();
                 lbBackButton = new javax.swing.JLabel();
                 lbBuscarCompras = new javax.swing.JLabel();
-                tfBucarCompras = new javax.swing.JTextField();
+                tfBuscarCompras = new javax.swing.JTextField();
                 lbBuscarProductos = new javax.swing.JLabel();
-                tfBucarProductos = new javax.swing.JTextField();
+                tfBuscarProductos = new javax.swing.JTextField();
                 lbCompras = new javax.swing.JLabel();
                 spTablaCompras = new javax.swing.JScrollPane();
                 tCompras = new javax.swing.JTable();
-                btnRegistarCompra = new javax.swing.JButton();
+                btnRegistrarCompra = new javax.swing.JButton();
                 btnEditarCompra = new javax.swing.JButton();
                 btnEliminarCompra = new javax.swing.JButton();
                 lbProductos = new javax.swing.JLabel();
@@ -82,11 +81,11 @@ public class ManageInventoryScreen extends javax.swing.JFrame {
                 lbBuscarCompras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
                 pMenu.add(lbBuscarCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, 30));
 
-                tfBucarCompras.setBackground(new java.awt.Color(231, 231, 231));
-                tfBucarCompras.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
-                tfBucarCompras.setForeground(new java.awt.Color(20, 20, 20));
-                tfBucarCompras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-                pMenu.add(tfBucarCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 330, 30));
+                tfBuscarCompras.setBackground(new java.awt.Color(231, 231, 231));
+                tfBuscarCompras.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                tfBuscarCompras.setForeground(new java.awt.Color(20, 20, 20));
+                tfBuscarCompras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                pMenu.add(tfBuscarCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 330, 30));
 
                 lbBuscarProductos.setBackground(new java.awt.Color(0, 0, 0));
                 lbBuscarProductos.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
@@ -95,11 +94,11 @@ public class ManageInventoryScreen extends javax.swing.JFrame {
                 lbBuscarProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
                 pMenu.add(lbBuscarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, -1, 30));
 
-                tfBucarProductos.setBackground(new java.awt.Color(231, 231, 231));
-                tfBucarProductos.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
-                tfBucarProductos.setForeground(new java.awt.Color(20, 20, 20));
-                tfBucarProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-                pMenu.add(tfBucarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 20, 330, 30));
+                tfBuscarProductos.setBackground(new java.awt.Color(231, 231, 231));
+                tfBuscarProductos.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                tfBuscarProductos.setForeground(new java.awt.Color(20, 20, 20));
+                tfBuscarProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                pMenu.add(tfBuscarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 20, 330, 30));
 
                 panelGestionInventario.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
 
@@ -130,17 +129,17 @@ public class ManageInventoryScreen extends javax.swing.JFrame {
 
                 panelGestionInventario.add(spTablaCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 590, 500));
 
-                btnRegistarCompra.setBackground(new java.awt.Color(93, 0, 0));
-                btnRegistarCompra.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
-                btnRegistarCompra.setForeground(new java.awt.Color(200, 200, 200));
-                btnRegistarCompra.setText("Registar Compra");
-                btnRegistarCompra.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-                btnRegistarCompra.addActionListener(new java.awt.event.ActionListener() {
+                btnRegistrarCompra.setBackground(new java.awt.Color(93, 0, 0));
+                btnRegistrarCompra.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnRegistrarCompra.setForeground(new java.awt.Color(200, 200, 200));
+                btnRegistrarCompra.setText("Registrar Compra");
+                btnRegistrarCompra.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnRegistrarCompra.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                btnRegistarCompraActionPerformed(evt);
+                                btnRegistrarCompraActionPerformed(evt);
                         }
                 });
-                panelGestionInventario.add(btnRegistarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 650, -1, 50));
+                panelGestionInventario.add(btnRegistrarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 650, -1, 50));
 
                 btnEditarCompra.setBackground(new java.awt.Color(93, 0, 0));
                 btnEditarCompra.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
@@ -244,43 +243,42 @@ public class ManageInventoryScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void btnAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoActionPerformed
+        private void btnAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {
 		CreateProduct cp = new CreateProduct();
 		cp.setVisible(true);
 		this.setVisible(false);
 
-        }//GEN-LAST:event_btnAgregarProductoActionPerformed
+        }
 
-        private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
-        }//GEN-LAST:event_btnEliminarProductoActionPerformed
+        private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {
+        }
 
-        private void btnEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarProductoActionPerformed
+        private void btnEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {
 		EditProduct ep = new EditProduct();
 		ep.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnEditarProductoActionPerformed
+        }
 
-        private void btnEliminarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCompraActionPerformed
-		// TODO add your handling code here:
-        }//GEN-LAST:event_btnEliminarCompraActionPerformed
+        private void btnEliminarCompraActionPerformed(java.awt.event.ActionEvent evt) {
+        }
 
-        private void btnRegistarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarCompraActionPerformed
+        private void btnRegistrarCompraActionPerformed(java.awt.event.ActionEvent evt) {
 		CreateCompra cc = new CreateCompra();
 		cc.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnRegistarCompraActionPerformed
+        }
 
-        private void btnEditarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCompraActionPerformed
+        private void btnEditarCompraActionPerformed(java.awt.event.ActionEvent evt) {
 		EditCompra ec = new EditCompra();
 		ec.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnEditarCompraActionPerformed
+        }
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
 		DashboardAdminScreen dashboard = new DashboardAdminScreen();
 		dashboard.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -289,7 +287,7 @@ public class ManageInventoryScreen extends javax.swing.JFrame {
         private javax.swing.JButton btnEditarProducto;
         private javax.swing.JButton btnEliminarCompra;
         private javax.swing.JButton btnEliminarProducto;
-        private javax.swing.JButton btnRegistarCompra;
+        private javax.swing.JButton btnRegistrarCompra;
         private javax.swing.JLabel lbBackButton;
         private javax.swing.JLabel lbBuscarCompras;
         private javax.swing.JLabel lbBuscarProductos;
@@ -301,7 +299,7 @@ public class ManageInventoryScreen extends javax.swing.JFrame {
         private javax.swing.JScrollPane spTablaProductos;
         private javax.swing.JTable tCompras;
         private javax.swing.JTable tProductos;
-        private javax.swing.JTextField tfBucarCompras;
-        private javax.swing.JTextField tfBucarProductos;
+        private javax.swing.JTextField tfBuscarCompras;
+        private javax.swing.JTextField tfBuscarProductos;
         // End of variables declaration//GEN-END:variables
 }

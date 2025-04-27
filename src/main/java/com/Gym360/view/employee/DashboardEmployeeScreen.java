@@ -1,3 +1,4 @@
+// cSpell:ignore rapidas
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -167,7 +168,7 @@ public class DashboardEmployeeScreen extends javax.swing.JFrame {
                 lbPonerProducto1.setBackground(new java.awt.Color(0, 0, 0));
                 lbPonerProducto1.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
                 lbPonerProducto1.setForeground(new java.awt.Color(20, 20, 20));
-                lbPonerProducto1.setText("Cinturón de levantammiento: -4 unidades");
+                lbPonerProducto1.setText("Cinturón de levantamiento: -4 unidades");
                 pInventarioFaltante.add(lbPonerProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 250, -1));
 
                 lbPonerProducto2.setBackground(new java.awt.Color(0, 0, 0));

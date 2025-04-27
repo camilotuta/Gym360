@@ -4,12 +4,7 @@
  */
 package main.java.com.Gym360.view.admin.payroll;
 
-import main.java.com.Gym360.view.admin.inventory.*;
-import main.java.com.Gym360.view.admin.users.*;
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import java.awt.EventQueue;
 import java.awt.Toolkit;
-import javax.swing.UIManager;
 
 /**
  *
@@ -107,11 +102,11 @@ public class HistoryPayroll extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
 		PayrollManagementScreen pm = new PayrollManagementScreen();
 		pm.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

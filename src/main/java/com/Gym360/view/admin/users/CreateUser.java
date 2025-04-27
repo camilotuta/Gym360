@@ -4,10 +4,7 @@
  */
 package main.java.com.Gym360.view.admin.users;
 
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import java.awt.EventQueue;
 import java.awt.Toolkit;
-import javax.swing.UIManager;
 
 /**
  *
@@ -143,16 +140,16 @@ public class CreateUser extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void btnCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUsuarioActionPerformed
-                // TODO add your handling code here:
-        }//GEN-LAST:event_btnCrearUsuarioActionPerformed
+        private void btnCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {
+                
+        }
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-                // TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+                
 		ManageUsersScreen mu = new ManageUsersScreen();
 		mu.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
 	/**
 	 * @param args the command line arguments

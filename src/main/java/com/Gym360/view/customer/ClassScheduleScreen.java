@@ -98,7 +98,7 @@ public class ClassScheduleScreen extends javax.swing.JFrame {
                 btnInscribirse.setBackground(new java.awt.Color(93, 0, 0));
                 btnInscribirse.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
                 btnInscribirse.setForeground(new java.awt.Color(200, 200, 200));
-                btnInscribirse.setText("      Incribirse");
+                btnInscribirse.setText("      Inscribirse");
                 btnInscribirse.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
                 btnInscribirse.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {

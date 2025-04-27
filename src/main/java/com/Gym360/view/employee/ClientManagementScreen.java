@@ -38,7 +38,7 @@ public class ClientManagementScreen extends javax.swing.JFrame {
                 pMenu = new javax.swing.JPanel();
                 lbBackButton = new javax.swing.JLabel();
                 lbBuscar = new javax.swing.JLabel();
-                tfBucar = new javax.swing.JTextField();
+                tfBuscar = new javax.swing.JTextField();
                 lbClientes = new javax.swing.JLabel();
                 spTablaClientes = new javax.swing.JScrollPane();
                 tTablaClientes = new javax.swing.JTable();
@@ -74,11 +74,11 @@ public class ClientManagementScreen extends javax.swing.JFrame {
                 lbBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
                 pMenu.add(lbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, 30));
 
-                tfBucar.setBackground(new java.awt.Color(231, 231, 231));
-                tfBucar.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
-                tfBucar.setForeground(new java.awt.Color(20, 20, 20));
-                tfBucar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-                pMenu.add(tfBucar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 330, 30));
+                tfBuscar.setBackground(new java.awt.Color(231, 231, 231));
+                tfBuscar.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                tfBuscar.setForeground(new java.awt.Color(20, 20, 20));
+                tfBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                pMenu.add(tfBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 330, 30));
 
                 panelClientManagementScreen.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
 
@@ -153,24 +153,24 @@ public class ClientManagementScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-		// TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+		
 		DashboardEmployeeScreen dashboard = new DashboardEmployeeScreen();
 		dashboard.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteActionPerformed
+        private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {
 		CreateClient cc = new CreateClient();
 		cc.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnAgregarClienteActionPerformed
+        }
 
-        private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
+        private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {
 		EditClient ec = new EditClient();
 		ec.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnEditarClienteActionPerformed
+        }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnAgregarCliente;
@@ -184,6 +184,6 @@ public class ClientManagementScreen extends javax.swing.JFrame {
         private javax.swing.JPanel panelClientManagementScreen;
         private javax.swing.JScrollPane spTablaClientes;
         private javax.swing.JTable tTablaClientes;
-        private javax.swing.JTextField tfBucar;
+        private javax.swing.JTextField tfBuscar;
         // End of variables declaration//GEN-END:variables
 }

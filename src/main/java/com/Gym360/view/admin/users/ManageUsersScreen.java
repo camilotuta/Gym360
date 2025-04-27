@@ -1,13 +1,11 @@
+// cSpell:ignore gestion 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package main.java.com.Gym360.view.admin.users;
 
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import java.awt.EventQueue;
 import java.awt.Toolkit;
-import javax.swing.UIManager;
 import main.java.com.Gym360.view.admin.DashboardAdminScreen;
 
 /**
@@ -40,7 +38,7 @@ public class ManageUsersScreen extends javax.swing.JFrame {
                 pMenu = new javax.swing.JPanel();
                 lbBackButton = new javax.swing.JLabel();
                 lbBuscar = new javax.swing.JLabel();
-                tfBucar = new javax.swing.JTextField();
+                tfBuscar = new javax.swing.JTextField();
                 lbUsuarios = new javax.swing.JLabel();
                 spTablaUsuarios = new javax.swing.JScrollPane();
                 tUsuarios = new javax.swing.JTable();
@@ -78,11 +76,11 @@ public class ManageUsersScreen extends javax.swing.JFrame {
                 lbBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
                 pMenu.add(lbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, 30));
 
-                tfBucar.setBackground(new java.awt.Color(231, 231, 231));
-                tfBucar.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
-                tfBucar.setForeground(new java.awt.Color(20, 20, 20));
-                tfBucar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-                pMenu.add(tfBucar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 330, 30));
+                tfBuscar.setBackground(new java.awt.Color(231, 231, 231));
+                tfBuscar.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                tfBuscar.setForeground(new java.awt.Color(20, 20, 20));
+                tfBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                pMenu.add(tfBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 330, 30));
 
                 panelGestionUsuarios.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
 
@@ -172,30 +170,30 @@ public class ManageUsersScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void btnAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioActionPerformed
-		// TODO add your handling code here:
+        private void btnAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {
+		
 		CreateUser cu = new CreateUser();
 		cu.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnAgregarUsuarioActionPerformed
+        }
 
-        private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuarioActionPerformed
-                // TODO add your handling code here:
+        private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {
+                
 		EditUser eu = new EditUser();
 		eu.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnEditarUsuarioActionPerformed
+        }
 
-        private void btnEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUsuarioActionPerformed
-                // TODO add your handling code here:
-        }//GEN-LAST:event_btnEliminarUsuarioActionPerformed
+        private void btnEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {
+                
+        }
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-                // TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+                
 		DashboardAdminScreen dashboard = new DashboardAdminScreen();
 		dashboard.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
 
 
@@ -213,6 +211,6 @@ public class ManageUsersScreen extends javax.swing.JFrame {
         private javax.swing.JPanel panelGestionUsuarios;
         private javax.swing.JScrollPane spTablaUsuarios;
         private javax.swing.JTable tUsuarios;
-        private javax.swing.JTextField tfBucar;
+        private javax.swing.JTextField tfBuscar;
         // End of variables declaration//GEN-END:variables
 }

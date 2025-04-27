@@ -1,3 +1,4 @@
+// cSpell:ignore grafica distribucion membresias egresos
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -6,10 +7,6 @@ package main.java.com.Gym360.view.admin;
 
 import java.awt.Toolkit;
 import main.java.com.Gym360.util.ui.CambiarIU;
-import main.java.com.Gym360.view.Login;
-import main.java.com.Gym360.view.admin.inventory.ManageInventoryScreen;
-import main.java.com.Gym360.view.admin.users.CreateUser;
-import main.java.com.Gym360.view.admin.users.ManageUsersScreen;
 
 /**
  *
@@ -197,20 +194,20 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-		// TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+		
 		DashboardAdminScreen dashboard = new DashboardAdminScreen();
 		dashboard.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnExportarExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarExcelActionPerformed
+        private void btnExportarExcelActionPerformed(java.awt.event.ActionEvent evt) {
 
-        }//GEN-LAST:event_btnExportarExcelActionPerformed
+        }
 
-        private void btnExportarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarPDFActionPerformed
-		// TODO add your handling code here:
-        }//GEN-LAST:event_btnExportarPDFActionPerformed
+        private void btnExportarPDFActionPerformed(java.awt.event.ActionEvent evt) {
+		
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

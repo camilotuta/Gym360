@@ -1,3 +1,4 @@
+// cSpell:ignore egresos
 package main.java.com.Gym360.model.classes;
 
 public class Contabilidad {

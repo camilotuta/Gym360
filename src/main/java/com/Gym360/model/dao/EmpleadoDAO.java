@@ -1,3 +1,4 @@
+// cSpell:ignore 
 package main.java.com.Gym360.model.dao;
 
 import java.sql.Connection;

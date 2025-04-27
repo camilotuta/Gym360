@@ -130,15 +130,15 @@ public class AttendanceRegisterScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
 		DashboardEmployeeScreen de = new DashboardEmployeeScreen();
 		de.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnConfirmarAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarAsistenciaActionPerformed
+        private void btnConfirmarAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {
 		
-        }//GEN-LAST:event_btnConfirmarAsistenciaActionPerformed
+        }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnConfirmarAsistencia;

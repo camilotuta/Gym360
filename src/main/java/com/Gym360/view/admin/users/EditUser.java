@@ -4,10 +4,7 @@
  */
 package main.java.com.Gym360.view.admin.users;
 
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import java.awt.EventQueue;
 import java.awt.Toolkit;
-import javax.swing.UIManager;
 
 /**
  *

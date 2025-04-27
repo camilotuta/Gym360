@@ -1,14 +1,11 @@
+// cSpell:ignore descripcion categoria
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package main.java.com.Gym360.view.admin.inventory;
 
-import main.java.com.Gym360.view.admin.users.*;
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import java.awt.EventQueue;
 import java.awt.Toolkit;
-import javax.swing.UIManager;
 
 /**
  *
@@ -177,16 +174,15 @@ public class CreateProduct extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void btnCrearProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearProductoActionPerformed
-                // TODO add your handling code here:
-        }//GEN-LAST:event_btnCrearProductoActionPerformed
+        private void btnCrearProductoActionPerformed(java.awt.event.ActionEvent evt) {
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-                // TODO add your handling code here:
+        }
+
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
 		ManageInventoryScreen mi = new ManageInventoryScreen();
 		mi.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

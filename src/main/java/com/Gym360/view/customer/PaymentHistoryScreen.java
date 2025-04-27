@@ -1,3 +1,4 @@
+// cSpell:ignore membresia
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -119,16 +120,16 @@ public class PaymentHistoryScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-                // TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+                
                 DashboardClientScreen dc = new DashboardClientScreen();
                 dc.setVisible(true);
                 this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnRenovarMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenovarMembresiaActionPerformed
-                // TODO add your handling code here:
-        }//GEN-LAST:event_btnRenovarMembresiaActionPerformed
+        private void btnRenovarMembresiaActionPerformed(java.awt.event.ActionEvent evt) {
+                
+        }
 
 	
 

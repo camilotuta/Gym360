@@ -4,6 +4,8 @@
  */
 package main.java.com.Gym360.view.employee;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author tutaa
@@ -15,6 +17,12 @@ public class AttendanceRegisterScreen extends javax.swing.JFrame {
 	 */
 	public AttendanceRegisterScreen() {
 		initComponents();
+
+		this.setTitle("Registro de Asistencia");
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/main/resources/images/logo.png")));
+
 	}
 
 	/**
@@ -26,22 +34,121 @@ public class AttendanceRegisterScreen extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                panelAsistencia = new javax.swing.JPanel();
+                pMenu = new javax.swing.JPanel();
+                lbBackButton = new javax.swing.JLabel();
+                lbClientesActivos = new javax.swing.JLabel();
+                lbFecha = new javax.swing.JLabel();
+                spTablaClientesActivos = new javax.swing.JScrollPane();
+                tTablaClientesActivos = new javax.swing.JTable();
+                imgConfirmarAsistencia = new javax.swing.JLabel();
+                btnConfirmarAsistencia = new javax.swing.JButton();
+
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+                panelAsistencia.setBackground(new java.awt.Color(245, 245, 245));
+                panelAsistencia.setMaximumSize(new java.awt.Dimension(1467, 800));
+                panelAsistencia.setMinimumSize(new java.awt.Dimension(1467, 800));
+                panelAsistencia.setPreferredSize(new java.awt.Dimension(1467, 800));
+                panelAsistencia.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                pMenu.setBackground(new java.awt.Color(93, 0, 0));
+                pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbBackButtonMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
+
+                panelAsistencia.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                lbClientesActivos.setBackground(new java.awt.Color(0, 0, 0));
+                lbClientesActivos.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbClientesActivos.setForeground(new java.awt.Color(93, 0, 0));
+                lbClientesActivos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbClientesActivos.setText("Clientes Activos");
+                lbClientesActivos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelAsistencia.add(lbClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1470, 50));
+
+                lbFecha.setBackground(new java.awt.Color(0, 0, 0));
+                lbFecha.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
+                lbFecha.setForeground(new java.awt.Color(102, 102, 102));
+                lbFecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbFecha.setText("Fecha: 2025-04-06");
+                lbFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelAsistencia.add(lbFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 1470, 50));
+
+                tTablaClientesActivos.setBackground(new java.awt.Color(232, 232, 232));
+                tTablaClientesActivos.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                tTablaClientesActivos.setForeground(new java.awt.Color(20, 20, 20));
+                tTablaClientesActivos.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object [][] {
+                                {"Juan Pérez", "juan@email.com", " Administrador", "Activo"},
+                                {"María López ", "maria@email.com", "Empleado", "Inactivo"},
+                                {"Carlos Ruiz", "carlos@email.com", "Cliente", "Activo"},
+                                {null, null, null, null}
+                        },
+                        new String [] {
+                                "Nombre", "Correo", "Rol", "Estado"
+                        }
+                ));
+                tTablaClientesActivos.setShowGrid(false);
+                spTablaClientesActivos.setViewportView(tTablaClientesActivos);
+
+                panelAsistencia.add(spTablaClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 1050, 480));
+
+                imgConfirmarAsistencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/confirmarAsistencia.png"))); // NOI18N
+                panelAsistencia.add(imgConfirmarAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 700, -1, 60));
+
+                btnConfirmarAsistencia.setBackground(new java.awt.Color(93, 0, 0));
+                btnConfirmarAsistencia.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnConfirmarAsistencia.setForeground(new java.awt.Color(200, 200, 200));
+                btnConfirmarAsistencia.setText("      Confirmar Asistencia");
+                btnConfirmarAsistencia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnConfirmarAsistencia.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnConfirmarAsistenciaActionPerformed(evt);
+                        }
+                });
+                panelAsistencia.add(btnConfirmarAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 700, 360, 60));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+                        .addComponent(panelAsistencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+                        .addComponent(panelAsistencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+		DashboardEmployeeScreen de = new DashboardEmployeeScreen();
+		de.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_lbBackButtonMouseClicked
+
+        private void btnConfirmarAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarAsistenciaActionPerformed
+		
+        }//GEN-LAST:event_btnConfirmarAsistenciaActionPerformed
+
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnConfirmarAsistencia;
+        private javax.swing.JLabel imgConfirmarAsistencia;
+        private javax.swing.JLabel lbBackButton;
+        private javax.swing.JLabel lbClientesActivos;
+        private javax.swing.JLabel lbFecha;
+        private javax.swing.JPanel pMenu;
+        private javax.swing.JPanel panelAsistencia;
+        private javax.swing.JScrollPane spTablaClientesActivos;
+        private javax.swing.JTable tTablaClientesActivos;
         // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,9 @@
  */
 package main.java.com.Gym360.view.customer;
 
+import java.awt.Toolkit;
+import main.java.com.Gym360.view.Login;
+
 /**
  *
  * @author tutaa
@@ -15,6 +18,10 @@ public class DashboardClientScreen extends javax.swing.JFrame {
 	 */
 	public DashboardClientScreen() {
 		initComponents();
+		this.setTitle("Mi Dashboard");
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/main/resources/images/logo.png")));
 	}
 
 	/**
@@ -26,23 +33,256 @@ public class DashboardClientScreen extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                panelDashboard = new javax.swing.JPanel();
+                pMenu = new javax.swing.JPanel();
+                lbBackButton = new javax.swing.JLabel();
+                lbDashboardCliente = new javax.swing.JLabel();
+                lbPanelInformativo = new javax.swing.JLabel();
+                pEstadoMembresia = new javax.swing.JPanel();
+                lbEstado = new javax.swing.JLabel();
+                lbPonerEstado = new javax.swing.JLabel();
+                lbPonerExpiracion = new javax.swing.JLabel();
+                pUltimaAsistencia = new javax.swing.JPanel();
+                lbUltima = new javax.swing.JLabel();
+                lbPonerFechaUltimaAsistencia = new javax.swing.JLabel();
+                lbFechaUltimoIngreso = new javax.swing.JLabel();
+                pUltimoPago = new javax.swing.JPanel();
+                lbUltimoPagoRealizado = new javax.swing.JLabel();
+                lbPonerMonto = new javax.swing.JLabel();
+                lbPonerFecha = new javax.swing.JLabel();
+                lbAccionesRapidas = new javax.swing.JLabel();
+                imgRenovarMembresia = new javax.swing.JLabel();
+                btnRenovarMembresia = new javax.swing.JButton();
+                imgVerClasesDisponibles = new javax.swing.JLabel();
+                btnVerClasesDisponibles = new javax.swing.JButton();
+                imgSoporte = new javax.swing.JLabel();
+                btnContactarSoporte = new javax.swing.JButton();
+
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+                panelDashboard.setBackground(new java.awt.Color(245, 245, 245));
+                panelDashboard.setMaximumSize(new java.awt.Dimension(1467, 800));
+                panelDashboard.setMinimumSize(new java.awt.Dimension(1467, 800));
+                panelDashboard.setPreferredSize(new java.awt.Dimension(1467, 800));
+                panelDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                pMenu.setBackground(new java.awt.Color(93, 0, 0));
+                pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbBackButtonMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
+
+                panelDashboard.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                lbDashboardCliente.setBackground(new java.awt.Color(0, 0, 0));
+                lbDashboardCliente.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbDashboardCliente.setForeground(new java.awt.Color(93, 0, 0));
+                lbDashboardCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbDashboardCliente.setText("Dashboard Cliente");
+                lbDashboardCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelDashboard.add(lbDashboardCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 1230, 50));
+
+                lbPanelInformativo.setBackground(new java.awt.Color(0, 0, 0));
+                lbPanelInformativo.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbPanelInformativo.setForeground(new java.awt.Color(93, 0, 0));
+                lbPanelInformativo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbPanelInformativo.setText("Panel Informativo");
+                lbPanelInformativo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelDashboard.add(lbPanelInformativo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 540, 50));
+
+                pEstadoMembresia.setBackground(new java.awt.Color(245, 245, 245));
+                pEstadoMembresia.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pEstadoMembresia.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbEstado.setBackground(new java.awt.Color(0, 0, 0));
+                lbEstado.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbEstado.setForeground(new java.awt.Color(20, 20, 20));
+                lbEstado.setText("Estado de la membresia");
+                pEstadoMembresia.add(lbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbPonerEstado.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerEstado.setFont(new java.awt.Font("Inter", 1, 30)); // NOI18N
+                lbPonerEstado.setForeground(new java.awt.Color(51, 255, 51));
+                lbPonerEstado.setText("Activa");
+                pEstadoMembresia.add(lbPonerEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbPonerExpiracion.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerExpiracion.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbPonerExpiracion.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerExpiracion.setText("(Expira en 15 dias)");
+                pEstadoMembresia.add(lbPonerExpiracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+                panelDashboard.add(pEstadoMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 250, 110));
+
+                pUltimaAsistencia.setBackground(new java.awt.Color(245, 245, 245));
+                pUltimaAsistencia.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pUltimaAsistencia.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbUltima.setBackground(new java.awt.Color(0, 0, 0));
+                lbUltima.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbUltima.setForeground(new java.awt.Color(20, 20, 20));
+                lbUltima.setText("Ultima asistencia");
+                pUltimaAsistencia.add(lbUltima, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbPonerFechaUltimaAsistencia.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerFechaUltimaAsistencia.setFont(new java.awt.Font("Inter", 1, 30)); // NOI18N
+                lbPonerFechaUltimaAsistencia.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerFechaUltimaAsistencia.setText("2025-04-05");
+                pUltimaAsistencia.add(lbPonerFechaUltimaAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbFechaUltimoIngreso.setBackground(new java.awt.Color(0, 0, 0));
+                lbFechaUltimoIngreso.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbFechaUltimoIngreso.setForeground(new java.awt.Color(20, 20, 20));
+                lbFechaUltimoIngreso.setText("Fecha del ultimo ingreso");
+                pUltimaAsistencia.add(lbFechaUltimoIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+                panelDashboard.add(pUltimaAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 250, 110));
+
+                pUltimoPago.setBackground(new java.awt.Color(245, 245, 245));
+                pUltimoPago.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pUltimoPago.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbUltimoPagoRealizado.setBackground(new java.awt.Color(0, 0, 0));
+                lbUltimoPagoRealizado.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbUltimoPagoRealizado.setForeground(new java.awt.Color(20, 20, 20));
+                lbUltimoPagoRealizado.setText("Ultimo pago realizado");
+                pUltimoPago.add(lbUltimoPagoRealizado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbPonerMonto.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerMonto.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbPonerMonto.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerMonto.setText("Monto: $300");
+                pUltimoPago.add(lbPonerMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 250, -1));
+
+                lbPonerFecha.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerFecha.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbPonerFecha.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerFecha.setText("Fecha: 2025-03-30");
+                pUltimoPago.add(lbPonerFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 250, -1));
+
+                panelDashboard.add(pUltimoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, 250, 110));
+
+                lbAccionesRapidas.setBackground(new java.awt.Color(0, 0, 0));
+                lbAccionesRapidas.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                lbAccionesRapidas.setForeground(new java.awt.Color(20, 20, 20));
+                lbAccionesRapidas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbAccionesRapidas.setText("Acciones Rápidas");
+                panelDashboard.add(lbAccionesRapidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 540, -1));
+
+                imgRenovarMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/membresia.png"))); // NOI18N
+                panelDashboard.add(imgRenovarMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 350, 40, 80));
+
+                btnRenovarMembresia.setBackground(new java.awt.Color(93, 0, 0));
+                btnRenovarMembresia.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnRenovarMembresia.setForeground(new java.awt.Color(200, 200, 200));
+                btnRenovarMembresia.setText("      Renovar Membresia");
+                btnRenovarMembresia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnRenovarMembresia.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnRenovarMembresiaActionPerformed(evt);
+                        }
+                });
+                panelDashboard.add(btnRenovarMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 350, 540, 80));
+
+                imgVerClasesDisponibles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/ver.png"))); // NOI18N
+                panelDashboard.add(imgVerClasesDisponibles, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 450, -1, 80));
+
+                btnVerClasesDisponibles.setBackground(new java.awt.Color(93, 0, 0));
+                btnVerClasesDisponibles.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnVerClasesDisponibles.setForeground(new java.awt.Color(200, 200, 200));
+                btnVerClasesDisponibles.setText("      Ver Clases Disponibles");
+                btnVerClasesDisponibles.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnVerClasesDisponibles.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnVerClasesDisponiblesActionPerformed(evt);
+                        }
+                });
+                panelDashboard.add(btnVerClasesDisponibles, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 450, 540, 80));
+
+                imgSoporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/soporte.png"))); // NOI18N
+                panelDashboard.add(imgSoporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 550, -1, 80));
+
+                btnContactarSoporte.setBackground(new java.awt.Color(93, 0, 0));
+                btnContactarSoporte.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnContactarSoporte.setForeground(new java.awt.Color(200, 200, 200));
+                btnContactarSoporte.setText("      Contactar Soporte");
+                btnContactarSoporte.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnContactarSoporte.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnContactarSoporteActionPerformed(evt);
+                        }
+                });
+                panelDashboard.add(btnContactarSoporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 550, 540, 80));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+                        .addComponent(panelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+                        .addComponent(panelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-	
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+		// TODO add your handling code here:
+		Login login = new Login();
+		login.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_lbBackButtonMouseClicked
+
+        private void btnRenovarMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenovarMembresiaActionPerformed
+		// TODO add your handling code here:
+		MembershipDetailsScreen md = new MembershipDetailsScreen();
+		md.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_btnRenovarMembresiaActionPerformed
+
+        private void btnVerClasesDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerClasesDisponiblesActionPerformed
+		ClassScheduleScreen cs = new ClassScheduleScreen();
+		cs.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_btnVerClasesDisponiblesActionPerformed
+
+        private void btnContactarSoporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactarSoporteActionPerformed
+		
+        }//GEN-LAST:event_btnContactarSoporteActionPerformed
+
+
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnContactarSoporte;
+        private javax.swing.JButton btnRenovarMembresia;
+        private javax.swing.JButton btnVerClasesDisponibles;
+        private javax.swing.JLabel imgRenovarMembresia;
+        private javax.swing.JLabel imgSoporte;
+        private javax.swing.JLabel imgVerClasesDisponibles;
+        private javax.swing.JLabel lbAccionesRapidas;
+        private javax.swing.JLabel lbBackButton;
+        private javax.swing.JLabel lbDashboardCliente;
+        private javax.swing.JLabel lbEstado;
+        private javax.swing.JLabel lbFechaUltimoIngreso;
+        private javax.swing.JLabel lbPanelInformativo;
+        private javax.swing.JLabel lbPonerEstado;
+        private javax.swing.JLabel lbPonerExpiracion;
+        private javax.swing.JLabel lbPonerFecha;
+        private javax.swing.JLabel lbPonerFechaUltimaAsistencia;
+        private javax.swing.JLabel lbPonerMonto;
+        private javax.swing.JLabel lbUltima;
+        private javax.swing.JLabel lbUltimoPagoRealizado;
+        private javax.swing.JPanel pEstadoMembresia;
+        private javax.swing.JPanel pMenu;
+        private javax.swing.JPanel pUltimaAsistencia;
+        private javax.swing.JPanel pUltimoPago;
+        private javax.swing.JPanel panelDashboard;
         // End of variables declaration//GEN-END:variables
 }

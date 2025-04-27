@@ -49,7 +49,8 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 lbInventario = new javax.swing.JLabel();
                 lbReportes = new javax.swing.JLabel();
                 lbNomina = new javax.swing.JLabel();
-                lbAlertas = new javax.swing.JLabel();
+                lbNotificaciones = new javax.swing.JLabel();
+                lbDashboardAdmin = new javax.swing.JLabel();
                 pMembresiasActivas = new javax.swing.JPanel();
                 lbMembreciasActivas = new javax.swing.JLabel();
                 lbPonerMembreciasActivas = new javax.swing.JLabel();
@@ -162,14 +163,27 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 });
                 pMenu.add(lbNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 20, -1, -1));
 
-                lbAlertas.setBackground(new java.awt.Color(0, 0, 0));
-                lbAlertas.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
-                lbAlertas.setForeground(new java.awt.Color(245, 245, 245));
-                lbAlertas.setText("Alertas");
-                lbAlertas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-                pMenu.add(lbAlertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, -1, -1));
+                lbNotificaciones.setBackground(new java.awt.Color(0, 0, 0));
+                lbNotificaciones.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbNotificaciones.setForeground(new java.awt.Color(245, 245, 245));
+                lbNotificaciones.setText("Notificaciones");
+                lbNotificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbNotificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbNotificacionesMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, -1, -1));
 
                 panelDashboard.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                lbDashboardAdmin.setBackground(new java.awt.Color(0, 0, 0));
+                lbDashboardAdmin.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbDashboardAdmin.setForeground(new java.awt.Color(93, 0, 0));
+                lbDashboardAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbDashboardAdmin.setText("Dashboard Administrador");
+                lbDashboardAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelDashboard.add(lbDashboardAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 1230, 50));
 
                 pMembresiasActivas.setBackground(new java.awt.Color(245, 245, 245));
                 pMembresiasActivas.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
@@ -370,7 +384,9 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarVentaActionPerformed
 
     private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
-	    // TODO add your handling code here:
+	    FinancialReportScreen fr = new FinancialReportScreen();
+	    fr.setVisible(true);
+	    this.setVisible(false);
     }//GEN-LAST:event_btnGenerarReporteActionPerformed
 
     private void btnAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioActionPerformed
@@ -414,6 +430,12 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
 		this.setVisible(false);
         }//GEN-LAST:event_lbNominaMouseClicked
 
+        private void lbNotificacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbNotificacionesMouseClicked
+               NotificationsScreen ns = new NotificationsScreen();
+		ns.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_lbNotificacionesMouseClicked
+
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnAgregarUsuario;
@@ -426,11 +448,11 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
         private javax.swing.JLabel imgRegistrarVenta;
         private javax.swing.JLabel lbAccionesRapidas;
         private javax.swing.JLabel lbActivos;
-        private javax.swing.JLabel lbAlertas;
         private javax.swing.JLabel lbBackButton;
         private javax.swing.JLabel lbClientes;
         private javax.swing.JLabel lbClientesActivos;
         private javax.swing.JLabel lbDashboard;
+        private javax.swing.JLabel lbDashboardAdmin;
         private javax.swing.JLabel lbGestionUsuarios;
         private javax.swing.JLabel lbHoy;
         private javax.swing.JLabel lbIngresosMes;
@@ -439,6 +461,7 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
         private javax.swing.JLabel lbMembreciasActivas;
         private javax.swing.JLabel lbMes;
         private javax.swing.JLabel lbNomina;
+        private javax.swing.JLabel lbNotificaciones;
         private javax.swing.JLabel lbPonerContadorClientesActivos;
         private javax.swing.JLabel lbPonerIngresosMes;
         private javax.swing.JLabel lbPonerMembreciasActivas;

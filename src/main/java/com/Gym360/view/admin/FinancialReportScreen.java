@@ -42,7 +42,6 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                 panelFinancialReport = new javax.swing.JPanel();
                 pMenu = new javax.swing.JPanel();
                 lbBackButton = new javax.swing.JLabel();
-                lbGestionUsuarios = new javax.swing.JLabel();
                 pGrafica1 = new javax.swing.JPanel();
                 imgGrafica1 = new javax.swing.JLabel();
                 pGrafica2 = new javax.swing.JPanel();
@@ -59,6 +58,7 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                 btnExportarPDF = new javax.swing.JButton();
                 imgExcel = new javax.swing.JLabel();
                 btnExportarExcel = new javax.swing.JButton();
+                lbNotificaciones = new javax.swing.JLabel();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,18 +79,6 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                         }
                 });
                 pMenu.add(lbBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
-
-                lbGestionUsuarios.setBackground(new java.awt.Color(0, 0, 0));
-                lbGestionUsuarios.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
-                lbGestionUsuarios.setForeground(new java.awt.Color(245, 245, 245));
-                lbGestionUsuarios.setText("Gestión de Empleados");
-                lbGestionUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-                lbGestionUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
-                        public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                lbGestionUsuariosMouseClicked(evt);
-                        }
-                });
-                pMenu.add(lbGestionUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, -1, -1));
 
                 panelFinancialReport.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
 
@@ -187,6 +175,14 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                 });
                 panelFinancialReport.add(btnExportarExcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 690, 260, 50));
 
+                lbNotificaciones.setBackground(new java.awt.Color(0, 0, 0));
+                lbNotificaciones.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbNotificaciones.setForeground(new java.awt.Color(93, 0, 0));
+                lbNotificaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbNotificaciones.setText("Reportes Financieros");
+                lbNotificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelFinancialReport.add(lbNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 1230, 50));
+
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
@@ -216,12 +212,6 @@ public class FinancialReportScreen extends javax.swing.JFrame {
 		// TODO add your handling code here:
         }//GEN-LAST:event_btnExportarPDFActionPerformed
 
-        private void lbGestionUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbGestionUsuariosMouseClicked
-                ManageUsersScreen mus = new ManageUsersScreen();
-                mus.setVisible(true);
-                this.setVisible(false);
-        }//GEN-LAST:event_lbGestionUsuariosMouseClicked
-
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnExportarExcel;
@@ -237,7 +227,7 @@ public class FinancialReportScreen extends javax.swing.JFrame {
         private javax.swing.JLabel lbClientesActivos3;
         private javax.swing.JLabel lbClientesActivos4;
         private javax.swing.JLabel lbClientesActivos5;
-        private javax.swing.JLabel lbGestionUsuarios;
+        private javax.swing.JLabel lbNotificaciones;
         private javax.swing.JLabel lbResumenFinanciero;
         private javax.swing.JPanel pGrafica1;
         private javax.swing.JPanel pGrafica2;

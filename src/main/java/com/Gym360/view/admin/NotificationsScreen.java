@@ -4,6 +4,8 @@
  */
 package main.java.com.Gym360.view.admin;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author tutaa
@@ -15,6 +17,12 @@ public class NotificationsScreen extends javax.swing.JFrame {
 	 */
 	public NotificationsScreen() {
 		initComponents();
+
+		this.setTitle("Notificaciones");
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/main/resources/images/logo.png")));
+
 	}
 
 	/**
@@ -26,22 +34,352 @@ public class NotificationsScreen extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                panelNotificaciones = new javax.swing.JPanel();
+                pMenu = new javax.swing.JPanel();
+                lbBackButton = new javax.swing.JLabel();
+                lbNotificaciones = new javax.swing.JLabel();
+                pNotificacion1 = new javax.swing.JPanel();
+                lbTituloNotificacion1 = new javax.swing.JLabel();
+                lbFechaNotificacion1 = new javax.swing.JLabel();
+                lbDatosNotificacion1 = new javax.swing.JLabel();
+                lbInfoAdicionalNotificacion1 = new javax.swing.JLabel();
+                cbHechoNotificacion1 = new javax.swing.JCheckBox();
+                pNotificacion2 = new javax.swing.JPanel();
+                lbTituloNotificacion2 = new javax.swing.JLabel();
+                lbFechaNotificacion2 = new javax.swing.JLabel();
+                lbDatosNotificacion2 = new javax.swing.JLabel();
+                lbInfoAdicionalNotificacion2 = new javax.swing.JLabel();
+                cbHechoNotificacion2 = new javax.swing.JCheckBox();
+                pNotificacion3 = new javax.swing.JPanel();
+                lbTituloNotificacion3 = new javax.swing.JLabel();
+                lbFechaNotificacion3 = new javax.swing.JLabel();
+                lbDatosNotificacion3 = new javax.swing.JLabel();
+                lbInfoAdicionalNotificacion3 = new javax.swing.JLabel();
+                cbHechoNotificacion3 = new javax.swing.JCheckBox();
+                pNotificacion4 = new javax.swing.JPanel();
+                lbTituloNotificacion4 = new javax.swing.JLabel();
+                lbFechaNotificacion6 = new javax.swing.JLabel();
+                lbDatosNotificacion4 = new javax.swing.JLabel();
+                lbInfoAdicionalNotificacion4 = new javax.swing.JLabel();
+                cbHechoNotificacion4 = new javax.swing.JCheckBox();
+                pNotificacion5 = new javax.swing.JPanel();
+                lbTituloNotificacion5 = new javax.swing.JLabel();
+                lbFechaNotificacion5 = new javax.swing.JLabel();
+                lbDatosNotificacion5 = new javax.swing.JLabel();
+                lbInfoAdicionalNotificacion5 = new javax.swing.JLabel();
+                cbHechoNotificacion5 = new javax.swing.JCheckBox();
+                pNotificacion6 = new javax.swing.JPanel();
+                lbTituloNotificacion6 = new javax.swing.JLabel();
+                lbFechaNotificacion4 = new javax.swing.JLabel();
+                lbDatosNotificacion6 = new javax.swing.JLabel();
+                lbInfoAdicionalNotificacion6 = new javax.swing.JLabel();
+                cbHechoNotificacion6 = new javax.swing.JCheckBox();
+                imgLimpiar = new javax.swing.JLabel();
+                btnLimpiarNotificaciones = new javax.swing.JButton();
+
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+                panelNotificaciones.setBackground(new java.awt.Color(245, 245, 245));
+                panelNotificaciones.setMaximumSize(new java.awt.Dimension(1467, 800));
+                panelNotificaciones.setMinimumSize(new java.awt.Dimension(1467, 800));
+                panelNotificaciones.setPreferredSize(new java.awt.Dimension(1467, 800));
+                panelNotificaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                pMenu.setBackground(new java.awt.Color(93, 0, 0));
+                pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbBackButtonMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
+
+                panelNotificaciones.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                lbNotificaciones.setBackground(new java.awt.Color(0, 0, 0));
+                lbNotificaciones.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbNotificaciones.setForeground(new java.awt.Color(93, 0, 0));
+                lbNotificaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbNotificaciones.setText("Notificaciones");
+                lbNotificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelNotificaciones.add(lbNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 1230, 50));
+
+                pNotificacion1.setBackground(new java.awt.Color(245, 245, 245));
+                pNotificacion1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pNotificacion1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbTituloNotificacion1.setBackground(new java.awt.Color(0, 0, 0));
+                lbTituloNotificacion1.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbTituloNotificacion1.setForeground(new java.awt.Color(255, 51, 51));
+                lbTituloNotificacion1.setText("Stock Bajo");
+                pNotificacion1.add(lbTituloNotificacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbFechaNotificacion1.setBackground(new java.awt.Color(0, 0, 0));
+                lbFechaNotificacion1.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbFechaNotificacion1.setForeground(new java.awt.Color(20, 20, 20));
+                lbFechaNotificacion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbFechaNotificacion1.setText("2025-04-05 ");
+                pNotificacion1.add(lbFechaNotificacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, -1));
+
+                lbDatosNotificacion1.setBackground(new java.awt.Color(0, 0, 0));
+                lbDatosNotificacion1.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbDatosNotificacion1.setForeground(new java.awt.Color(20, 20, 20));
+                lbDatosNotificacion1.setText("Proteína en Polvo");
+                pNotificacion1.add(lbDatosNotificacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbInfoAdicionalNotificacion1.setBackground(new java.awt.Color(0, 0, 0));
+                lbInfoAdicionalNotificacion1.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbInfoAdicionalNotificacion1.setForeground(new java.awt.Color(20, 20, 20));
+                lbInfoAdicionalNotificacion1.setText("Quedan solo (3 unidades)");
+                pNotificacion1.add(lbInfoAdicionalNotificacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+                pNotificacion1.add(cbHechoNotificacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+
+                panelNotificaciones.add(pNotificacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 320, 110));
+
+                pNotificacion2.setBackground(new java.awt.Color(245, 245, 245));
+                pNotificacion2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pNotificacion2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbTituloNotificacion2.setBackground(new java.awt.Color(0, 0, 0));
+                lbTituloNotificacion2.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbTituloNotificacion2.setForeground(new java.awt.Color(255, 204, 102));
+                lbTituloNotificacion2.setText("Membresía Vencida");
+                pNotificacion2.add(lbTituloNotificacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbFechaNotificacion2.setBackground(new java.awt.Color(0, 0, 0));
+                lbFechaNotificacion2.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbFechaNotificacion2.setForeground(new java.awt.Color(20, 20, 20));
+                lbFechaNotificacion2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbFechaNotificacion2.setText("2025-04-05");
+                pNotificacion2.add(lbFechaNotificacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, -1));
+
+                lbDatosNotificacion2.setBackground(new java.awt.Color(0, 0, 0));
+                lbDatosNotificacion2.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbDatosNotificacion2.setForeground(new java.awt.Color(20, 20, 20));
+                lbDatosNotificacion2.setText("Cliente X");
+                pNotificacion2.add(lbDatosNotificacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbInfoAdicionalNotificacion2.setBackground(new java.awt.Color(0, 0, 0));
+                lbInfoAdicionalNotificacion2.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbInfoAdicionalNotificacion2.setForeground(new java.awt.Color(20, 20, 20));
+                lbInfoAdicionalNotificacion2.setText("Se ha vencido el dia 2025-04-05");
+                pNotificacion2.add(lbInfoAdicionalNotificacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+                pNotificacion2.add(cbHechoNotificacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+
+                panelNotificaciones.add(pNotificacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 320, 110));
+
+                pNotificacion3.setBackground(new java.awt.Color(245, 245, 245));
+                pNotificacion3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pNotificacion3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbTituloNotificacion3.setBackground(new java.awt.Color(0, 0, 0));
+                lbTituloNotificacion3.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbTituloNotificacion3.setForeground(new java.awt.Color(20, 20, 20));
+                lbTituloNotificacion3.setText("-");
+                pNotificacion3.add(lbTituloNotificacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbFechaNotificacion3.setBackground(new java.awt.Color(0, 0, 0));
+                lbFechaNotificacion3.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbFechaNotificacion3.setForeground(new java.awt.Color(20, 20, 20));
+                lbFechaNotificacion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbFechaNotificacion3.setText("-");
+                pNotificacion3.add(lbFechaNotificacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, -1));
+
+                lbDatosNotificacion3.setBackground(new java.awt.Color(0, 0, 0));
+                lbDatosNotificacion3.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbDatosNotificacion3.setForeground(new java.awt.Color(20, 20, 20));
+                lbDatosNotificacion3.setText("-");
+                pNotificacion3.add(lbDatosNotificacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbInfoAdicionalNotificacion3.setBackground(new java.awt.Color(0, 0, 0));
+                lbInfoAdicionalNotificacion3.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbInfoAdicionalNotificacion3.setForeground(new java.awt.Color(20, 20, 20));
+                lbInfoAdicionalNotificacion3.setText("-");
+                pNotificacion3.add(lbInfoAdicionalNotificacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+                pNotificacion3.add(cbHechoNotificacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+
+                panelNotificaciones.add(pNotificacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 260, 320, 110));
+
+                pNotificacion4.setBackground(new java.awt.Color(245, 245, 245));
+                pNotificacion4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pNotificacion4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbTituloNotificacion4.setBackground(new java.awt.Color(0, 0, 0));
+                lbTituloNotificacion4.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbTituloNotificacion4.setForeground(new java.awt.Color(20, 20, 20));
+                lbTituloNotificacion4.setText("-");
+                pNotificacion4.add(lbTituloNotificacion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbFechaNotificacion6.setBackground(new java.awt.Color(0, 0, 0));
+                lbFechaNotificacion6.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbFechaNotificacion6.setForeground(new java.awt.Color(20, 20, 20));
+                lbFechaNotificacion6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbFechaNotificacion6.setText("-");
+                pNotificacion4.add(lbFechaNotificacion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, -1));
+
+                lbDatosNotificacion4.setBackground(new java.awt.Color(0, 0, 0));
+                lbDatosNotificacion4.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbDatosNotificacion4.setForeground(new java.awt.Color(20, 20, 20));
+                lbDatosNotificacion4.setText("-");
+                pNotificacion4.add(lbDatosNotificacion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbInfoAdicionalNotificacion4.setBackground(new java.awt.Color(0, 0, 0));
+                lbInfoAdicionalNotificacion4.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbInfoAdicionalNotificacion4.setForeground(new java.awt.Color(20, 20, 20));
+                lbInfoAdicionalNotificacion4.setText("-");
+                pNotificacion4.add(lbInfoAdicionalNotificacion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+                pNotificacion4.add(cbHechoNotificacion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+
+                panelNotificaciones.add(pNotificacion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 320, 110));
+
+                pNotificacion5.setBackground(new java.awt.Color(245, 245, 245));
+                pNotificacion5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pNotificacion5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbTituloNotificacion5.setBackground(new java.awt.Color(0, 0, 0));
+                lbTituloNotificacion5.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbTituloNotificacion5.setForeground(new java.awt.Color(20, 20, 20));
+                lbTituloNotificacion5.setText("-");
+                pNotificacion5.add(lbTituloNotificacion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbFechaNotificacion5.setBackground(new java.awt.Color(0, 0, 0));
+                lbFechaNotificacion5.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbFechaNotificacion5.setForeground(new java.awt.Color(20, 20, 20));
+                lbFechaNotificacion5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbFechaNotificacion5.setText("-");
+                pNotificacion5.add(lbFechaNotificacion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, -1));
+
+                lbDatosNotificacion5.setBackground(new java.awt.Color(0, 0, 0));
+                lbDatosNotificacion5.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbDatosNotificacion5.setForeground(new java.awt.Color(20, 20, 20));
+                lbDatosNotificacion5.setText("-");
+                pNotificacion5.add(lbDatosNotificacion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbInfoAdicionalNotificacion5.setBackground(new java.awt.Color(0, 0, 0));
+                lbInfoAdicionalNotificacion5.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbInfoAdicionalNotificacion5.setForeground(new java.awt.Color(20, 20, 20));
+                lbInfoAdicionalNotificacion5.setText("-");
+                pNotificacion5.add(lbInfoAdicionalNotificacion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+                pNotificacion5.add(cbHechoNotificacion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+
+                panelNotificaciones.add(pNotificacion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 430, 320, 110));
+
+                pNotificacion6.setBackground(new java.awt.Color(245, 245, 245));
+                pNotificacion6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pNotificacion6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbTituloNotificacion6.setBackground(new java.awt.Color(0, 0, 0));
+                lbTituloNotificacion6.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbTituloNotificacion6.setForeground(new java.awt.Color(20, 20, 20));
+                lbTituloNotificacion6.setText("-");
+                pNotificacion6.add(lbTituloNotificacion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbFechaNotificacion4.setBackground(new java.awt.Color(0, 0, 0));
+                lbFechaNotificacion4.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbFechaNotificacion4.setForeground(new java.awt.Color(20, 20, 20));
+                lbFechaNotificacion4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbFechaNotificacion4.setText("-");
+                pNotificacion6.add(lbFechaNotificacion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, -1));
+
+                lbDatosNotificacion6.setBackground(new java.awt.Color(0, 0, 0));
+                lbDatosNotificacion6.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbDatosNotificacion6.setForeground(new java.awt.Color(20, 20, 20));
+                lbDatosNotificacion6.setText("-");
+                pNotificacion6.add(lbDatosNotificacion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbInfoAdicionalNotificacion6.setBackground(new java.awt.Color(0, 0, 0));
+                lbInfoAdicionalNotificacion6.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbInfoAdicionalNotificacion6.setForeground(new java.awt.Color(20, 20, 20));
+                lbInfoAdicionalNotificacion6.setText("-");
+                pNotificacion6.add(lbInfoAdicionalNotificacion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+                pNotificacion6.add(cbHechoNotificacion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+
+                panelNotificaciones.add(pNotificacion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 430, 320, 110));
+
+                imgLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/limpiar.png"))); // NOI18N
+                panelNotificaciones.add(imgLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 630, 40, 80));
+
+                btnLimpiarNotificaciones.setBackground(new java.awt.Color(93, 0, 0));
+                btnLimpiarNotificaciones.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnLimpiarNotificaciones.setForeground(new java.awt.Color(200, 200, 200));
+                btnLimpiarNotificaciones.setText("      Limpiar Notificaciones");
+                btnLimpiarNotificaciones.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnLimpiarNotificaciones.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnLimpiarNotificacionesActionPerformed(evt);
+                        }
+                });
+                panelNotificaciones.add(btnLimpiarNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 630, 370, 80));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+                        .addComponent(panelNotificaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+                        .addComponent(panelNotificaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+		DashboardAdminScreen dashboard = new DashboardAdminScreen();
+		dashboard.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_lbBackButtonMouseClicked
+
+        private void btnLimpiarNotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarNotificacionesActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnLimpiarNotificacionesActionPerformed
+
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnLimpiarNotificaciones;
+        private javax.swing.JCheckBox cbHechoNotificacion1;
+        private javax.swing.JCheckBox cbHechoNotificacion2;
+        private javax.swing.JCheckBox cbHechoNotificacion3;
+        private javax.swing.JCheckBox cbHechoNotificacion4;
+        private javax.swing.JCheckBox cbHechoNotificacion5;
+        private javax.swing.JCheckBox cbHechoNotificacion6;
+        private javax.swing.JLabel imgLimpiar;
+        private javax.swing.JLabel lbBackButton;
+        private javax.swing.JLabel lbDatosNotificacion1;
+        private javax.swing.JLabel lbDatosNotificacion2;
+        private javax.swing.JLabel lbDatosNotificacion3;
+        private javax.swing.JLabel lbDatosNotificacion4;
+        private javax.swing.JLabel lbDatosNotificacion5;
+        private javax.swing.JLabel lbDatosNotificacion6;
+        private javax.swing.JLabel lbFechaNotificacion1;
+        private javax.swing.JLabel lbFechaNotificacion2;
+        private javax.swing.JLabel lbFechaNotificacion3;
+        private javax.swing.JLabel lbFechaNotificacion4;
+        private javax.swing.JLabel lbFechaNotificacion5;
+        private javax.swing.JLabel lbFechaNotificacion6;
+        private javax.swing.JLabel lbInfoAdicionalNotificacion1;
+        private javax.swing.JLabel lbInfoAdicionalNotificacion2;
+        private javax.swing.JLabel lbInfoAdicionalNotificacion3;
+        private javax.swing.JLabel lbInfoAdicionalNotificacion4;
+        private javax.swing.JLabel lbInfoAdicionalNotificacion5;
+        private javax.swing.JLabel lbInfoAdicionalNotificacion6;
+        private javax.swing.JLabel lbNotificaciones;
+        private javax.swing.JLabel lbTituloNotificacion1;
+        private javax.swing.JLabel lbTituloNotificacion2;
+        private javax.swing.JLabel lbTituloNotificacion3;
+        private javax.swing.JLabel lbTituloNotificacion4;
+        private javax.swing.JLabel lbTituloNotificacion5;
+        private javax.swing.JLabel lbTituloNotificacion6;
+        private javax.swing.JPanel pMenu;
+        private javax.swing.JPanel pNotificacion1;
+        private javax.swing.JPanel pNotificacion2;
+        private javax.swing.JPanel pNotificacion3;
+        private javax.swing.JPanel pNotificacion4;
+        private javax.swing.JPanel pNotificacion5;
+        private javax.swing.JPanel pNotificacion6;
+        private javax.swing.JPanel panelNotificaciones;
         // End of variables declaration//GEN-END:variables
 }

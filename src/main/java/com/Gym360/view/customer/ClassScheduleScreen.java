@@ -4,6 +4,8 @@
  */
 package main.java.com.Gym360.view.customer;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author tutaa
@@ -15,6 +17,10 @@ public class ClassScheduleScreen extends javax.swing.JFrame {
 	 */
 	public ClassScheduleScreen() {
 		initComponents();
+		this.setTitle("Horario de Clases");
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/main/resources/images/logo.png")));
 	}
 
 	/**
@@ -26,23 +32,136 @@ public class ClassScheduleScreen extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                PaymentHistoryScreen = new javax.swing.JPanel();
+                pMenu = new javax.swing.JPanel();
+                lbBackButton = new javax.swing.JLabel();
+                lbCalendarioLista = new javax.swing.JLabel();
+                spTablaClases = new javax.swing.JScrollPane();
+                tTablaClases = new javax.swing.JTable();
+                imgInscribirse = new javax.swing.JLabel();
+                btnInscribirse = new javax.swing.JButton();
+                imgCancelar = new javax.swing.JLabel();
+                btnCancelar = new javax.swing.JButton();
+
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+                PaymentHistoryScreen.setBackground(new java.awt.Color(245, 245, 245));
+                PaymentHistoryScreen.setMaximumSize(new java.awt.Dimension(1467, 800));
+                PaymentHistoryScreen.setMinimumSize(new java.awt.Dimension(1467, 800));
+                PaymentHistoryScreen.setPreferredSize(new java.awt.Dimension(1467, 800));
+                PaymentHistoryScreen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                pMenu.setBackground(new java.awt.Color(93, 0, 0));
+                pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbBackButtonMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
+
+                PaymentHistoryScreen.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                lbCalendarioLista.setBackground(new java.awt.Color(0, 0, 0));
+                lbCalendarioLista.setFont(new java.awt.Font("Inter", 1, 42)); // NOI18N
+                lbCalendarioLista.setForeground(new java.awt.Color(93, 0, 0));
+                lbCalendarioLista.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbCalendarioLista.setText("Calendario / Lista");
+                lbCalendarioLista.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                PaymentHistoryScreen.add(lbCalendarioLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1470, 50));
+
+                tTablaClases.setBackground(new java.awt.Color(232, 232, 232));
+                tTablaClases.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                tTablaClases.setForeground(new java.awt.Color(20, 20, 20));
+                tTablaClases.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object [][] {
+                                {"Juan Pérez", "juan@email.com", " Administrador", "Activo"},
+                                {"María López ", "maria@email.com", "Empleado", "Inactivo"},
+                                {"Carlos Ruiz", "carlos@email.com", "Cliente", "Activo"},
+                                {null, null, null, null}
+                        },
+                        new String [] {
+                                "Nombre", "Correo", "Rol", "Estado"
+                        }
+                ));
+                tTablaClases.setShowGrid(false);
+                spTablaClases.setViewportView(tTablaClases);
+
+                PaymentHistoryScreen.add(spTablaClases, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 1050, 480));
+
+                imgInscribirse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/pdf.png"))); // NOI18N
+                PaymentHistoryScreen.add(imgInscribirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 660, 40, 50));
+
+                btnInscribirse.setBackground(new java.awt.Color(93, 0, 0));
+                btnInscribirse.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnInscribirse.setForeground(new java.awt.Color(200, 200, 200));
+                btnInscribirse.setText("      Incribirse");
+                btnInscribirse.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnInscribirse.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnInscribirseActionPerformed(evt);
+                        }
+                });
+                PaymentHistoryScreen.add(btnInscribirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, 220, 50));
+
+                imgCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/pdf.png"))); // NOI18N
+                PaymentHistoryScreen.add(imgCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 660, 40, 50));
+
+                btnCancelar.setBackground(new java.awt.Color(93, 0, 0));
+                btnCancelar.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnCancelar.setForeground(new java.awt.Color(200, 200, 200));
+                btnCancelar.setText("      Cancelar");
+                btnCancelar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnCancelarActionPerformed(evt);
+                        }
+                });
+                PaymentHistoryScreen.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 660, 210, 50));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+                        .addComponent(PaymentHistoryScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+                        .addComponent(PaymentHistoryScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+                // TODO add your handling code here:
+                DashboardClientScreen dc = new DashboardClientScreen();
+                dc.setVisible(true);
+                this.setVisible(false);
+        }//GEN-LAST:event_lbBackButtonMouseClicked
+
+        private void btnInscribirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirseActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnInscribirseActionPerformed
+
+        private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnCancelarActionPerformed
+
 	
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JPanel PaymentHistoryScreen;
+        private javax.swing.JButton btnCancelar;
+        private javax.swing.JButton btnInscribirse;
+        private javax.swing.JLabel imgCancelar;
+        private javax.swing.JLabel imgInscribirse;
+        private javax.swing.JLabel lbBackButton;
+        private javax.swing.JLabel lbCalendarioLista;
+        private javax.swing.JPanel pMenu;
+        private javax.swing.JScrollPane spTablaClases;
+        private javax.swing.JTable tTablaClases;
         // End of variables declaration//GEN-END:variables
 }

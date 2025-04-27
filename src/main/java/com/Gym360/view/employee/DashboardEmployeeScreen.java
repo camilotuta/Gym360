@@ -4,6 +4,9 @@
  */
 package main.java.com.Gym360.view.employee;
 
+import java.awt.Toolkit;
+import main.java.com.Gym360.view.Login;
+
 /**
  *
  * @author tutaa
@@ -15,6 +18,12 @@ public class DashboardEmployeeScreen extends javax.swing.JFrame {
 	 */
 	public DashboardEmployeeScreen() {
 		initComponents();
+
+		this.setTitle("Notificaciones");
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/main/resources/images/logo.png")));
+
 	}
 
 	/**
@@ -26,23 +35,274 @@ public class DashboardEmployeeScreen extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                panelDashboard = new javax.swing.JPanel();
+                pMenu = new javax.swing.JPanel();
+                lbBackButton = new javax.swing.JLabel();
+                lbDashboardEmpleado = new javax.swing.JLabel();
+                lbResumen = new javax.swing.JLabel();
+                pClientesActivos = new javax.swing.JPanel();
+                lbClientesActivos = new javax.swing.JLabel();
+                lbHoy = new javax.swing.JLabel();
+                lbPonerNumeroClientesActivos = new javax.swing.JLabel();
+                lbClientesEnEstablecimiento = new javax.swing.JLabel();
+                pVentasDia = new javax.swing.JPanel();
+                lbIngresosDia = new javax.swing.JLabel();
+                lbPonerIngresosDia = new javax.swing.JLabel();
+                lbMes = new javax.swing.JLabel();
+                pInventarioFaltante = new javax.swing.JPanel();
+                lbInventarioFaltante = new javax.swing.JLabel();
+                lbPonerProducto1 = new javax.swing.JLabel();
+                lbPonerProducto2 = new javax.swing.JLabel();
+                lbPonerProducto3 = new javax.swing.JLabel();
+                lbAccionesRapidas = new javax.swing.JLabel();
+                imgRegistrarVenta = new javax.swing.JLabel();
+                btnRegistrarVenta = new javax.swing.JButton();
+                imgRegistrarAsistencia = new javax.swing.JLabel();
+                btnRegistrarAsistencia = new javax.swing.JButton();
+                imgConsultarCliente = new javax.swing.JLabel();
+                btnConsultarCliente = new javax.swing.JButton();
+
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+                panelDashboard.setBackground(new java.awt.Color(245, 245, 245));
+                panelDashboard.setMaximumSize(new java.awt.Dimension(1467, 800));
+                panelDashboard.setMinimumSize(new java.awt.Dimension(1467, 800));
+                panelDashboard.setPreferredSize(new java.awt.Dimension(1467, 800));
+                panelDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                pMenu.setBackground(new java.awt.Color(93, 0, 0));
+                pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbBackButtonMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
+
+                panelDashboard.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                lbDashboardEmpleado.setBackground(new java.awt.Color(0, 0, 0));
+                lbDashboardEmpleado.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbDashboardEmpleado.setForeground(new java.awt.Color(93, 0, 0));
+                lbDashboardEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbDashboardEmpleado.setText("Dashboard Empleado");
+                lbDashboardEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelDashboard.add(lbDashboardEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 1230, 50));
+
+                lbResumen.setBackground(new java.awt.Color(0, 0, 0));
+                lbResumen.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbResumen.setForeground(new java.awt.Color(93, 0, 0));
+                lbResumen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbResumen.setText("Resumen");
+                lbResumen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelDashboard.add(lbResumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 540, 50));
+
+                pClientesActivos.setBackground(new java.awt.Color(245, 245, 245));
+                pClientesActivos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pClientesActivos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbClientesActivos.setBackground(new java.awt.Color(0, 0, 0));
+                lbClientesActivos.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbClientesActivos.setForeground(new java.awt.Color(20, 20, 20));
+                lbClientesActivos.setText("Clientes activos");
+                pClientesActivos.add(lbClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbHoy.setBackground(new java.awt.Color(0, 0, 0));
+                lbHoy.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbHoy.setForeground(new java.awt.Color(169, 0, 0));
+                lbHoy.setText("hoy");
+                pClientesActivos.add(lbHoy, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+
+                lbPonerNumeroClientesActivos.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerNumeroClientesActivos.setFont(new java.awt.Font("Inter", 1, 30)); // NOI18N
+                lbPonerNumeroClientesActivos.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerNumeroClientesActivos.setText("50");
+                pClientesActivos.add(lbPonerNumeroClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbClientesEnEstablecimiento.setBackground(new java.awt.Color(0, 0, 0));
+                lbClientesEnEstablecimiento.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbClientesEnEstablecimiento.setForeground(new java.awt.Color(20, 20, 20));
+                lbClientesEnEstablecimiento.setText("clientes en el establecimiento");
+                pClientesActivos.add(lbClientesEnEstablecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+                panelDashboard.add(pClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 250, 110));
+
+                pVentasDia.setBackground(new java.awt.Color(245, 245, 245));
+                pVentasDia.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pVentasDia.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbIngresosDia.setBackground(new java.awt.Color(0, 0, 0));
+                lbIngresosDia.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbIngresosDia.setForeground(new java.awt.Color(20, 20, 20));
+                lbIngresosDia.setText("Ventas del día");
+                pVentasDia.add(lbIngresosDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbPonerIngresosDia.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerIngresosDia.setFont(new java.awt.Font("Inter", 1, 30)); // NOI18N
+                lbPonerIngresosDia.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerIngresosDia.setText("$5,000");
+                pVentasDia.add(lbPonerIngresosDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+                lbMes.setBackground(new java.awt.Color(0, 0, 0));
+                lbMes.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbMes.setForeground(new java.awt.Color(20, 20, 20));
+                lbMes.setText("En el dia 14-08-2025");
+                pVentasDia.add(lbMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+                panelDashboard.add(pVentasDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 250, 110));
+
+                pInventarioFaltante.setBackground(new java.awt.Color(245, 245, 245));
+                pInventarioFaltante.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pInventarioFaltante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbInventarioFaltante.setBackground(new java.awt.Color(0, 0, 0));
+                lbInventarioFaltante.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
+                lbInventarioFaltante.setForeground(new java.awt.Color(20, 20, 20));
+                lbInventarioFaltante.setText("Inventario faltante");
+                pInventarioFaltante.add(lbInventarioFaltante, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+                lbPonerProducto1.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerProducto1.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbPonerProducto1.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerProducto1.setText("Cinturón de levantammiento: -4 unidades");
+                pInventarioFaltante.add(lbPonerProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 250, -1));
+
+                lbPonerProducto2.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerProducto2.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbPonerProducto2.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerProducto2.setText("Magnesio en polvo: -1 unidades");
+                pInventarioFaltante.add(lbPonerProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 250, -1));
+
+                lbPonerProducto3.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerProducto3.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+                lbPonerProducto3.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerProducto3.setText("Guantes de entrenamiento: -5 unidades");
+                pInventarioFaltante.add(lbPonerProducto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 250, -1));
+
+                panelDashboard.add(pInventarioFaltante, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, 250, 110));
+
+                lbAccionesRapidas.setBackground(new java.awt.Color(0, 0, 0));
+                lbAccionesRapidas.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                lbAccionesRapidas.setForeground(new java.awt.Color(20, 20, 20));
+                lbAccionesRapidas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbAccionesRapidas.setText("Acciones Rápidas");
+                panelDashboard.add(lbAccionesRapidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 540, -1));
+
+                imgRegistrarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/registrarVenta.png"))); // NOI18N
+                panelDashboard.add(imgRegistrarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 350, 40, 80));
+
+                btnRegistrarVenta.setBackground(new java.awt.Color(93, 0, 0));
+                btnRegistrarVenta.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnRegistrarVenta.setForeground(new java.awt.Color(200, 200, 200));
+                btnRegistrarVenta.setText("      Registrar Venta");
+                btnRegistrarVenta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnRegistrarVenta.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnRegistrarVentaActionPerformed(evt);
+                        }
+                });
+                panelDashboard.add(btnRegistrarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 350, 540, 80));
+
+                imgRegistrarAsistencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/agregarUsuario.png"))); // NOI18N
+                panelDashboard.add(imgRegistrarAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 450, -1, 80));
+
+                btnRegistrarAsistencia.setBackground(new java.awt.Color(93, 0, 0));
+                btnRegistrarAsistencia.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnRegistrarAsistencia.setForeground(new java.awt.Color(200, 200, 200));
+                btnRegistrarAsistencia.setText("      Registrar Asistencia");
+                btnRegistrarAsistencia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnRegistrarAsistencia.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnRegistrarAsistenciaActionPerformed(evt);
+                        }
+                });
+                panelDashboard.add(btnRegistrarAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 450, 540, 80));
+
+                imgConsultarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/generarReporte.png"))); // NOI18N
+                panelDashboard.add(imgConsultarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 550, -1, 80));
+
+                btnConsultarCliente.setBackground(new java.awt.Color(93, 0, 0));
+                btnConsultarCliente.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnConsultarCliente.setForeground(new java.awt.Color(200, 200, 200));
+                btnConsultarCliente.setText("      Consultar Cliente");
+                btnConsultarCliente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnConsultarCliente.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnConsultarClienteActionPerformed(evt);
+                        }
+                });
+                panelDashboard.add(btnConsultarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 550, 540, 80));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+                        .addComponent(panelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+                        .addComponent(panelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-	
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+		// TODO add your handling code here:
+		Login login = new Login();
+		login.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_lbBackButtonMouseClicked
+
+        private void btnRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarVentaActionPerformed
+		// TODO add your handling code here:
+		SalesScreen ss = new SalesScreen();
+		ss.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_btnRegistrarVentaActionPerformed
+
+        private void btnRegistrarAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarAsistenciaActionPerformed
+		AttendanceRegisterScreen at = new AttendanceRegisterScreen();
+		at.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_btnRegistrarAsistenciaActionPerformed
+
+        private void btnConsultarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarClienteActionPerformed
+		ClientManagementScreen cc = new ClientManagementScreen();
+		cc.setVisible(true);
+		this.setVisible(false);
+        }//GEN-LAST:event_btnConsultarClienteActionPerformed
+
+
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnConsultarCliente;
+        private javax.swing.JButton btnRegistrarAsistencia;
+        private javax.swing.JButton btnRegistrarVenta;
+        private javax.swing.JLabel imgConsultarCliente;
+        private javax.swing.JLabel imgRegistrarAsistencia;
+        private javax.swing.JLabel imgRegistrarVenta;
+        private javax.swing.JLabel lbAccionesRapidas;
+        private javax.swing.JLabel lbBackButton;
+        private javax.swing.JLabel lbClientesActivos;
+        private javax.swing.JLabel lbClientesEnEstablecimiento;
+        private javax.swing.JLabel lbDashboardEmpleado;
+        private javax.swing.JLabel lbHoy;
+        private javax.swing.JLabel lbIngresosDia;
+        private javax.swing.JLabel lbInventarioFaltante;
+        private javax.swing.JLabel lbMes;
+        private javax.swing.JLabel lbPonerIngresosDia;
+        private javax.swing.JLabel lbPonerNumeroClientesActivos;
+        private javax.swing.JLabel lbPonerProducto1;
+        private javax.swing.JLabel lbPonerProducto2;
+        private javax.swing.JLabel lbPonerProducto3;
+        private javax.swing.JLabel lbResumen;
+        private javax.swing.JPanel pClientesActivos;
+        private javax.swing.JPanel pInventarioFaltante;
+        private javax.swing.JPanel pMenu;
+        private javax.swing.JPanel pVentasDia;
+        private javax.swing.JPanel panelDashboard;
         // End of variables declaration//GEN-END:variables
 }

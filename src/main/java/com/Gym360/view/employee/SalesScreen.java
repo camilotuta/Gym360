@@ -4,6 +4,8 @@
  */
 package main.java.com.Gym360.view.employee;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author tutaa
@@ -15,6 +17,13 @@ public class SalesScreen extends javax.swing.JFrame {
 	 */
 	public SalesScreen() {
 		initComponents();
+		
+		
+		this.setTitle("Registrar Venta");
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/main/resources/images/logo.png")));
+		
 	}
 
 	/**
@@ -26,23 +35,207 @@ public class SalesScreen extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                panelVentas = new javax.swing.JPanel();
+                pMenu = new javax.swing.JPanel();
+                lbBackButton = new javax.swing.JLabel();
+                lbVentas = new javax.swing.JLabel();
+                lbCliente = new javax.swing.JLabel();
+                cbCliente = new javax.swing.JComboBox<>();
+                lbProducto = new javax.swing.JLabel();
+                cbProducto = new javax.swing.JComboBox<>();
+                lbCantidad = new javax.swing.JLabel();
+                tfCantidad = new javax.swing.JTextField();
+                lbPrecio = new javax.swing.JLabel();
+                lbPonerPrecio = new javax.swing.JLabel();
+                lbTotal = new javax.swing.JLabel();
+                lbPonerTotal = new javax.swing.JLabel();
+                lbMetodoPago = new javax.swing.JLabel();
+                cbMetodoPago = new javax.swing.JComboBox<>();
+                imgRegistrarVenta = new javax.swing.JLabel();
+                btnRegistrarVenta = new javax.swing.JButton();
+                pProducto = new javax.swing.JPanel();
+                imgPonerProducto = new javax.swing.JLabel();
+                pMedioPago = new javax.swing.JPanel();
+                imgPonerMedioPago = new javax.swing.JLabel();
+
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+                panelVentas.setBackground(new java.awt.Color(245, 245, 245));
+                panelVentas.setMaximumSize(new java.awt.Dimension(1467, 800));
+                panelVentas.setMinimumSize(new java.awt.Dimension(1467, 800));
+                panelVentas.setPreferredSize(new java.awt.Dimension(1467, 800));
+                panelVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                pMenu.setBackground(new java.awt.Color(93, 0, 0));
+                pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbBackButtonMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
+
+                panelVentas.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                lbVentas.setBackground(new java.awt.Color(0, 0, 0));
+                lbVentas.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
+                lbVentas.setForeground(new java.awt.Color(93, 0, 0));
+                lbVentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbVentas.setText("Nueva Venta");
+                lbVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                panelVentas.add(lbVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1470, 50));
+
+                lbCliente.setBackground(new java.awt.Color(0, 0, 0));
+                lbCliente.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbCliente.setForeground(new java.awt.Color(20, 20, 20));
+                lbCliente.setText("Cliente:");
+                panelVentas.add(lbCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, 40));
+
+                cbCliente.setBackground(new java.awt.Color(231, 231, 231));
+                cbCliente.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                cbCliente.setForeground(new java.awt.Color(20, 20, 20));
+                cbCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+                panelVentas.add(cbCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 280, 40));
+
+                lbProducto.setBackground(new java.awt.Color(0, 0, 0));
+                lbProducto.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbProducto.setForeground(new java.awt.Color(20, 20, 20));
+                lbProducto.setText("Producto:");
+                panelVentas.add(lbProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, -1, 40));
+
+                cbProducto.setBackground(new java.awt.Color(231, 231, 231));
+                cbProducto.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                cbProducto.setForeground(new java.awt.Color(20, 20, 20));
+                cbProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+                panelVentas.add(cbProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 280, 40));
+
+                lbCantidad.setBackground(new java.awt.Color(0, 0, 0));
+                lbCantidad.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbCantidad.setForeground(new java.awt.Color(20, 20, 20));
+                lbCantidad.setText("Cantidad:");
+                panelVentas.add(lbCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, 40));
+
+                tfCantidad.setBackground(new java.awt.Color(231, 231, 231));
+                tfCantidad.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                tfCantidad.setForeground(new java.awt.Color(20, 20, 20));
+                tfCantidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                panelVentas.add(tfCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 280, 40));
+
+                lbPrecio.setBackground(new java.awt.Color(0, 0, 0));
+                lbPrecio.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbPrecio.setForeground(new java.awt.Color(20, 20, 20));
+                lbPrecio.setText("Precio unitario:");
+                panelVentas.add(lbPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, -1, 40));
+
+                lbPonerPrecio.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerPrecio.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbPonerPrecio.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerPrecio.setText("Saldo:");
+                panelVentas.add(lbPonerPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 280, 40));
+
+                lbTotal.setBackground(new java.awt.Color(0, 0, 0));
+                lbTotal.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbTotal.setForeground(new java.awt.Color(20, 20, 20));
+                lbTotal.setText("Saldo:");
+                panelVentas.add(lbTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 470, -1, 40));
+
+                lbPonerTotal.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerTotal.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbPonerTotal.setForeground(new java.awt.Color(20, 20, 20));
+                lbPonerTotal.setText("Saldo:");
+                panelVentas.add(lbPonerTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 280, 40));
+
+                lbMetodoPago.setBackground(new java.awt.Color(0, 0, 0));
+                lbMetodoPago.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+                lbMetodoPago.setForeground(new java.awt.Color(20, 20, 20));
+                lbMetodoPago.setText("Método de Pago:");
+                panelVentas.add(lbMetodoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, -1, 40));
+
+                cbMetodoPago.setBackground(new java.awt.Color(231, 231, 231));
+                cbMetodoPago.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                cbMetodoPago.setForeground(new java.awt.Color(20, 20, 20));
+                cbMetodoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+                panelVentas.add(cbMetodoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 540, 280, 40));
+
+                imgRegistrarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/confirmarAsistencia.png"))); // NOI18N
+                panelVentas.add(imgRegistrarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 700, -1, 60));
+
+                btnRegistrarVenta.setBackground(new java.awt.Color(93, 0, 0));
+                btnRegistrarVenta.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnRegistrarVenta.setForeground(new java.awt.Color(200, 200, 200));
+                btnRegistrarVenta.setText("      Registrar Venta");
+                btnRegistrarVenta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnRegistrarVenta.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnRegistrarVentaActionPerformed(evt);
+                        }
+                });
+                panelVentas.add(btnRegistrarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 700, 360, 60));
+
+                pProducto.setBackground(new java.awt.Color(245, 245, 245));
+                pProducto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 240, 240)));
+                pProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+                pProducto.add(imgPonerProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 190));
+
+                panelVentas.add(pProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 180, 240, 190));
+
+                pMedioPago.setBackground(new java.awt.Color(245, 245, 245));
+                pMedioPago.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 240, 240)));
+                pMedioPago.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+                pMedioPago.add(imgPonerMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 190));
+
+                panelVentas.add(pMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 390, 240, 190));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+                        .addComponent(panelVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+                        .addComponent(panelVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+                DashboardEmployeeScreen de = new DashboardEmployeeScreen();
+                de.setVisible(true);
+                this.setVisible(false);
+        }//GEN-LAST:event_lbBackButtonMouseClicked
+
+        private void btnRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarVentaActionPerformed
+
+        }//GEN-LAST:event_btnRegistrarVentaActionPerformed
+
 	
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnRegistrarVenta;
+        private javax.swing.JComboBox<String> cbCliente;
+        private javax.swing.JComboBox<String> cbMetodoPago;
+        private javax.swing.JComboBox<String> cbProducto;
+        private javax.swing.JLabel imgPonerMedioPago;
+        private javax.swing.JLabel imgPonerProducto;
+        private javax.swing.JLabel imgRegistrarVenta;
+        private javax.swing.JLabel lbBackButton;
+        private javax.swing.JLabel lbCantidad;
+        private javax.swing.JLabel lbCliente;
+        private javax.swing.JLabel lbMetodoPago;
+        private javax.swing.JLabel lbPonerPrecio;
+        private javax.swing.JLabel lbPonerTotal;
+        private javax.swing.JLabel lbPrecio;
+        private javax.swing.JLabel lbProducto;
+        private javax.swing.JLabel lbTotal;
+        private javax.swing.JLabel lbVentas;
+        private javax.swing.JPanel pMedioPago;
+        private javax.swing.JPanel pMenu;
+        private javax.swing.JPanel pProducto;
+        private javax.swing.JPanel panelVentas;
+        private javax.swing.JTextField tfCantidad;
         // End of variables declaration//GEN-END:variables
 }

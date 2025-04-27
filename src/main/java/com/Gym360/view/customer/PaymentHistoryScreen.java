@@ -4,6 +4,8 @@
  */
 package main.java.com.Gym360.view.customer;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author tutaa
@@ -15,6 +17,10 @@ public class PaymentHistoryScreen extends javax.swing.JFrame {
 	 */
 	public PaymentHistoryScreen() {
 		initComponents();
+		this.setTitle("Historial de Pagos");
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/main/resources/images/logo.png")));
 	}
 
 	/**
@@ -26,24 +32,114 @@ public class PaymentHistoryScreen extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                PaymentHistoryScreen = new javax.swing.JPanel();
+                pMenu = new javax.swing.JPanel();
+                lbBackButton = new javax.swing.JLabel();
+                lbPagos = new javax.swing.JLabel();
+                spTablaPagos = new javax.swing.JScrollPane();
+                tTablaPagos = new javax.swing.JTable();
+                imgRenovarMembresia = new javax.swing.JLabel();
+                btnRenovarMembresia = new javax.swing.JButton();
+
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+                PaymentHistoryScreen.setBackground(new java.awt.Color(245, 245, 245));
+                PaymentHistoryScreen.setMaximumSize(new java.awt.Dimension(1467, 800));
+                PaymentHistoryScreen.setMinimumSize(new java.awt.Dimension(1467, 800));
+                PaymentHistoryScreen.setPreferredSize(new java.awt.Dimension(1467, 800));
+                PaymentHistoryScreen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                pMenu.setBackground(new java.awt.Color(93, 0, 0));
+                pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lbBackButtonMouseClicked(evt);
+                        }
+                });
+                pMenu.add(lbBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
+
+                PaymentHistoryScreen.add(pMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 60));
+
+                lbPagos.setBackground(new java.awt.Color(0, 0, 0));
+                lbPagos.setFont(new java.awt.Font("Inter", 1, 42)); // NOI18N
+                lbPagos.setForeground(new java.awt.Color(93, 0, 0));
+                lbPagos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lbPagos.setText("Pagos");
+                lbPagos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                PaymentHistoryScreen.add(lbPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1470, 50));
+
+                tTablaPagos.setBackground(new java.awt.Color(232, 232, 232));
+                tTablaPagos.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+                tTablaPagos.setForeground(new java.awt.Color(20, 20, 20));
+                tTablaPagos.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object [][] {
+                                {"Juan Pérez", "juan@email.com", " Administrador", "Activo"},
+                                {"María López ", "maria@email.com", "Empleado", "Inactivo"},
+                                {"Carlos Ruiz", "carlos@email.com", "Cliente", "Activo"},
+                                {null, null, null, null}
+                        },
+                        new String [] {
+                                "Nombre", "Correo", "Rol", "Estado"
+                        }
+                ));
+                tTablaPagos.setShowGrid(false);
+                spTablaPagos.setViewportView(tTablaPagos);
+
+                PaymentHistoryScreen.add(spTablaPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 1050, 480));
+
+                imgRenovarMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/pdf.png"))); // NOI18N
+                PaymentHistoryScreen.add(imgRenovarMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 660, 40, 50));
+
+                btnRenovarMembresia.setBackground(new java.awt.Color(93, 0, 0));
+                btnRenovarMembresia.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnRenovarMembresia.setForeground(new java.awt.Color(200, 200, 200));
+                btnRenovarMembresia.setText("      Descargar PDF");
+                btnRenovarMembresia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnRenovarMembresia.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnRenovarMembresiaActionPerformed(evt);
+                        }
+                });
+                PaymentHistoryScreen.add(btnRenovarMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 660, 260, 50));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+                        .addComponent(PaymentHistoryScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+                        .addComponent(PaymentHistoryScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+                // TODO add your handling code here:
+                DashboardClientScreen dc = new DashboardClientScreen();
+                dc.setVisible(true);
+                this.setVisible(false);
+        }//GEN-LAST:event_lbBackButtonMouseClicked
+
+        private void btnRenovarMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenovarMembresiaActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnRenovarMembresiaActionPerformed
+
 	
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JPanel PaymentHistoryScreen;
+        private javax.swing.JButton btnRenovarMembresia;
+        private javax.swing.JLabel imgRenovarMembresia;
+        private javax.swing.JLabel lbBackButton;
+        private javax.swing.JLabel lbPagos;
+        private javax.swing.JPanel pMenu;
+        private javax.swing.JScrollPane spTablaPagos;
+        private javax.swing.JTable tTablaPagos;
         // End of variables declaration//GEN-END:variables
 }

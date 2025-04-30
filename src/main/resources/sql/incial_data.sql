@@ -332,80 +332,547 @@ VALUES -- Contabilidad 1
     -- Contabilidad 10
     (19, 10, 'Cobro de proyecto'),
     (20, 10, 'Pago de impuestos');
+
+-- (Opcional) Reiniciar el contador de ID
+ALTER TABLE Usuario AUTO_INCREMENT = 1;
+-- Insertar Admins y Empleados
 INSERT INTO Usuario (
-        idUsuario,
         nombreUsuario,
         contraseña,
         cargo,
+        correo,
         idEmpleado
     )
 VALUES (
-        1,
-        'carlos_perez',
-        'pwdCarlos123',
-        'vendedor',
+        'carlos.perez',
+        'Carlos360@',
+        'empleado',
+        'carlos.perez@empresa.com',
         1
     ),
     (
-        2,
-        'maria_lopez',
-        'pwdMaria456',
-        'vendedor',
+        'maria.lopez',
+        'Maria360@',
+        'empleado',
+        'maria.lopez@empresa.com',
         2
     ),
     (
-        3,
-        'javier_garcia',
-        'pwdJavier789',
-        'supervisor',
+        'javier.garcia',
+        'Javier360@',
+        'empleado',
+        'javier.garcia@empresa.com',
         3
     ),
     (
-        4,
-        'ana_martinez',
-        'pwdAnaABC',
-        'gerente',
+        'ana.martinez',
+        'Ana360@',
+        'admin',
+        'ana.martinez@empresa.com',
         4
     ),
     (
-        5,
-        'lucia_rodriguez',
-        'pwdLuciaDEF',
-        'vendedor',
+        'lucia.rodriguez',
+        'Lucia360@',
+        'empleado',
+        'lucia.rodriguez@empresa.com',
         5
     ),
     (
-        6,
-        'david_fernandez',
-        'pwdDavidGHI',
-        'supervisor',
+        'david.fernandez',
+        'David360@',
+        'empleado',
+        'david.fernandez@empresa.com',
         6
     ),
     (
-        7,
-        'marta_gomez',
-        'pwdMartaJKL',
-        'vendedor',
+        'marta.gomez',
+        'Marta360@',
+        'empleado',
+        'marta.gomez@empresa.com',
         7
     ),
     (
-        8,
-        'sofia_sanchez',
-        'pwdSofiaMNO',
+        'sofia.sanchez',
+        'Sofia360@',
         'admin',
+        'sofia.sanchez@empresa.com',
         8
     ),
     (
-        9,
-        'raul_hernandez',
-        'pwdRaulPQR',
-        'vendedor',
+        'raul.hernandez',
+        'Raul360@',
+        'empleado',
+        'raul.hernandez@empresa.com',
         9
     ),
     (
-        10,
-        'elena_jimenez',
-        'pwdElenaSTU',
-        'admin',
+        'elena.jimenez',
+        'Elena360@',
+        'empleado',
+        'elena.jimenez@empresa.com',
         10
+    );
+-- Insertar Clientes (sin idEmpleado)
+INSERT INTO Usuario (nombreUsuario, contraseña, cargo, correo)
+VALUES (
+        'pedro.gonzalez',
+        'Pedro360@',
+        'cliente',
+        'pedro.gonzalez@empresa.com'
+    ),
+    (
+        'laura.morales',
+        'Laura360@',
+        'cliente',
+        'laura.morales@empresa.com'
+    ),
+    (
+        'andres.castillo',
+        'Andres360@',
+        'cliente',
+        'andres.castillo@empresa.com'
+    ),
+    (
+        'carolina.rivas',
+        'Carolina360@',
+        'cliente',
+        'carolina.rivas@empresa.com'
+    );
+
+
+
+    INSERT INTO Producto (
+        nombre,
+        descripcion,
+        precioUnitario,
+        stock,
+        categoria,
+        codigoBarras
+    )
+VALUES (
+        'Proteína Whey',
+        'Proteína de suero de leche sabor vainilla',
+        35.50,
+        100,
+        'Suplementos',
+        '1234567890123'
+    ),
+    (
+        'Creatina Monohidrato',
+        'Creatina pura en polvo para aumentar fuerza',
+        19.99,
+        50,
+        'Suplementos',
+        '2345678901234'
+    ),
+    (
+        'BCAA 2:1:1',
+        'Aminoácidos ramificados para recuperación muscular',
+        24.99,
+        200,
+        'Suplementos',
+        '3456789012345'
+    ),
+    (
+        'Guantes de entrenamiento',
+        'Guantes para levantar pesas con agarre antideslizante',
+        14.99,
+        150,
+        'Accesorios',
+        '4567890123456'
+    ),
+    (
+        'Silla de abdominales',
+        'Silla ergonómica para ejercicios de abdominales',
+        120.00,
+        10,
+        'Equipos',
+        '5678901234567'
+    ),
+    (
+        'Banda elástica',
+        'Banda de resistencia para entrenamiento funcional',
+        9.99,
+        300,
+        'Accesorios',
+        '6789012345678'
+    ),
+    (
+        'Cinta de correr',
+        'Cinta de correr eléctrica, 12 niveles de velocidad',
+        599.99,
+        5,
+        'Equipos',
+        '7890123456789'
+    ),
+    (
+        'Barra olímpica',
+        'Barra de acero para levantamiento de pesas',
+        199.99,
+        20,
+        'Equipos',
+        '8901234567890'
+    ),
+    (
+        'Zapatillas de running',
+        'Zapatillas deportivas para correr, ligeras y cómodas',
+        69.99,
+        100,
+        'Ropa',
+        '9012345678901'
+    ),
+    (
+        'Botellas de agua',
+        'Botellas deportivas de 750ml, diseño ergonómico',
+        6.99,
+        500,
+        'Accesorios',
+        '0123456789012'
+    );
+
+
+    INSERT INTO DetalleCompra (idCompra, idProducto, cantidad, precioUnitario)
+VALUES (1, 1, 2, 35.50),
+    (1, 3, 1, 24.99),
+    (2, 4, 5, 14.99),
+    (2, 2, 3, 19.99),
+    (3, 5, 1, 120.00),
+    (3, 6, 10, 9.99),
+    (4, 7, 1, 599.99),
+    (4, 8, 2, 199.99),
+    (5, 9, 4, 69.99),
+    (5, 10, 20, 6.99);
+
+
+
+INSERT INTO Usuario (
+        idEmpleado,
+        nombreUsuario,
+        contraseña,
+        cargo,
+        correo
+    )
+VALUES (
+        1002457890,
+        'carlos.perez',
+        'Carlos360@',
+        'empleado',
+        'carlos.perez@empresa.com'
+    ),
+    (
+        1003789123,
+        'maria.lopez',
+        'Maria360@',
+        'empleado',
+        'maria.lopez@empresa.com'
+    ),
+    (
+        1004567123,
+        'javier.garcia',
+        'Javier360@',
+        'empleado',
+        'javier.garcia@empresa.com'
+    ),
+    (
+        1005678234,
+        'ana.martinez',
+        'Ana360@',
+        'admin',
+        'ana.martinez@empresa.com'
+    ),
+    (
+        1006789345,
+        'lucia.rodriguez',
+        'Lucia360@',
+        'empleado',
+        'lucia.rodriguez@empresa.com'
+    ),
+    (
+        1007890456,
+        'david.fernandez',
+        'David360@',
+        'empleado',
+        'david.fernandez@empresa.com'
+    ),
+    (
+        1008901567,
+        'marta.gomez',
+        'Marta360@',
+        'empleado',
+        'marta.gomez@empresa.com'
+    ),
+    (
+        1010012678,
+        'sofia.sanchez',
+        'Sofia360@',
+        'admin',
+        'sofia.sanchez@empresa.com'
+    ),
+    (
+        1011123789,
+        'raul.hernandez',
+        'Raul360@',
+        'empleado',
+        'raul.hernandez@empresa.com'
+    ),
+    (
+        1012234890,
+        'elena.jimenez',
+        'Elena360@',
+        'empleado',
+        'elena.jimenez@empresa.com'
+    ),
+    (
+        1013345901,
+        'pedro.gonzalez',
+        'Pedro360@',
+        'cliente',
+        'pedro.gonzalez@empresa.com'
+    ),
+    (
+        1014456012,
+        'laura.morales',
+        'Laura360@',
+        'cliente',
+        'laura.morales@empresa.com'
+    ),
+    (
+        1015567123,
+        'andres.castillo',
+        'Andres360@',
+        'cliente',
+        'andres.castillo@empresa.com'
+    ),
+    (
+        1016678234,
+        'carolina.rivas',
+        'Carolina360@',
+        'cliente',
+        'carolina.rivas@empresa.com'
+    );
+
+
+
+INSERT INTO Empleado (
+        idEmpleado,
+        nombre,
+        apellido,
+        salario,
+        fechaContratacion,
+        cargo,
+        telefono,
+        email
+    )
+VALUES (
+        1002457890,
+        'Carlos',
+        'Perez',
+        2500000,
+        '2022-05-10',
+        'empleado',
+        '3001234567',
+        'carlos.perez@empresa.com'
+    ),
+    (
+        1003789123,
+        'Maria',
+        'Lopez',
+        2400000,
+        '2022-06-15',
+        'empleado',
+        '3007654321',
+        'maria.lopez@empresa.com'
+    ),
+    (
+        1005893211,
+        'Javier',
+        'Garcia',
+        2550000,
+        '2021-11-20',
+        'empleado',
+        '3012345678',
+        'javier.garcia@empresa.com'
+    ),
+    (
+        1008234567,
+        'Ana',
+        'Martinez',
+        3500000,
+        '2020-02-28',
+        'admin',
+        '3023456789',
+        'ana.martinez@empresa.com'
+    ),
+    (
+        1009345678,
+        'Lucia',
+        'Rodriguez',
+        2450000,
+        '2022-01-17',
+        'empleado',
+        '3034567890',
+        'lucia.rodriguez@empresa.com'
+    ),
+    (
+        1010456789,
+        'David',
+        'Fernandez',
+        2600000,
+        '2023-03-05',
+        'empleado',
+        '3045678901',
+        'david.fernandez@empresa.com'
+    ),
+    (
+        1011567890,
+        'Marta',
+        'Gomez',
+        2350000,
+        '2022-09-09',
+        'empleado',
+        '3056789012',
+        'marta.gomez@empresa.com'
+    ),
+    (
+        1012678901,
+        'Sofia',
+        'Sanchez',
+        3600000,
+        '2019-12-12',
+        'admin',
+        '3067890123',
+        'sofia.sanchez@empresa.com'
+    ),
+    (
+        1013789012,
+        'Raul',
+        'Hernandez',
+        2480000,
+        '2023-06-21',
+        'empleado',
+        '3078901234',
+        'raul.hernandez@empresa.com'
+    ),
+    (
+        1014890123,
+        'Elena',
+        'Jimenez',
+        2430000,
+        '2022-08-08',
+        'empleado',
+        '3089012345',
+        'elena.jimenez@empresa.com'
+    );
+
+
+
+
+DELETE FROM Usuario;
+
+
+INSERT INTO Usuario (
+        idEmpleado,
+        nombreUsuario,
+        contraseña,
+        cargo,
+        correo
+    )
+VALUES (
+        1002457890,
+        'carlos perez',
+        'Carlos360@',
+        'empleado',
+        'carlos.perez@empresa.com'
+    ),
+    (
+        1003789123,
+        'maria lopez',
+        'Maria360@',
+        'empleado',
+        'maria.lopez@empresa.com'
+    ),
+    (
+        1004567123,
+        'javier garcia',
+        'Javier360@',
+        'empleado',
+        'javier.garcia@empresa.com'
+    ),
+    (
+        1005678234,
+        'ana martinez',
+        'Ana360@',
+        'admin',
+        'ana.martinez@empresa.com'
+    ),
+    (
+        1006789345,
+        'lucia rodriguez',
+        'Lucia360@',
+        'empleado',
+        'lucia.rodriguez@empresa.com'
+    ),
+    (
+        1007890456,
+        'david fernandez',
+        'David360@',
+        'empleado',
+        'david.fernandez@empresa.com'
+    ),
+    (
+        1008901567,
+        'marta gomez',
+        'Marta360@',
+        'empleado',
+        'marta.gomez@empresa.com'
+    ),
+    (
+        1010012678,
+        'sofia sanchez',
+        'Sofia360@',
+        'admin',
+        'sofia.sanchez@empresa.com'
+    ),
+    (
+        1011123789,
+        'raul hernandez',
+        'Raul360@',
+        'empleado',
+        'raul.hernandez@empresa.com'
+    ),
+    (
+        1012234890,
+        'elena jimenez',
+        'Elena360@',
+        'empleado',
+        'elena.jimenez@empresa.com'
+    ),
+    (
+        1013345901,
+        'pedro gonzalez',
+        'Pedro360@',
+        'cliente',
+        'pedro.gonzalez@empresa.com'
+    ),
+    (
+        1014456012,
+        'laura morales',
+        'Laura360@',
+        'cliente',
+        'laura.morales@empresa.com'
+    ),
+    (
+        1015567123,
+        'andres castillo',
+        'Andres360@',
+        'cliente',
+        'andres.castillo@empresa.com'
+    ),
+    (
+        1016678234,
+        'carolina rivas',
+        'Carolina360@',
+        'cliente',
+        'carolina.rivas@empresa.com'
     );

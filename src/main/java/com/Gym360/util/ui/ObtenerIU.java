@@ -1,7 +1,7 @@
 // cSpell:ignore rawtypes seleccion
 package main.java.com.Gym360.util.ui;
 
-import static main.java.com.casinoRoyal.util.dates.Dates.formatter;
+import static main.java.com.Gym360.util.dates.Dates.formatter;
 import javax.swing.JPasswordField;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;

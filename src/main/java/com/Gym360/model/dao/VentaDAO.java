@@ -20,7 +20,7 @@ public class VentaDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "INSERT INTO Ventas (fecha, total, idEmpleado, idClienteProveedor) VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO Venta (fecha, total, idEmpleado, idClienteProveedor) VALUES (?, ?, ?, ?)";
 
 			pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			pst.setString(1, venta.getFecha());
@@ -53,7 +53,7 @@ public class VentaDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "UPDATE Ventas SET fecha = ?, total = ?, idEmpleado = ?, idClienteProveedor = ? WHERE idVenta = ?";
+			String sql = "UPDATE Venta SET fecha = ?, total = ?, idEmpleado = ?, idClienteProveedor = ? WHERE idVenta = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, venta.getFecha());
@@ -83,7 +83,7 @@ public class VentaDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "DELETE FROM Ventas WHERE idVenta = ?";
+			String sql = "DELETE FROM Venta WHERE idVenta = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
@@ -110,7 +110,7 @@ public class VentaDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Ventas WHERE idVenta = ?";
+			String sql = "SELECT * FROM Venta WHERE idVenta = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
@@ -142,7 +142,7 @@ public class VentaDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Ventas";
+			String sql = "SELECT * FROM Venta";
 
 			pst = conn.prepareStatement(sql);
 			rs = pst.executeQuery();
@@ -175,7 +175,7 @@ public class VentaDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Ventas WHERE idEmpleado = ?";
+			String sql = "SELECT * FROM Venta WHERE idEmpleado = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, idEmpleado);
@@ -209,7 +209,7 @@ public class VentaDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Ventas WHERE idClienteProveedor = ?";
+			String sql = "SELECT * FROM Venta WHERE idClienteProveedor = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, idCliente);

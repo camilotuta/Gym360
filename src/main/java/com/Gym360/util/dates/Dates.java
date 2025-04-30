@@ -1,5 +1,5 @@
 // cSpell:words dias
-package main.java.com.casinoRoyal.util.dates;
+package main.java.com.Gym360.util.dates;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

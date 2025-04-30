@@ -1,4 +1,4 @@
-// cSpell:ignore transaccion
+// cSpell:ignore transaccion descripcion
 package main.java.com.Gym360.model.dao;
 
 import java.sql.Connection;
@@ -21,7 +21,7 @@ public class TransaccionDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "INSERT INTO Transacciones (idContabilidad, descripcion) VALUES (?, ?)";
+			String sql = "INSERT INTO Transaccion (idContabilidad, descripcion) VALUES (?, ?)";
 
 			pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			pst.setInt(1, transaccion.getIdContabilidad());
@@ -52,7 +52,7 @@ public class TransaccionDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "UPDATE Transacciones SET idContabilidad = ?, descripcion = ? WHERE idTransaccion = ?";
+			String sql = "UPDATE Transaccion SET idContabilidad = ?, descripcion = ? WHERE idTransaccion = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, transaccion.getIdContabilidad());
@@ -80,7 +80,7 @@ public class TransaccionDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "DELETE FROM Transacciones WHERE idTransaccion = ?";
+			String sql = "DELETE FROM Transaccion WHERE idTransaccion = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
@@ -107,7 +107,7 @@ public class TransaccionDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Transacciones WHERE idTransaccion = ?";
+			String sql = "SELECT * FROM Transaccion WHERE idTransaccion = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
@@ -137,7 +137,7 @@ public class TransaccionDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Transacciones";
+			String sql = "SELECT * FROM Transaccion";
 
 			pst = conn.prepareStatement(sql);
 			rs = pst.executeQuery();
@@ -168,7 +168,7 @@ public class TransaccionDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Transacciones WHERE idContabilidad = ?";
+			String sql = "SELECT * FROM Transaccion WHERE idContabilidad = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, idContabilidad);

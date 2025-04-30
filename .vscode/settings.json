@@ -17,5 +17,6 @@
     "lib\\swing-datetime-picker-1.2.0.jar",
     "lib\\swing-layout-1.0.4.jar",
     "lib\\TimingFramework-0.55.jar"
-  ]
+  ],
+  "java.format.settings.url": ".vscode/java-formatter.xml"
 }

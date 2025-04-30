@@ -13,6 +13,43 @@ import main.java.com.Gym360.util.database.DatabaseConnection;
 
 public class ProductoDAO {
 
+	public List<Producto> obtenerProductosConFiltro(String filtro) {
+		Connection conn = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		List<Producto> listaProductos = new ArrayList<>();
+
+		try {
+			conn = DatabaseConnection.conectar();
+			String sql = "SELECT * FROM Producto WHERE nombre LIKE ? OR descripcion LIKE ?"; // Filtrar por nombre o descripción
+
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, "%" + filtro + "%"); // Filtro para nombre
+			pst.setString(2, "%" + filtro + "%"); // Filtro para descripción
+			rs = pst.executeQuery();
+
+			while (rs.next()) {
+				Producto producto = new Producto();
+				producto.setIdProducto(rs.getInt("idProducto"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecioUnitario(rs.getDouble("precioUnitario"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setCategoria(rs.getString("categoria"));
+				producto.setCodigoBarras(rs.getString("codigoBarras"));
+
+				listaProductos.add(producto);
+			}
+
+		} catch (SQLException e) {
+			System.err.println("Error al obtener los productos con filtro: " + e.getMessage());
+		} finally {
+			DatabaseConnection.cerrarConexion(conn, pst, rs);
+		}
+
+		return listaProductos;
+	}
+
 	public boolean insertar(Producto producto) {
 		Connection conn = null;
 		PreparedStatement pst = null;
@@ -21,7 +58,7 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "INSERT INTO Productos (nombre, descripcion, precioUnitario, stock, categoria, codigoBarras) "
+			String sql = "INSERT INTO Producto (nombre, descripcion, precioUnitario, stock, categoria, codigoBarras) "
 				+ "VALUES (?, ?, ?, ?, ?, ?)";
 
 			pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -57,7 +94,7 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "UPDATE Productos SET nombre = ?, descripcion = ?, precioUnitario = ?, "
+			String sql = "UPDATE Producto SET nombre = ?, descripcion = ?, precioUnitario = ?, "
 				+ "stock = ?, categoria = ?, codigoBarras = ? WHERE idProducto = ?";
 
 			pst = conn.prepareStatement(sql);
@@ -90,7 +127,7 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "DELETE FROM Productos WHERE idProducto = ?";
+			String sql = "DELETE FROM Producto WHERE idProducto = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
@@ -117,7 +154,7 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Productos WHERE idProducto = ?";
+			String sql = "SELECT * FROM Producto WHERE idProducto = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
@@ -151,7 +188,7 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Productos";
+			String sql = "SELECT * FROM Producto";
 
 			pst = conn.prepareStatement(sql);
 			rs = pst.executeQuery();
@@ -186,7 +223,7 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Productos WHERE categoria = ?";
+			String sql = "SELECT * FROM Producto WHERE categoria = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, categoria);
@@ -222,7 +259,7 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Productos WHERE codigoBarras = ?";
+			String sql = "SELECT * FROM Producto WHERE codigoBarras = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, codigoBarras);
@@ -255,7 +292,7 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "UPDATE Productos SET stock = ? WHERE idProducto = ?";
+			String sql = "UPDATE Producto SET stock = ? WHERE idProducto = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, nuevoStock);

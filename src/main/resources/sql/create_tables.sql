@@ -3,16 +3,16 @@
 -- =========================================
 DROP TABLE IF EXISTS Empleado;
 CREATE TABLE Empleado (
-    idEmpleado INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombre               TEXT NOT NULL,
-    apellido             TEXT NOT NULL,
-    salario              REAL,
-    fechaContratacion    TEXT,       -- Se puede guardar como 'YYYY-MM-DD' o similar
-    cargo                TEXT,
-    telefono             TEXT,
-    email                TEXT
+    idEmpleado INTEGER PRIMARY KEY,
+    -- Ya no AUTOINCREMENT
+    nombre TEXT NOT NULL,
+    apellido TEXT NOT NULL,
+    salario REAL,
+    fechaContratacion TEXT,
+    cargo TEXT,
+    telefono TEXT,
+    email TEXT
 );
-
 -- =========================================
 -- 2. Tabla Nomina
 --  (Relacionada con Empleado)
@@ -107,18 +107,6 @@ CREATE TABLE Transaccion (
     FOREIGN KEY (idContabilidad) REFERENCES Contabilidad(idContabilidad)
 );
 
-DROP TABLE IF EXISTS Usuario;
-CREATE TABLE Usuario (
-    idUsuario INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombreUsuario TEXT NOT NULL UNIQUE,
-    contraseña TEXT NOT NULL,
-    cargo TEXT NOT NULL,
-    -- Ejemplos: 'admin', 'vendedor', 'supervisor', 'gerente', etc.
-    idEmpleado INTEGER,
-    -- FK a la tabla Empleado (campo idEmpleado)
-    FOREIGN KEY (idEmpleado) REFERENCES Empleado(idEmpleado)
-);
-
 
 -- =========================================
 -- Tabla Producto
@@ -162,4 +150,16 @@ CREATE TABLE DetalleVenta (
     precioUnitario REAL NOT NULL,
     FOREIGN KEY (idVenta) REFERENCES Venta(idVenta),
     FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
+);
+
+
+DROP TABLE IF EXISTS Usuario;
+
+CREATE TABLE Usuario (
+    idEmpleado INTEGER PRIMARY KEY, -- actúa como cédula, PK y es único por definición
+    nombreUsuario TEXT NOT NULL UNIQUE,
+    contraseña TEXT NOT NULL,
+    cargo TEXT NOT NULL,
+    correo TEXT NOT NULL UNIQUE,
+    FOREIGN KEY (idEmpleado) REFERENCES Empleado(idEmpleado)
 );

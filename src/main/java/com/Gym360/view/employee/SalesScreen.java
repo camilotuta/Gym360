@@ -1,3 +1,4 @@
+// cSpell:ignore metodo
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -203,15 +204,15 @@ public class SalesScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
                 DashboardEmployeeScreen de = new DashboardEmployeeScreen();
                 de.setVisible(true);
                 this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarVentaActionPerformed
+        private void btnRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {
 
-        }//GEN-LAST:event_btnRegistrarVentaActionPerformed
+        }
 
 	
         // Variables declaration - do not modify//GEN-BEGIN:variables

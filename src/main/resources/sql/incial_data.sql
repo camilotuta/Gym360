@@ -876,3 +876,172 @@ VALUES (
         'cliente',
         'carolina.rivas@empresa.com'
     );
+
+
+
+INSERT INTO ClienteProveedor (
+        id,
+        nombre,
+        apellido,
+        telefono,
+        email,
+        tipo,
+        saldo
+    )
+VALUES (
+        '1723456789',
+        'María',
+        'Gómez',
+        '0987654321',
+        'maria.gomez@email.com',
+        'Cliente',
+        120.50
+    ),
+    (
+        '0912345678',
+        'Carlos',
+        'Pérez',
+        '0991122334',
+        'carlos.perez@email.com',
+        'Cliente',
+        0.00
+    ),
+    (
+        '1009876543',
+        'Andrea',
+        'Martínez',
+        '0989988776',
+        'andrea.martinez@email.com',
+        'Proveedor',
+        -250.00
+    ),
+    (
+        '0601122334',
+        'Luis',
+        'Ramírez',
+        '0977432100',
+        'luis.ramirez@email.com',
+        'Cliente',
+        45.75
+    ),
+    (
+        '1503344556',
+        'Sofía',
+        'Lozano',
+        '0983344556',
+        'sofia.lozano@email.com',
+        'Proveedor',
+        -180.00
+    ),
+    (
+        '1102233445',
+        'Jorge',
+        'Salazar',
+        '0961234567',
+        'jorge.salazar@email.com',
+        'Cliente',
+        75.00
+    ),
+    (
+        '0809876543',
+        'Daniela',
+        'Ríos',
+        '0987112233',
+        'daniela.rios@email.com',
+        'Proveedor',
+        -100.00
+    ),
+    (
+        '1301122334',
+        'Esteban',
+        'Cedeño',
+        '0955566778',
+        'esteban.cedeno@email.com',
+        'Cliente',
+        200.00
+    ),
+    (
+        '1712345678',
+        'Valeria',
+        'Navarrete',
+        '0986543210',
+        'valeria.navarrete@email.com',
+        'Proveedor',
+        -320.75
+    ),
+    (
+        '1205566778',
+        'Pedro',
+        'Mendoza',
+        '0969988776',
+        'pedro.mendoza@email.com',
+        'Cliente',
+        0.00
+    );
+
+
+
+
+INSERT INTO Cliente(
+        id,
+        nombre,
+        apellido,
+        telefono,
+        email,
+        saldo,
+        tipo_membresia
+    )
+VALUES (
+        '1012345678',
+        'Juan',
+        'Pérez',
+        '3001234567',
+        'juan.perez@email.com',
+        150000,
+        '1 año'
+    ),
+    (
+        '1023456789',
+        'Ana',
+        'Gómez',
+        '3002345678',
+        'ana.gomez@email.com',
+        250000,
+        '3 meses'
+    ),
+    (
+        '1034567890',
+        'Carlos',
+        'Martínez',
+        '3003456789',
+        'carlos.martinez@email.com',
+        80000,
+        '6 meses'
+    ),
+    (
+        '1045678901',
+        'Laura',
+        'López',
+        '3004567890',
+        'laura.lopez@email.com',
+        40000,
+        '1 año'
+    ),
+    (
+        '1056789012',
+        'Pedro',
+        'Sánchez',
+        '3005678901',
+        'pedro.sanchez@email.com',
+        220000,
+        '3 meses'
+    ),
+    (
+        '1067890123',
+        'María',
+        'Ramírez',
+        '3006789012',
+        'maria.ramirez@email.com',
+        180000,
+        '6 meses'
+    );

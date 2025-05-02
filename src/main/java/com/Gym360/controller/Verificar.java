@@ -1,10 +1,15 @@
-// cSpell:ignore cedula telefono ZáéíóúÁÉÍÓ ÚñÑ desencriptada desencriptar seleccion descripcion codigo
+// cSpell:ignore cedula telefono ZáéíóúÁÉÍÓ ÚñÑ desencriptada desencriptar seleccion descripcion codigo minimo smlv
 package main.java.com.Gym360.controller;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.regex.Pattern;
 
+import main.java.com.Gym360.model.classes.Empleado;
 import main.java.com.Gym360.model.classes.Producto;
 import main.java.com.Gym360.model.classes.Usuario;
+import main.java.com.Gym360.model.dao.EmpleadoDAO;
 import main.java.com.Gym360.model.dao.ProductoDAO;
 import main.java.com.Gym360.model.dao.UsuarioDAO;
 import main.java.com.Gym360.model.security.Desencriptar;
@@ -18,10 +23,15 @@ public class Verificar {
     }
 
     public static boolean validarYVerificarCedulaSeleccionada(String cedula, int idSeleccionado) {
-        return Integer.parseInt(cedula) == idSeleccionado;
+        try {
+            return Integer.parseInt(cedula) == idSeleccionado;
+
+        } catch (Exception e) {
+            return false;
+        }
     }
 
-    public static boolean validarYVerificarCedula(String cedula) {
+    public static boolean validarYVerificarCedulaUsuario(String cedula) {
         // Validar formato: solo números, entre 6 y 10 dígitos
         String regex = "^\\d{6,10}$";
         if (!Pattern.matches(regex, cedula)) {
@@ -34,6 +44,25 @@ public class Verificar {
                                                                                               // este
 
         if (usuarioExistente == null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean validarYVerificarCedulaEmpleado(String cedula) {
+        // Validar formato: solo números, entre 6 y 10 dígitos
+        String regex = "^\\d{6,10}$";
+        if (!Pattern.matches(regex, cedula)) {
+            return false;
+        }
+
+        // Verificar unicidad en la base de datos
+        EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+        Empleado empleadoExistente = empleadoDAO.obtenerPorId(Integer.parseInt(cedula)); // Asumiendo que existe
+                                                                                         // este
+
+        if (empleadoExistente == null) {
             return true;
         }
 
@@ -123,6 +152,27 @@ public class Verificar {
         }
 
         return false;
+    }
+
+    public static boolean validarSalario(String salario) {
+        try {
+            Double salarioD = Double.parseDouble(salario);
+            final double SALARIO_MINIMO_2025 = 1_423_500.0; // Valor sin auxilio de transporte
+            return salarioD > SALARIO_MINIMO_2025;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean validarFechaMenorIgualHoy(String fechaStr) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        try {
+            LocalDate fechaIngresada = LocalDate.parse(fechaStr, formatter);
+            LocalDate fechaActual = LocalDate.now();
+            return !fechaIngresada.isAfter(fechaActual); // Retorna true si la fecha ingresada es hoy o anterior
+        } catch (DateTimeParseException e) {
+            return false; // La fecha no tiene el formato correcto o es inválida
+        }
     }
 
 }

@@ -1,37 +1,36 @@
-// cSpell:ignore telefono
 package main.java.com.Gym360.model.classes;
 
-public class ClienteProveedor {
+public class Cliente {
 
-    private int id;
+    private String id; // Cambiado a String
     private String nombre;
     private String apellido;
     private String telefono;
     private String email;
-    private String tipo;  // 'Cliente' o 'Proveedor'
     private double saldo;
+    private String tipoMembresia; // Tipo de membresía ('1 año', '3 meses', '6 meses')
 
     // Constructor
-    public ClienteProveedor() {
+    public Cliente() {
     }
 
-    public ClienteProveedor(int id, String nombre, String apellido, String telefono,
-            String email, String tipo, double saldo) {
+    public Cliente(String id, String nombre, String apellido, String telefono, String email, double saldo,
+            String tipoMembresia) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
-        this.tipo = tipo;
         this.saldo = saldo;
+        this.tipoMembresia = tipoMembresia;
     }
 
     // Getters y Setters
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -67,14 +66,6 @@ public class ClienteProveedor {
         this.email = email;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     public double getSaldo() {
         return saldo;
     }
@@ -83,16 +74,24 @@ public class ClienteProveedor {
         this.saldo = saldo;
     }
 
+    public String getTipoMembresia() {
+        return tipoMembresia;
+    }
+
+    public void setTipoMembresia(String tipoMembresia) {
+        this.tipoMembresia = tipoMembresia;
+    }
+
     @Override
     public String toString() {
-        return "ClienteProveedor{"
-                + "id=" + id
-                + ", nombre='" + nombre + '\''
-                + ", apellido='" + apellido + '\''
-                + ", telefono='" + telefono + '\''
-                + ", email='" + email + '\''
-                + ", tipo='" + tipo + '\''
-                + ", saldo=" + saldo
-                + '}';
+        return "Cliente{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", saldo=" + saldo +
+                ", tipoMembresia='" + tipoMembresia + '\'' +
+                '}';
     }
 }

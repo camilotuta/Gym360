@@ -11,7 +11,6 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 import main.java.com.Gym360.model.classes.Usuario;
-import main.java.com.Gym360.model.dao.ProductoDAO;
 import main.java.com.Gym360.model.dao.UsuarioDAO;
 import main.java.com.Gym360.util.ui.CambiarIU;
 import main.java.com.Gym360.view.admin.DashboardAdminScreen;

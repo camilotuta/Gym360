@@ -31,16 +31,18 @@ CREATE TABLE Nomina (
 -- =========================================
 -- 3. Tabla ClienteProveedor
 -- =========================================
-DROP TABLE IF EXISTS ClienteProveedor;
-CREATE TABLE ClienteProveedor (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombre    TEXT NOT NULL,
-    apellido  TEXT NOT NULL,
-    telefono  TEXT,
-    email     TEXT,
-    tipo      TEXT,   -- 'Cliente' o 'Proveedor'
-    saldo     REAL
+DROP TABLE IF EXISTS Cliente;
+
+CREATE TABLE Cliente(
+    id            TEXT PRIMARY KEY,   -- Ahora se usa como cédula
+    nombre        TEXT NOT NULL,
+    apellido      TEXT NOT NULL,
+    telefono      TEXT,
+    email         TEXT,
+    saldo         REAL,
+    tipo_membresia TEXT CHECK(tipo_membresia IN ('1 año', '3 meses', '6 meses')) -- Nuevo campo para tipo de membresía
 );
+
 
 -- =========================================
 -- 4. Tabla InventarioCompras

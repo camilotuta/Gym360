@@ -1,4 +1,4 @@
-// cSpell:ignore descripcion categoria codigo
+// cSpell:ignore descripcion categoria codigo telefono contratacion
 package main.java.com.Gym360.model.dao;
 
 import java.sql.Connection;
@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import main.java.com.Gym360.model.classes.Empleado;
 import main.java.com.Gym360.model.classes.Producto;
 import main.java.com.Gym360.util.database.DatabaseConnection;
 
@@ -21,7 +23,8 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
-			String sql = "SELECT * FROM Producto WHERE nombre LIKE ? OR descripcion LIKE ?"; // Filtrar por nombre o descripción
+			String sql = "SELECT * FROM Producto WHERE nombre LIKE ? OR descripcion LIKE ?"; // Filtrar por nombre o
+																								// descripción
 
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, "%" + filtro + "%"); // Filtro para nombre
@@ -59,7 +62,7 @@ public class ProductoDAO {
 		try {
 			conn = DatabaseConnection.conectar();
 			String sql = "INSERT INTO Producto (nombre, descripcion, precioUnitario, stock, categoria, codigoBarras) "
-				+ "VALUES (?, ?, ?, ?, ?, ?)";
+					+ "VALUES (?, ?, ?, ?, ?, ?)";
 
 			pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			pst.setString(1, producto.getNombre());
@@ -95,7 +98,7 @@ public class ProductoDAO {
 		try {
 			conn = DatabaseConnection.conectar();
 			String sql = "UPDATE Producto SET nombre = ?, descripcion = ?, precioUnitario = ?, "
-				+ "stock = ?, categoria = ?, codigoBarras = ? WHERE idProducto = ?";
+					+ "stock = ?, categoria = ?, codigoBarras = ? WHERE idProducto = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, producto.getNombre());

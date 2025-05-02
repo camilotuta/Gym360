@@ -284,7 +284,8 @@ public class CreateUser extends javax.swing.JFrame {
 
         private boolean datosValidos() {
                 return Verificar.validarNombre(ObtenerIU.obtenerTextoCampo(tfNombre))
-                                && Verificar.validarYVerificarCedula((ObtenerIU.obtenerTextoCampo(tfIdentificacion)))
+                                && Verificar.validarYVerificarCedulaEmpleado(
+                                                (ObtenerIU.obtenerTextoCampo(tfIdentificacion)))
                                 && Verificar.validarCorreo(ObtenerIU.obtenerTextoCampo(tfCorreo))
                                 && Verificar.validarComboBox((ObtenerIU.obtenerSeleccionCombo(cbCargo)))
                                 && Verificar.validarContraseña(
@@ -299,7 +300,9 @@ public class CreateUser extends javax.swing.JFrame {
                                 imgValidarNombre, "El nombre es válido.", "El nombre no es válido.");
 
                 // tfIdentificacion
-                VerificarCampo.verificarCampo(Verificar.validarYVerificarCedula(ObtenerIU.obtenerTextoCampo(tfIdentificacion)),
+                VerificarCampo.verificarCampo(
+                                Verificar.validarYVerificarCedulaEmpleado(
+                                                ObtenerIU.obtenerTextoCampo(tfIdentificacion)),
                                 imgValidarIdentificacion, "La identificación no es válida.",
                                 "La identificación es válida.");
                 // tfCorreo

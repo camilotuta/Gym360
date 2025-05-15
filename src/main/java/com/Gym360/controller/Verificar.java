@@ -102,7 +102,7 @@ public class Verificar {
     }
 
     public static boolean validarComboBox(String seleccion) {
-        return !seleccion.equals("Seleccionar");
+        return seleccion != null && !seleccion.equals("Seleccionar") && !seleccion.trim().isEmpty();
     }
 
     public static boolean validarStock(String stock) {

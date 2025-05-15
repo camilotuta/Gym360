@@ -52,9 +52,7 @@ DROP TABLE IF EXISTS InventarioCompras;
 CREATE TABLE InventarioCompras (
     idCompra           INTEGER PRIMARY KEY AUTOINCREMENT,
     fecha              TEXT,
-    totalCompras       REAL,
-    idClienteProveedor INTEGER, -- FK a ClienteProveedor
-    FOREIGN KEY (idClienteProveedor) REFERENCES ClienteProveedor(id)
+    totalCompras       REAL
 );
 
 -- =========================================

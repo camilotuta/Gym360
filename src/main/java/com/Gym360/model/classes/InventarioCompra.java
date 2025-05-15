@@ -1,22 +1,20 @@
 package main.java.com.Gym360.model.classes;
 
-
 public class InventarioCompra {
 
 	private int idCompra;
 	private String fecha;
 	private double totalCompras;
-	private int idClienteProveedor;
 
-	// Constructor
+	// Constructor vacío
 	public InventarioCompra() {
 	}
 
-	public InventarioCompra(int idCompra, String fecha, double totalCompras, int idClienteProveedor) {
+	// Constructor con parámetros
+	public InventarioCompra(int idCompra, String fecha, double totalCompras) {
 		this.idCompra = idCompra;
 		this.fecha = fecha;
 		this.totalCompras = totalCompras;
-		this.idClienteProveedor = idClienteProveedor;
 	}
 
 	// Getters y Setters
@@ -44,21 +42,9 @@ public class InventarioCompra {
 		this.totalCompras = totalCompras;
 	}
 
-	public int getIdClienteProveedor() {
-		return idClienteProveedor;
-	}
-
-	public void setIdClienteProveedor(int idClienteProveedor) {
-		this.idClienteProveedor = idClienteProveedor;
-	}
-
 	@Override
 	public String toString() {
-		return "InventarioCompras{"
-			+ "idCompra=" + idCompra
-			+ ", fecha='" + fecha + '\''
-			+ ", totalCompras=" + totalCompras
-			+ ", idClienteProveedor=" + idClienteProveedor
-			+ '}';
+		return "InventarioCompra{" + "idCompra=" + idCompra + ", fecha='" + fecha + '\'' + ", totalCompras="
+				+ totalCompras + '}';
 	}
 }

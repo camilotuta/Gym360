@@ -9,7 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.com.Gym360.model.classes.Empleado;
 import main.java.com.Gym360.model.classes.Producto;
 import main.java.com.Gym360.util.database.DatabaseConnection;
 

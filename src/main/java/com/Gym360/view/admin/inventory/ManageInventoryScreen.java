@@ -20,7 +20,7 @@ import main.java.com.Gym360.view.admin.DashboardAdminScreen;
  */
 public class ManageInventoryScreen extends javax.swing.JFrame {
 
-    public static int idDetalleCompraSeleccionada = -1;
+    public static int idCompraSeleccionada = -1;
 
     public static int idProductoSeleccionado = -1;
 
@@ -276,9 +276,9 @@ public class ManageInventoryScreen extends javax.swing.JFrame {
 
     private void tComprasMouseClicked(java.awt.event.MouseEvent evt) {
         int selectedRow = tCompras.getSelectedRow();
-        idDetalleCompraSeleccionada = Integer.parseInt(tCompras.getValueAt(selectedRow, 0).toString());
+        idCompraSeleccionada = Integer.parseInt(tCompras.getValueAt(selectedRow, 1).toString());
 
-        if (idDetalleCompraSeleccionada != -1) {
+        if (idCompraSeleccionada != -1) {
             CambiarIU.habilitarBotones(btnEditarCompra, btnEliminarCompra);
         }
     }
@@ -325,8 +325,8 @@ public class ManageInventoryScreen extends javax.swing.JFrame {
 
     private void btnEliminarCompraActionPerformed(java.awt.event.ActionEvent evt) {
         DetalleCompraDAO detalleCompraDAO = new DetalleCompraDAO();
-        detalleCompraDAO.eliminar(idDetalleCompraSeleccionada);
-        idDetalleCompraSeleccionada = -1;
+        detalleCompraDAO.eliminar(idCompraSeleccionada);
+        idCompraSeleccionada = -1;
         cargarTablaCompras("");
         CambiarIU.deshabilitarBotones(btnEditarProducto, btnEliminarProducto);
         CambiarIU.deshabilitarBotones(btnEditarCompra, btnEliminarCompra);

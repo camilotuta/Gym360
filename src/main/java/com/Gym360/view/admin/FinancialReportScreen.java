@@ -33,6 +33,7 @@ import org.jfree.data.general.PieDataset;
  *
  * @author tutaa
  */
+//TODO: hacer un balance o cualquier calculo financiero
 public class FinancialReportScreen extends javax.swing.JFrame {
 
         /**

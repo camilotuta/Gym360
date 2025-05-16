@@ -375,8 +375,8 @@ public class CreateProduct extends javax.swing.JFrame {
                 String codigoBarras = (ObtenerIU.obtenerTextoCampo(tfCodigoBarras));
 
                 try {
-                        productoDAO.insertar(new Producto(ManageInventoryScreen.idProductoSeleccionado, nombre,
-                                        descripcion, precioUnidad, stock, categoria, codigoBarras));
+                        productoDAO.insertar(new Producto(0, nombre, descripcion, precioUnidad, stock, categoria,
+                                        codigoBarras));
                         JOptionPane.showMessageDialog(this, "El producto se registró correctamente.",
                                         "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
                         ManageInventoryScreen mi = new ManageInventoryScreen();

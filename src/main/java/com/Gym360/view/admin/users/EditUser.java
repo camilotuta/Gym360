@@ -23,6 +23,7 @@ import main.java.com.Gym360.view.admin.inventory.ManageInventoryScreen;
  *
  * @author tutaa
  */
+// TODO: enviar un correo con la modificación y mostrarle el usuario y contraseña
 public class EditUser extends javax.swing.JFrame {
 
         /**

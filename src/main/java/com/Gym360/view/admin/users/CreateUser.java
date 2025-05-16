@@ -19,6 +19,7 @@ import main.java.com.Gym360.util.ui.ObtenerIU;
  *
  * @author tutaa
  */
+// TODO: enviar un correo con la bienvenida y mostrarle el usuario y contraseña
 public class CreateUser extends javax.swing.JFrame {
 
         /**

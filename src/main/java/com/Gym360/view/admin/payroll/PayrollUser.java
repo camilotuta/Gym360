@@ -25,6 +25,7 @@ import main.java.com.Gym360.util.ui.CambiarIU;
  *
  * @author tutaa
  */
+//Todo: modificar nomina
 public class PayrollUser extends javax.swing.JFrame {
 
         public static int idUsuarioSeleccionado = -1;

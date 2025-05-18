@@ -22,7 +22,6 @@ import main.java.com.Gym360.util.ui.CambiarIU;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.RingPlot;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
@@ -33,7 +32,6 @@ import org.jfree.data.general.PieDataset;
  *
  * @author tutaa
  */
-//TODO: hacer un balance o cualquier calculo financiero
 public class FinancialReportScreen extends javax.swing.JFrame {
 
         /**
@@ -59,6 +57,7 @@ public class FinancialReportScreen extends javax.swing.JFrame {
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
+        // <editor-fold defaultstate="collapsed" desc="Generated
         // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
@@ -77,6 +76,8 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                 lbPonerEgresos = new javax.swing.JLabel();
                 lbUtilidadNeta = new javax.swing.JLabel();
                 lbPonerUtilidad = new javax.swing.JLabel();
+                lbMargenUtilidad = new javax.swing.JLabel();
+                lbPonerMargenUtilidad = new javax.swing.JLabel();
                 imgPDF = new javax.swing.JLabel();
                 btnExportarPDF = new javax.swing.JButton();
                 imgExcel = new javax.swing.JLabel();
@@ -128,7 +129,7 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                 lbResumenFinanciero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 lbResumenFinanciero.setText("Resumen Financiero");
                 panelFinancialReport.add(lbResumenFinanciero,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 1180, 40));
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 1180, 40));
 
                 pResumenFinanciero.setBackground(new java.awt.Color(245, 245, 245));
                 pResumenFinanciero.setBorder(
@@ -154,34 +155,48 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                 lbEgresosTotales.setForeground(new java.awt.Color(20, 20, 20));
                 lbEgresosTotales.setText("Egresos Totales:");
                 pResumenFinanciero.add(lbEgresosTotales,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, -1));
 
                 lbPonerEgresos.setBackground(new java.awt.Color(0, 0, 0));
                 lbPonerEgresos.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
                 lbPonerEgresos.setForeground(new java.awt.Color(255, 51, 51));
                 lbPonerEgresos.setText("$100.000.000");
                 pResumenFinanciero.add(lbPonerEgresos,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, -1));
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, -1, -1));
 
                 lbUtilidadNeta.setBackground(new java.awt.Color(0, 0, 0));
                 lbUtilidadNeta.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
                 lbUtilidadNeta.setForeground(new java.awt.Color(20, 20, 20));
                 lbUtilidadNeta.setText("Utilidad Neta:");
                 pResumenFinanciero.add(lbUtilidadNeta,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
                 lbPonerUtilidad.setBackground(new java.awt.Color(0, 0, 0));
                 lbPonerUtilidad.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
                 lbPonerUtilidad.setForeground(new java.awt.Color(255, 204, 0));
                 lbPonerUtilidad.setText("$100.000.000");
                 pResumenFinanciero.add(lbPonerUtilidad,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, -1, -1));
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+
+                lbMargenUtilidad.setBackground(new java.awt.Color(0, 0, 0));
+                lbMargenUtilidad.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbMargenUtilidad.setForeground(new java.awt.Color(20, 20, 20));
+                lbMargenUtilidad.setText("Márgen de Utilidad Neta:");
+                pResumenFinanciero.add(lbMargenUtilidad,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+
+                lbPonerMargenUtilidad.setBackground(new java.awt.Color(0, 0, 0));
+                lbPonerMargenUtilidad.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                lbPonerMargenUtilidad.setForeground(new java.awt.Color(255, 204, 0));
+                lbPonerMargenUtilidad.setText("$100.000.000");
+                pResumenFinanciero.add(lbPonerMargenUtilidad,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, -1, -1));
 
                 panelFinancialReport.add(pResumenFinanciero,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 660, 140));
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, 700, 170));
 
                 imgPDF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/pdf.png"))); // NOI18N
-                panelFinancialReport.add(imgPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 690, -1, 50));
+                panelFinancialReport.add(imgPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 660, -1, 50));
 
                 btnExportarPDF.setBackground(new java.awt.Color(93, 0, 0));
                 btnExportarPDF.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
@@ -194,10 +209,11 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                         }
                 });
                 panelFinancialReport.add(btnExportarPDF,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 690, 250, 50));
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 660, 250, 50));
 
                 imgExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/excel.png"))); // NOI18N
-                panelFinancialReport.add(imgExcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 690, -1, 50));
+                panelFinancialReport.add(imgExcel,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 660, -1, 50));
 
                 btnExportarExcel.setBackground(new java.awt.Color(93, 0, 0));
                 btnExportarExcel.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
@@ -210,7 +226,7 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                         }
                 });
                 panelFinancialReport.add(btnExportarExcel,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 690, 260, 50));
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 660, 260, 50));
 
                 lbNotificaciones.setBackground(new java.awt.Color(0, 0, 0));
                 lbNotificaciones.setFont(new java.awt.Font("Inter", 1, 36)); // NOI18N
@@ -347,9 +363,44 @@ public class FinancialReportScreen extends javax.swing.JFrame {
                         totalIngresos += c.getIngresos();
                         totalEgresos += c.getEgresos();
                 }
+                // Mostrar Ingresos y Egresos
                 CambiarIU.ponerTextoEtiqueta(lbPonerIngresos, String.valueOf(totalIngresos));
                 CambiarIU.ponerTextoEtiqueta(lbPonerEgresos, String.valueOf(totalEgresos));
-                CambiarIU.ponerTextoEtiqueta(lbPonerUtilidad, String.valueOf((totalIngresos - totalEgresos)));
+
+                // Calcular Utilidad
+                double utilidad = totalIngresos - totalEgresos;
+                CambiarIU.ponerTextoEtiqueta(lbPonerUtilidad, String.valueOf(utilidad));
+
+                // Calcular Margen de Utilidad
+                String margenTexto;
+                if (totalIngresos != 0) {
+                        int margen = (int) ((utilidad / totalIngresos) * 100);
+                        margenTexto = margen + "%";
+                } else {
+                        margenTexto = "0%";
+                }
+                CambiarIU.ponerTextoEtiqueta(lbPonerMargenUtilidad, margenTexto);
+
+                // Cambiar color dependiendo del resultado
+                Color colorPositivo = new Color(0, 153, 0); // verde
+                Color colorNegativo = Color.RED;
+                Color colorNeutro = Color.GRAY;
+
+                Color colorFinal;
+
+                if (utilidad > 0) {
+                        colorFinal = colorPositivo;
+                } else if (utilidad < 0) {
+                        colorFinal = colorNegativo;
+                } else {
+                        colorFinal = colorNeutro;
+                }
+
+                // Aplicar el color a las etiquetas clave
+                lbPonerUtilidad.setForeground(colorFinal);
+                lbPonerMargenUtilidad.setForeground(colorFinal);
+                lbPonerIngresos.setForeground(totalIngresos >= totalEgresos ? colorPositivo : colorNegativo);
+                lbPonerEgresos.setForeground(totalEgresos > totalIngresos ? colorNegativo : colorPositivo);
 
         }
 
@@ -363,9 +414,11 @@ public class FinancialReportScreen extends javax.swing.JFrame {
         private javax.swing.JLabel lbBackButton;
         private javax.swing.JLabel lbEgresosTotales;
         private javax.swing.JLabel lbIngresosTotales;
+        private javax.swing.JLabel lbMargenUtilidad;
         private javax.swing.JLabel lbNotificaciones;
         private javax.swing.JLabel lbPonerEgresos;
         private javax.swing.JLabel lbPonerIngresos;
+        private javax.swing.JLabel lbPonerMargenUtilidad;
         private javax.swing.JLabel lbPonerUtilidad;
         private javax.swing.JLabel lbResumenFinanciero;
         private javax.swing.JLabel lbUtilidadNeta;

@@ -5,9 +5,16 @@
  */
 package main.java.com.Gym360.view.admin;
 
-import main.java.com.Gym360.util.ui.CambiarIU;
-
 import java.awt.Toolkit;
+import java.util.List;
+import java.util.Random;
+
+import main.java.com.Gym360.model.classes.Cliente;
+import main.java.com.Gym360.model.classes.Contabilidad;
+import main.java.com.Gym360.model.dao.ClienteDAO;
+import main.java.com.Gym360.model.dao.ContabilidadDAO;
+import main.java.com.Gym360.util.dates.Dates;
+import main.java.com.Gym360.util.ui.CambiarIU;
 import main.java.com.Gym360.view.Login;
 import main.java.com.Gym360.view.admin.inventory.ManageInventoryScreen;
 import main.java.com.Gym360.view.admin.payroll.PayrollManagementScreen;
@@ -32,6 +39,9 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                                 .getImage(getClass().getResource("/main/resources/images/logo.png")));
                 new FinancialReportScreen().graficaIngresosVsEgresos(imgGrafica1);
                 new FinancialReportScreen().graficaDistribucionMembresias(imgGrafica2);
+                ponerIngresos();
+                ponerMembresias();
+                ponerClientesActivos();
         }
 
         /**
@@ -41,7 +51,8 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
          */
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
                 panelDashboard = new javax.swing.JPanel();
@@ -78,10 +89,8 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 pGrafica2 = new javax.swing.JPanel();
                 imgGrafica2 = new javax.swing.JLabel();
                 lbAccionesRapidas = new javax.swing.JLabel();
-                imgRegistrarVenta = new javax.swing.JLabel();
                 imgGenerarReporte = new javax.swing.JLabel();
                 imgAgregarUsuario = new javax.swing.JLabel();
-                btnRegistrarVenta = new javax.swing.JButton();
                 btnAgregarUsuario = new javax.swing.JButton();
                 btnGenerarReporte = new javax.swing.JButton();
 
@@ -97,7 +106,8 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 pMenu.setBackground(new java.awt.Color(93, 0, 0));
                 pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setIcon(
+                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
                 lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
                 lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -186,23 +196,27 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 lbDashboardAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 lbDashboardAdmin.setText("Dashboard Administrador");
                 lbDashboardAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-                panelDashboard.add(lbDashboardAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 1230, 50));
+                panelDashboard.add(lbDashboardAdmin,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 1230, 50));
 
                 pMembresiasActivas.setBackground(new java.awt.Color(245, 245, 245));
-                pMembresiasActivas.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pMembresiasActivas.setBorder(
+                                new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
                 pMembresiasActivas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
                 lbMembresiasActivas.setBackground(new java.awt.Color(0, 0, 0));
                 lbMembresiasActivas.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
                 lbMembresiasActivas.setForeground(new java.awt.Color(20, 20, 20));
                 lbMembresiasActivas.setText("Membresías Activas");
-                pMembresiasActivas.add(lbMembresiasActivas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+                pMembresiasActivas.add(lbMembresiasActivas,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
                 lbPonerMembresiasActivas.setBackground(new java.awt.Color(0, 0, 0));
                 lbPonerMembresiasActivas.setFont(new java.awt.Font("Inter", 1, 30)); // NOI18N
                 lbPonerMembresiasActivas.setForeground(new java.awt.Color(20, 20, 20));
                 lbPonerMembresiasActivas.setText("325");
-                pMembresiasActivas.add(lbPonerMembresiasActivas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+                pMembresiasActivas.add(lbPonerMembresiasActivas,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
                 lbClientes.setBackground(new java.awt.Color(0, 0, 0));
                 lbClientes.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
@@ -216,7 +230,8 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 lbActivos.setText("activos");
                 pMembresiasActivas.add(lbActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
-                panelDashboard.add(pMembresiasActivas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 250, 110));
+                panelDashboard.add(pMembresiasActivas,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 250, 110));
 
                 pIngresosMes.setBackground(new java.awt.Color(245, 245, 245));
                 pIngresosMes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
@@ -243,14 +258,16 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 panelDashboard.add(pIngresosMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 250, 110));
 
                 pClientesActivos.setBackground(new java.awt.Color(245, 245, 245));
-                pClientesActivos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pClientesActivos.setBorder(
+                                new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
                 pClientesActivos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
                 lbClientesActivos.setBackground(new java.awt.Color(0, 0, 0));
                 lbClientesActivos.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
                 lbClientesActivos.setForeground(new java.awt.Color(20, 20, 20));
                 lbClientesActivos.setText("Clientes activos");
-                pClientesActivos.add(lbClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+                pClientesActivos.add(lbClientesActivos,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
                 lbHoy.setBackground(new java.awt.Color(0, 0, 0));
                 lbHoy.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
@@ -262,45 +279,54 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 lbPonerPorcentajeClientesActivos.setFont(new java.awt.Font("Inter", 1, 30)); // NOI18N
                 lbPonerPorcentajeClientesActivos.setForeground(new java.awt.Color(20, 20, 20));
                 lbPonerPorcentajeClientesActivos.setText("30%");
-                pClientesActivos.add(lbPonerPorcentajeClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+                pClientesActivos.add(lbPonerPorcentajeClientesActivos,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
                 lbPonerContadorClientesActivos.setBackground(new java.awt.Color(0, 0, 0));
                 lbPonerContadorClientesActivos.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
                 lbPonerContadorClientesActivos.setForeground(new java.awt.Color(20, 20, 20));
                 lbPonerContadorClientesActivos.setText("98 clientes");
-                pClientesActivos.add(lbPonerContadorClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+                pClientesActivos.add(lbPonerContadorClientesActivos,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-                panelDashboard.add(pClientesActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 250, 110));
+                panelDashboard.add(pClientesActivos,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 250, 110));
 
                 pInventarioFaltante.setBackground(new java.awt.Color(245, 245, 245));
-                pInventarioFaltante.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
+                pInventarioFaltante.setBorder(
+                                new javax.swing.border.LineBorder(new java.awt.Color(200, 200, 200), 1, true));
                 pInventarioFaltante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
                 lbInventarioFaltante.setBackground(new java.awt.Color(0, 0, 0));
                 lbInventarioFaltante.setFont(new java.awt.Font("Inter", 1, 12)); // NOI18N
                 lbInventarioFaltante.setForeground(new java.awt.Color(20, 20, 20));
                 lbInventarioFaltante.setText("Inventario faltante");
-                pInventarioFaltante.add(lbInventarioFaltante, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+                pInventarioFaltante.add(lbInventarioFaltante,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
                 lbPonerProducto1.setBackground(new java.awt.Color(0, 0, 0));
                 lbPonerProducto1.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
                 lbPonerProducto1.setForeground(new java.awt.Color(20, 20, 20));
                 lbPonerProducto1.setText("Cinturón de levantamiento: -4 unidades");
-                pInventarioFaltante.add(lbPonerProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 250, -1));
+                pInventarioFaltante.add(lbPonerProducto1,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 250, -1));
 
                 lbPonerProducto2.setBackground(new java.awt.Color(0, 0, 0));
                 lbPonerProducto2.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
                 lbPonerProducto2.setForeground(new java.awt.Color(20, 20, 20));
                 lbPonerProducto2.setText("Magnesio en polvo: -1 unidades");
-                pInventarioFaltante.add(lbPonerProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 250, -1));
+                pInventarioFaltante.add(lbPonerProducto2,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 250, -1));
 
                 lbPonerProducto3.setBackground(new java.awt.Color(0, 0, 0));
                 lbPonerProducto3.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
                 lbPonerProducto3.setForeground(new java.awt.Color(20, 20, 20));
                 lbPonerProducto3.setText("Guantes de entrenamiento: -5 unidades");
-                pInventarioFaltante.add(lbPonerProducto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 250, -1));
+                pInventarioFaltante.add(lbPonerProducto3,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 250, -1));
 
-                panelDashboard.add(pInventarioFaltante, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 250, 110));
+                panelDashboard.add(pInventarioFaltante,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 250, 110));
 
                 pGrafica1.setBackground(new java.awt.Color(245, 245, 245));
                 pGrafica1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 240, 240)));
@@ -321,28 +347,18 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 lbAccionesRapidas.setForeground(new java.awt.Color(20, 20, 20));
                 lbAccionesRapidas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 lbAccionesRapidas.setText("Acciones Rápidas");
-                panelDashboard.add(lbAccionesRapidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 540, -1));
+                panelDashboard.add(lbAccionesRapidas,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 540, -1));
 
-                imgRegistrarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/registrarVenta.png"))); // NOI18N
-                panelDashboard.add(imgRegistrarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, 40, 80));
+                imgGenerarReporte.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/main/resources/images/generarReporte.png"))); // NOI18N
+                panelDashboard.add(imgGenerarReporte,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 600, -1, 80));
 
-                imgGenerarReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/generarReporte.png"))); // NOI18N
-                panelDashboard.add(imgGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 690, -1, 80));
-
-                imgAgregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/agregarUsuario.png"))); // NOI18N
-                panelDashboard.add(imgAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 590, -1, 80));
-
-                btnRegistrarVenta.setBackground(new java.awt.Color(93, 0, 0));
-                btnRegistrarVenta.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
-                btnRegistrarVenta.setForeground(new java.awt.Color(200, 200, 200));
-                btnRegistrarVenta.setText("      Registrar Venta");
-                btnRegistrarVenta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-                btnRegistrarVenta.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                btnRegistrarVentaActionPerformed(evt);
-                        }
-                });
-                panelDashboard.add(btnRegistrarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 540, 80));
+                imgAgregarUsuario.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/main/resources/images/agregarUsuario.png"))); // NOI18N
+                panelDashboard.add(imgAgregarUsuario,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 500, -1, 80));
 
                 btnAgregarUsuario.setBackground(new java.awt.Color(93, 0, 0));
                 btnAgregarUsuario.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
@@ -354,7 +370,8 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                                 btnAgregarUsuarioActionPerformed(evt);
                         }
                 });
-                panelDashboard.add(btnAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 590, 540, 80));
+                panelDashboard.add(btnAgregarUsuario,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 540, 80));
 
                 btnGenerarReporte.setBackground(new java.awt.Color(93, 0, 0));
                 btnGenerarReporte.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
@@ -366,25 +383,20 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                                 btnGenerarReporteActionPerformed(evt);
                         }
                 });
-                panelDashboard.add(btnGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 690, 540, 80));
+                panelDashboard.add(btnGenerarReporte,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 600, 540, 80));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
-                layout.setHorizontalGroup(
-                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                );
-                layout.setVerticalGroup(
-                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                );
+                layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(panelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+                layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(panelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
-
-        private void btnRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {
-
-        }
 
         private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {
                 FinancialReportScreen fr = new FinancialReportScreen();
@@ -439,15 +451,53 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 this.setVisible(false);
         }
 
+        private void ponerIngresos() {
+                String[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
+                                "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+
+                ContabilidadDAO dao = new ContabilidadDAO();
+                List<Contabilidad> registros = dao.obtenerTodos();
+
+                double totalIngresos = 0;
+
+                for (Contabilidad c : registros) {
+                        totalIngresos += c.getIngresos();
+                }
+                // Mostrar Ingresos y Egresos
+                CambiarIU.ponerTextoEtiqueta(lbPonerIngresosMes, "$" + String.valueOf(totalIngresos));
+                CambiarIU.ponerTextoEtiqueta(lbMes, "En el mes de " + meses[Integer.parseInt(Dates.obtenerMes()) - 1]);
+
+        }
+
+        private void ponerMembresias() {
+                ClienteDAO dao = new ClienteDAO();
+                List<Cliente> clientes = dao.obtenerTodos();
+                CambiarIU.ponerTextoEtiqueta(lbPonerMembresiasActivas, String.valueOf(clientes.size()));
+        }
+
+        private void ponerClientesActivos() {
+                Random rand = new Random();
+                ClienteDAO dao = new ClienteDAO();
+                List<Cliente> clientes = dao.obtenerTodos();
+                int clientesTotales = clientes.size();
+                int clientesActuales = rand.nextInt(0, clientesTotales / 2);
+
+                int porcentajeClientesActivos = (clientesActuales * 100) / clientesTotales;
+
+                CambiarIU.ponerTextoEtiqueta(lbPonerContadorClientesActivos,
+                                String.valueOf(clientesActuales) + " clientes");
+                CambiarIU.ponerTextoEtiqueta(lbPonerPorcentajeClientesActivos,
+                                String.valueOf(porcentajeClientesActivos) + "%");
+
+        }
+
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnAgregarUsuario;
         private javax.swing.JButton btnGenerarReporte;
-        private javax.swing.JButton btnRegistrarVenta;
         private javax.swing.JLabel imgAgregarUsuario;
         private javax.swing.JLabel imgGenerarReporte;
         private javax.swing.JLabel imgGrafica1;
         private javax.swing.JLabel imgGrafica2;
-        private javax.swing.JLabel imgRegistrarVenta;
         private javax.swing.JLabel lbAccionesRapidas;
         private javax.swing.JLabel lbActivos;
         private javax.swing.JLabel lbBackButton;

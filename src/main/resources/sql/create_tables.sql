@@ -31,18 +31,26 @@ CREATE TABLE Nomina (
 -- =========================================
 -- 3. Tabla ClienteProveedor
 -- =========================================
+ALTER TABLE Cliente
+ALTER COLUMN estado
+SET DEFAULT 'inactivo';
+ALTER TABLE Cliente
+ADD COLUMN estado TEXT;
 DROP TABLE IF EXISTS Cliente;
-
-CREATE TABLE Cliente(
-    id            TEXT PRIMARY KEY,   -- Ahora se usa como cédula
-    nombre        TEXT NOT NULL,
-    apellido      TEXT NOT NULL,
-    telefono      TEXT,
-    email         TEXT,
-    saldo         REAL,
-    tipo_membresia TEXT CHECK(tipo_membresia IN ('1 año', '3 meses', '6 meses')) -- Nuevo campo para tipo de membresía
+CREATE TABLE Cliente (
+    id TEXT PRIMARY KEY,
+    -- Ahora se usa como cédula
+    nombre TEXT NOT NULL,
+    apellido TEXT NOT NULL,
+    telefono TEXT,
+    email TEXT,
+    contraseña TEXT NOT NULL,
+    -- Nuevo campo para almacenar la contraseña
+    saldo REAL,
+    tipo_membresia TEXT CHECK(
+        tipo_membresia IN ('1 año', '3 meses', '6 meses')
+    )
 );
-
 
 -- =========================================
 -- 4. Tabla InventarioCompras
@@ -78,8 +86,9 @@ DROP TABLE IF EXISTS DetalleVenta;
 CREATE TABLE DetalleVenta (
     idDetalleVenta INTEGER PRIMARY KEY AUTOINCREMENT,
     idVenta        INTEGER NOT NULL,  -- FK a Venta
-    producto       TEXT NOT NULL,
-    FOREIGN KEY (idVenta) REFERENCES Venta(idVenta)
+    idProducto       INTEGER NOT NULL,
+    FOREIGN KEY (idVenta) REFERENCES Venta(idVenta),
+    FOREIGN KEY (idVenta) REFERENCES Producto(idProducto)
 );
 
 -- =========================================
@@ -163,3 +172,49 @@ CREATE TABLE Usuario (
     correo TEXT NOT NULL UNIQUE,
     FOREIGN KEY (idEmpleado) REFERENCES Empleado(idEmpleado)
 );
+
+
+
+
+
+CREATE TABLE Cliente_temp (
+    id TEXT PRIMARY KEY,
+    nombre TEXT,
+    apellido TEXT,
+    telefono TEXT,
+    email TEXT,
+    contraseña TEXT,
+    saldo REAL,
+    tipo_membresia TEXT,
+    estado TEXT DEFAULT 'inactivo'
+);
+
+
+INSERT INTO Cliente_temp (
+        id,
+        nombre,
+        apellido,
+        telefono,
+        email,
+        contraseña,
+        saldo,
+        tipo_membresia,
+        estado
+    )
+SELECT id,
+    nombre,
+    apellido,
+    telefono,
+    email,
+    contraseña,
+    saldo,
+    tipo_membresia,
+    COALESCE(estado, 'inactivo')
+FROM Cliente;
+
+
+DROP TABLE Cliente;
+
+
+ALTER TABLE Cliente_temp
+    RENAME TO Cliente;

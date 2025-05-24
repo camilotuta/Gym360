@@ -31,6 +31,8 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    public static String idGuardar = "";
+
     public Login() {
         initComponents();
         this.setTitle("Ingresar");
@@ -171,11 +173,7 @@ public class Login extends javax.swing.JFrame {
 
         if (Ingresar.UsuarioValido(correo, contraseña)) {
 
-            if (Ingresar.obtenerCargo(correo, contraseña).equals("cliente")) {
-                DashboardClientScreen dashboardC = new DashboardClientScreen();
-                dashboardC.setVisible(true);
-                this.setVisible(false);
-            } else if (Ingresar.obtenerCargo(correo, contraseña).equals("empleado")) {
+            if (Ingresar.obtenerCargo(correo, contraseña).equals("empleado")) {
                 DashboardEmployeeScreen dashboardE = new DashboardEmployeeScreen();
                 dashboardE.setVisible(true);
                 this.setVisible(false);
@@ -187,6 +185,10 @@ public class Login extends javax.swing.JFrame {
 
             guardarDatos();
 
+        } else if (Ingresar.ClienteValido(correo, contraseña)) {
+            DashboardClientScreen dashboardC = new DashboardClientScreen();
+            dashboardC.setVisible(true);
+            this.setVisible(false);
         } else {
 
             JOptionPane.showMessageDialog(this, "CORREO O CONTRASEÑA NO VALIDOS \n", "AVISO!",

@@ -11,16 +11,53 @@ import main.java.com.Gym360.util.database.DatabaseConnection;
 
 public class ClienteDAO {
 
-    public boolean insertar(Cliente cliente) {
+    public List<Cliente> obtenerPorIdFiltro(String filtro) {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
+        List<Cliente> clientes = new ArrayList<>();
+
+        try {
+            conn = DatabaseConnection.conectar();
+            String sql = "SELECT * FROM Cliente WHERE id LIKE ?";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, filtro + "%");
+
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Cliente cliente = new Cliente();
+                cliente.setId(rs.getString("id"));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellido(rs.getString("apellido"));
+                cliente.setTelefono(rs.getString("telefono"));
+                cliente.setEmail(rs.getString("email"));
+                cliente.setContraseña(rs.getString("contraseña"));
+                cliente.setSaldo(rs.getDouble("saldo"));
+                cliente.setTipoMembresia(rs.getString("tipo_membresia"));
+                cliente.setEstado(rs.getString("estado"));
+
+                clientes.add(cliente);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error al obtener clientes por ID parcial: " + e.getMessage());
+        } finally {
+            DatabaseConnection.cerrarConexion(conn, pst, rs);
+        }
+
+        return clientes;
+    }
+
+    public boolean insertar(Cliente cliente) {
+        Connection conn = null;
+        PreparedStatement pst = null;
         boolean resultado = false;
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "INSERT INTO Cliente (id, nombre, apellido, telefono, email, saldo, tipo_membresia) "
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO Cliente (id, nombre, apellido, telefono, email, contraseña, saldo, tipo_membresia, estado) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, cliente.getId());
@@ -28,18 +65,17 @@ public class ClienteDAO {
             pst.setString(3, cliente.getApellido());
             pst.setString(4, cliente.getTelefono());
             pst.setString(5, cliente.getEmail());
-            pst.setDouble(6, cliente.getSaldo());
-            pst.setString(7, cliente.getTipoMembresia());
+            pst.setString(6, cliente.getContraseña());
+            pst.setDouble(7, cliente.getSaldo());
+            pst.setString(8, cliente.getTipoMembresia());
+            pst.setString(9, cliente.getEstado());
 
-            int filas = pst.executeUpdate();
-            if (filas > 0) {
-                resultado = true;
-            }
+            resultado = pst.executeUpdate() > 0;
 
         } catch (SQLException e) {
             System.err.println("Error al insertar cliente: " + e.getMessage());
         } finally {
-            DatabaseConnection.cerrarConexion(conn, pst, rs);
+            DatabaseConnection.cerrarConexion(conn, pst, null);
         }
 
         return resultado;
@@ -52,22 +88,20 @@ public class ClienteDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "UPDATE Cliente SET nombre = ?, apellido = ?, telefono = ?, "
-                    + "email = ?, saldo = ?, tipo_membresia = ? WHERE id = ?";
+            String sql = "UPDATE Cliente SET nombre = ?, apellido = ?, telefono = ?, email = ?, contraseña = ?, saldo = ?, tipo_membresia = ?, estado = ? WHERE id = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, cliente.getNombre());
             pst.setString(2, cliente.getApellido());
             pst.setString(3, cliente.getTelefono());
             pst.setString(4, cliente.getEmail());
-            pst.setDouble(5, cliente.getSaldo());
-            pst.setString(6, cliente.getTipoMembresia());
-            pst.setString(7, cliente.getId());
+            pst.setString(5, cliente.getContraseña());
+            pst.setDouble(6, cliente.getSaldo());
+            pst.setString(7, cliente.getTipoMembresia());
+            pst.setString(8, cliente.getEstado());
+            pst.setString(9, cliente.getId());
 
-            int filas = pst.executeUpdate();
-            if (filas > 0) {
-                resultado = true;
-            }
+            resultado = pst.executeUpdate() > 0;
 
         } catch (SQLException e) {
             System.err.println("Error al actualizar cliente: " + e.getMessage());
@@ -90,10 +124,7 @@ public class ClienteDAO {
             pst = conn.prepareStatement(sql);
             pst.setString(1, id);
 
-            int filas = pst.executeUpdate();
-            if (filas > 0) {
-                resultado = true;
-            }
+            resultado = pst.executeUpdate() > 0;
 
         } catch (SQLException e) {
             System.err.println("Error al eliminar cliente: " + e.getMessage());
@@ -116,8 +147,8 @@ public class ClienteDAO {
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, id);
-
             rs = pst.executeQuery();
+
             if (rs.next()) {
                 cliente = new Cliente();
                 cliente.setId(rs.getString("id"));
@@ -125,8 +156,10 @@ public class ClienteDAO {
                 cliente.setApellido(rs.getString("apellido"));
                 cliente.setTelefono(rs.getString("telefono"));
                 cliente.setEmail(rs.getString("email"));
+                cliente.setContraseña(rs.getString("contraseña"));
                 cliente.setSaldo(rs.getDouble("saldo"));
                 cliente.setTipoMembresia(rs.getString("tipo_membresia"));
+                cliente.setEstado(rs.getString("estado"));
             }
 
         } catch (SQLException e) {
@@ -158,8 +191,10 @@ public class ClienteDAO {
                 cliente.setApellido(rs.getString("apellido"));
                 cliente.setTelefono(rs.getString("telefono"));
                 cliente.setEmail(rs.getString("email"));
+                cliente.setContraseña(rs.getString("contraseña"));
                 cliente.setSaldo(rs.getDouble("saldo"));
                 cliente.setTipoMembresia(rs.getString("tipo_membresia"));
+                cliente.setEstado(rs.getString("estado"));
 
                 clientes.add(cliente);
             }
@@ -185,8 +220,8 @@ public class ClienteDAO {
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, tipoMembresia);
-
             rs = pst.executeQuery();
+
             while (rs.next()) {
                 Cliente cliente = new Cliente();
                 cliente.setId(rs.getString("id"));
@@ -194,8 +229,10 @@ public class ClienteDAO {
                 cliente.setApellido(rs.getString("apellido"));
                 cliente.setTelefono(rs.getString("telefono"));
                 cliente.setEmail(rs.getString("email"));
+                cliente.setContraseña(rs.getString("contraseña"));
                 cliente.setSaldo(rs.getDouble("saldo"));
                 cliente.setTipoMembresia(rs.getString("tipo_membresia"));
+                cliente.setEstado(rs.getString("estado"));
 
                 resultado.add(cliente);
             }

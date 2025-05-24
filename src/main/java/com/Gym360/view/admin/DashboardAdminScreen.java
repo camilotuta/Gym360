@@ -6,7 +6,10 @@
 package main.java.com.Gym360.view.admin;
 
 import java.awt.Toolkit;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 import main.java.com.Gym360.model.classes.Cliente;
@@ -37,8 +40,10 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                 this.setLocationRelativeTo(null);
                 this.setIconImage(Toolkit.getDefaultToolkit()
                                 .getImage(getClass().getResource("/main/resources/images/logo.png")));
-                new FinancialReportScreen().graficaIngresosVsEgresos(imgGrafica1);
-                new FinancialReportScreen().graficaDistribucionMembresias(imgGrafica2);
+                new FinancialReportScreen();
+                FinancialReportScreen.graficaIngresosVsEgresos(imgGrafica1);
+                new FinancialReportScreen();
+                FinancialReportScreen.graficaDistribucionMembresias(imgGrafica2);
                 ponerIngresos();
                 ponerMembresias();
                 ponerClientesActivos();
@@ -464,7 +469,15 @@ public class DashboardAdminScreen extends javax.swing.JFrame {
                         totalIngresos += c.getIngresos();
                 }
                 // Mostrar Ingresos y Egresos
-                CambiarIU.ponerTextoEtiqueta(lbPonerIngresosMes, "$" + String.valueOf(totalIngresos));
+
+                // Formato personalizado
+                DecimalFormatSymbols simbolos = new DecimalFormatSymbols(new Locale("es", "CO"));
+                simbolos.setGroupingSeparator(','); // separador de miles como guión bajo
+                simbolos.setDecimalSeparator('.'); // separador decimal como coma
+
+                DecimalFormat formato = new DecimalFormat("#,##0.0", simbolos);
+
+                CambiarIU.ponerTextoEtiqueta(lbPonerIngresosMes, "$" + String.valueOf(formato.format(totalIngresos)));
                 CambiarIU.ponerTextoEtiqueta(lbMes, "En el mes de " + meses[Integer.parseInt(Dates.obtenerMes()) - 1]);
 
         }

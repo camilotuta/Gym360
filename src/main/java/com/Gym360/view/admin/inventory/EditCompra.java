@@ -10,9 +10,11 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import main.java.com.Gym360.controller.Verificar;
+import main.java.com.Gym360.model.classes.Contabilidad;
 import main.java.com.Gym360.model.classes.DetalleCompra;
 import main.java.com.Gym360.model.classes.InventarioCompra;
 import main.java.com.Gym360.model.classes.Producto;
+import main.java.com.Gym360.model.dao.ContabilidadDAO;
 import main.java.com.Gym360.model.dao.DetalleCompraDAO;
 import main.java.com.Gym360.model.dao.InventarioComprasDAO;
 import main.java.com.Gym360.model.dao.ProductoDAO;
@@ -25,6 +27,7 @@ import main.java.com.Gym360.util.ui.ObtenerIU;
  * @author tutaa
  */
 public class EditCompra extends javax.swing.JFrame {
+        static double totalViejo = 0;
 
         /**
          * Creates new form ManageUsersScreen
@@ -38,7 +41,7 @@ public class EditCompra extends javax.swing.JFrame {
                                 .getImage(getClass().getResource("/main/resources/images/logo.png")));
                 ponerProductosCombo();
                 ponerDatosCompra(ManageInventoryScreen.idCompraSeleccionada);
-                ponerTotal();
+
                 mostrarErrores();
                 btnEditarCompra.setEnabled(datosValidos());
         }
@@ -367,6 +370,9 @@ public class EditCompra extends javax.swing.JFrame {
                 CambiarIU.ponerTextoCampo(tfCantidad, String.valueOf(detalles.getCantidad()));
                 CambiarIU.ponerTextoCampo(tfPrecioUnitario, String.valueOf(detalles.getPrecioUnitario()));
 
+                ponerTotal();
+                totalViejo = Double.parseDouble(ObtenerIU.obtenerTextoEtiqueta(lbPonerTotal));
+
                 ProductoDAO productoDAO = new ProductoDAO();
                 Producto producto = productoDAO.obtenerPorId(detalles.getIdProducto());
 
@@ -428,6 +434,12 @@ public class EditCompra extends javax.swing.JFrame {
                         DetalleCompra detalleCom = new DetalleCompra(detalles.getIdDetalleCompra(),
                                         ManageInventoryScreen.idCompraSeleccionada, idProducto, cantidad, precio);
                         detalleComDao.actualizar(detalleCom);
+
+                        ContabilidadDAO contDao = new ContabilidadDAO();
+                        double diferenciaTotales = total - totalViejo;
+
+                        Contabilidad cont = new Contabilidad(0, 0, diferenciaTotales);
+                        contDao.insertar(cont);
 
                         JOptionPane.showMessageDialog(this, "La compra se actualizó correctamente.",
                                         "Actualización exitosa", JOptionPane.INFORMATION_MESSAGE);

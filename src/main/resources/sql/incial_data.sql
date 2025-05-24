@@ -327,7 +327,6 @@ VALUES -- Contabilidad 1
     -- Contabilidad 10
     (19, 10, 'Cobro de proyecto'),
     (20, 10, 'Pago de impuestos');
-
 -- (Opcional) Reiniciar el contador de ID
 ALTER TABLE Usuario AUTO_INCREMENT = 1;
 -- Insertar Admins y Empleados
@@ -434,10 +433,7 @@ VALUES (
         'cliente',
         'carolina.rivas@empresa.com'
     );
-
-
-
-    INSERT INTO Producto (
+INSERT INTO Producto (
         nombre,
         descripcion,
         precioUnitario,
@@ -525,9 +521,7 @@ VALUES (
         'Accesorios',
         '0123456789012'
     );
-
-
-    INSERT INTO DetalleCompra (idCompra, idProducto, cantidad, precioUnitario)
+INSERT INTO DetalleCompra (idCompra, idProducto, cantidad, precioUnitario)
 VALUES (1, 1, 2, 35.50),
     (1, 3, 1, 24.99),
     (2, 4, 5, 14.99),
@@ -538,9 +532,6 @@ VALUES (1, 1, 2, 35.50),
     (4, 8, 2, 199.99),
     (5, 9, 4, 69.99),
     (5, 10, 20, 6.99);
-
-
-
 INSERT INTO Usuario (
         idEmpleado,
         nombreUsuario,
@@ -646,9 +637,6 @@ VALUES (
         'cliente',
         'carolina.rivas@empresa.com'
     );
-
-
-
 INSERT INTO Empleado (
         idEmpleado,
         nombre,
@@ -759,13 +747,7 @@ VALUES (
         '3089012345',
         'elena.jimenez@empresa.com'
     );
-
-
-
-
 DELETE FROM Usuario;
-
-
 INSERT INTO Usuario (
         idEmpleado,
         nombreUsuario,
@@ -871,9 +853,6 @@ VALUES (
         'cliente',
         'carolina.rivas@empresa.com'
     );
-
-
-
 INSERT INTO ClienteProveedor (
         id,
         nombre,
@@ -974,6 +953,8 @@ VALUES (
         0.00
     );
 
+DELETE FROM usuario
+WHERE LOWER(cargo) LIKE 'cliente';
 
 
 
@@ -983,6 +964,7 @@ INSERT INTO Cliente(
         apellido,
         telefono,
         email,
+        contraseña,
         saldo,
         tipo_membresia
     )
@@ -992,6 +974,7 @@ VALUES (
         'Pérez',
         '3001234567',
         'juan.perez@email.com',
+        'Juan123@',
         150000,
         '1 año'
     ),
@@ -1001,6 +984,7 @@ VALUES (
         'Gómez',
         '3002345678',
         'ana.gomez@email.com',
+        'Ana456$G',
         250000,
         '3 meses'
     ),
@@ -1010,6 +994,7 @@ VALUES (
         'Martínez',
         '3003456789',
         'carlos.martinez@email.com',
+        'Carl0s!M',
         80000,
         '6 meses'
     ),
@@ -1019,6 +1004,7 @@ VALUES (
         'López',
         '3004567890',
         'laura.lopez@email.com',
+        'Lau321&x',
         40000,
         '1 año'
     ),
@@ -1028,6 +1014,7 @@ VALUES (
         'Sánchez',
         '3005678901',
         'pedro.sanchez@email.com',
+        'Pedr0$S1',
         220000,
         '3 meses'
     ),
@@ -1037,12 +1024,11 @@ VALUES (
         'Ramírez',
         '3006789012',
         'maria.ramirez@email.com',
+        'Maria987!',
         180000,
         '6 meses'
     );
 
 
 
-
-
-delete from detallecompra where iddetallecompra in (2,4,6);
+insert into contabilidad(ingresos,egresos) values (10000000,0);

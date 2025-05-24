@@ -15,20 +15,24 @@ import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 
 import main.java.com.Gym360.controller.CalculadoraNomina;
+import main.java.com.Gym360.model.classes.Contabilidad;
 import main.java.com.Gym360.model.classes.Empleado;
 import main.java.com.Gym360.model.classes.Nomina;
+import main.java.com.Gym360.model.classes.Transaccion;
+import main.java.com.Gym360.model.dao.ContabilidadDAO;
 import main.java.com.Gym360.model.dao.EmpleadoDAO;
 import main.java.com.Gym360.model.dao.NominaDAO;
+import main.java.com.Gym360.model.dao.TransaccionDAO;
 import main.java.com.Gym360.util.ui.CambiarIU;
 
 /**
  *
  * @author tutaa
  */
-//Todo: modificar nomina
+// Todo: modificar nomina
 public class PayrollUser extends javax.swing.JFrame {
 
-        public static int idUsuarioSeleccionado = -1;
+        public static int idEmpleadoSeleccionado = -1;
 
         /**
          * Creates new form ManageUsersScreen
@@ -41,7 +45,7 @@ public class PayrollUser extends javax.swing.JFrame {
                 this.setIconImage(Toolkit.getDefaultToolkit()
                                 .getImage(getClass().getResource("/main/resources/images/logo.png")));
                 cargarTablaNomina("");
-                CambiarIU.deshabilitarBotones(btnCalcularNomina);
+                CambiarIU.deshabilitarBotones(btnCalcularNomina, btnPagarNomina);
         }
 
         /**
@@ -54,7 +58,8 @@ public class PayrollUser extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
                 panelNominaEmpleados = new javax.swing.JPanel();
@@ -65,6 +70,8 @@ public class PayrollUser extends javax.swing.JFrame {
                 tTablaHistorialPagos = new javax.swing.JTable();
                 imgCalcularNomina = new javax.swing.JLabel();
                 btnCalcularNomina = new javax.swing.JButton();
+                imgPagarNomina = new javax.swing.JLabel();
+                btnPagarNomina = new javax.swing.JButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,7 +84,8 @@ public class PayrollUser extends javax.swing.JFrame {
                 pMenu.setBackground(new java.awt.Color(93, 0, 0));
                 pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setIcon(
+                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
                 lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
                 lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -100,16 +108,11 @@ public class PayrollUser extends javax.swing.JFrame {
                 tTablaHistorialPagos.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
                 tTablaHistorialPagos.setForeground(new java.awt.Color(20, 20, 20));
                 tTablaHistorialPagos.setModel(new javax.swing.table.DefaultTableModel(
-                        new Object [][] {
-                                {"Juan Pérez", "juan@email.com", " Administrador", "Activo"},
-                                {"María López ", "maria@email.com", "Empleado", "Inactivo"},
-                                {"Carlos Ruiz", "carlos@email.com", "Cliente", "Activo"},
-                                {null, null, null, null}
-                        },
-                        new String [] {
-                                "Nombre", "Correo", "Rol", "Estado"
-                        }
-                ));
+                                new Object[][] { { "Juan Pérez", "juan@email.com", " Administrador", "Activo" },
+                                                { "María López ", "maria@email.com", "Empleado", "Inactivo" },
+                                                { "Carlos Ruiz", "carlos@email.com", "Cliente", "Activo" },
+                                                { null, null, null, null } },
+                                new String[] { "Nombre", "Correo", "Rol", "Estado" }));
                 tTablaHistorialPagos.setShowGrid(false);
                 tTablaHistorialPagos.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,10 +121,13 @@ public class PayrollUser extends javax.swing.JFrame {
                 });
                 spTablaHistorialPagos.setViewportView(tTablaHistorialPagos);
 
-                panelNominaEmpleados.add(spTablaHistorialPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 820, 530));
+                panelNominaEmpleados.add(spTablaHistorialPagos,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 820, 530));
 
-                imgCalcularNomina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/calcularNomina.png"))); // NOI18N
-                panelNominaEmpleados.add(imgCalcularNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 650, -1, 50));
+                imgCalcularNomina.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/main/resources/images/calcularNomina.png"))); // NOI18N
+                panelNominaEmpleados.add(imgCalcularNomina,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 650, -1, 50));
 
                 btnCalcularNomina.setBackground(new java.awt.Color(93, 0, 0));
                 btnCalcularNomina.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
@@ -133,33 +139,79 @@ public class PayrollUser extends javax.swing.JFrame {
                                 btnCalcularNominaActionPerformed(evt);
                         }
                 });
-                panelNominaEmpleados.add(btnCalcularNomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 650, 270, 50));
+                panelNominaEmpleados.add(btnCalcularNomina,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 650, 270, 50));
+
+                imgPagarNomina.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/main/resources/images/pagarNomina.png"))); // NOI18N
+                panelNominaEmpleados.add(imgPagarNomina,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 650, -1, 50));
+
+                btnPagarNomina.setBackground(new java.awt.Color(93, 0, 0));
+                btnPagarNomina.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
+                btnPagarNomina.setForeground(new java.awt.Color(200, 200, 200));
+                btnPagarNomina.setText("     Pagar Nómina");
+                btnPagarNomina.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                btnPagarNomina.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnPagarNominaActionPerformed(evt);
+                        }
+                });
+                panelNominaEmpleados.add(btnPagarNomina,
+                                new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 650, 270, 50));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
-                layout.setHorizontalGroup(
-                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelNominaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 1011, Short.MAX_VALUE)
-                );
-                layout.setVerticalGroup(
-                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelNominaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
-                );
+                layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(panelNominaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 1011,
+                                                Short.MAX_VALUE));
+                layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(panelNominaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 760,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE));
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
+        private void btnPagarNominaActionPerformed(java.awt.event.ActionEvent evt) {
+
+                double nomina = calcularNomina();
+
+                ContabilidadDAO contDao = new ContabilidadDAO();
+                Contabilidad cont = new Contabilidad(0, 0, nomina);
+                contDao.insertar(cont);
+
+                // Transacción
+                EmpleadoDAO empDao = new EmpleadoDAO();
+                System.out.println(idEmpleadoSeleccionado);
+
+                Empleado empleado = empDao.obtenerPorId(idEmpleadoSeleccionado);
+                String nombreEmpleado = empleado.getNombre() + " " + empleado.getApellido();
+                var movimientos = contDao.obtenerTodos();
+
+                var ultimoMovimiento = movimientos.get(movimientos.size() - 1);
+
+                TransaccionDAO transDao = new TransaccionDAO();
+                Transaccion nuevaTransaccion = new Transaccion(0, ultimoMovimiento.getIdContabilidad(), String
+                                .format("Pago de nómina al empleado %s por un valor de $%.2f", nombreEmpleado, nomina));
+                transDao.insertar(nuevaTransaccion);
+                
+                idEmpleadoSeleccionado = -1;
+                cargarTablaNomina("");
+
+        }
+
         private void tTablaHistorialPagosMouseClicked(java.awt.event.MouseEvent evt) {
                 int selectedRow = tTablaHistorialPagos.getSelectedRow();
 
-                idUsuarioSeleccionado = Integer.parseInt(tTablaHistorialPagos.getValueAt(selectedRow, 6).toString());
-                if (idUsuarioSeleccionado != -1) {
-                        CambiarIU.habilitarBotones(btnCalcularNomina);
+                idEmpleadoSeleccionado = Integer.parseInt(tTablaHistorialPagos.getValueAt(selectedRow, 6).toString());
+                if (idEmpleadoSeleccionado != -1) {
+                        CambiarIU.habilitarBotones(btnCalcularNomina, btnPagarNomina);
                 }
         }
 
         private void btnCalcularNominaActionPerformed(java.awt.event.ActionEvent evt) {
                 calcularNomina();
+                idEmpleadoSeleccionado = -1;
 
         }
 
@@ -206,16 +258,16 @@ public class PayrollUser extends javax.swing.JFrame {
                 tTablaHistorialPagos.setModel(model);
         }
 
-        private void calcularNomina() {
+        private double calcularNomina() {
                 try {
                         EmpleadoDAO emDao = new EmpleadoDAO();
-                        Empleado empleadoSeleccionado = emDao.obtenerPorId(idUsuarioSeleccionado);
+                        Empleado empleadoSeleccionado = emDao.obtenerPorId(idEmpleadoSeleccionado);
 
                         if (empleadoSeleccionado == null) {
                                 JOptionPane.showMessageDialog(this,
                                                 "No se encontró información del empleado seleccionado.", "Error",
                                                 JOptionPane.ERROR_MESSAGE);
-                                return;
+                                return -1;
                         }
 
                         NominaDAO nominaDAO = new NominaDAO();
@@ -228,7 +280,7 @@ public class PayrollUser extends javax.swing.JFrame {
                                 JOptionPane.showMessageDialog(this,
                                                 "No se encontró información de nómina para este empleado.", "Error",
                                                 JOptionPane.ERROR_MESSAGE);
-                                return;
+                                return -1;
                         }
 
                         // Solicitar horas extra
@@ -265,7 +317,9 @@ public class PayrollUser extends javax.swing.JFrame {
                                                         + empleadoSeleccionado.getApellido(),
                                         JOptionPane.INFORMATION_MESSAGE);
 
-                        idUsuarioSeleccionado = -1;
+                        
+
+                        return salarioNeto;
 
                 } catch (NumberFormatException e) {
                         JOptionPane.showMessageDialog(this,
@@ -279,11 +333,14 @@ public class PayrollUser extends javax.swing.JFrame {
                                         "Error", JOptionPane.ERROR_MESSAGE);
                         e.printStackTrace();
                 }
+                return -1;
         }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnCalcularNomina;
+        private javax.swing.JButton btnPagarNomina;
         private javax.swing.JLabel imgCalcularNomina;
+        private javax.swing.JLabel imgPagarNomina;
         private javax.swing.JLabel lbBackButton;
         private javax.swing.JLabel lbHistorialPagos;
         private javax.swing.JPanel pMenu;

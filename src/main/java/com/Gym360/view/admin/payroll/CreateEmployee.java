@@ -51,7 +51,7 @@ public class CreateEmployee extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // Code">//GEN-BEGIN:initComponents
+        // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
                 panelEditarEmpleado = new javax.swing.JPanel();
@@ -96,8 +96,7 @@ public class CreateEmployee extends javax.swing.JFrame {
                 pMenu.setBackground(new java.awt.Color(93, 0, 0));
                 pMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-                lbBackButton.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
+                lbBackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/back.png"))); // NOI18N
                 lbBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
                 lbBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -120,8 +119,7 @@ public class CreateEmployee extends javax.swing.JFrame {
                 lbIdentificacion.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
                 lbIdentificacion.setForeground(new java.awt.Color(20, 20, 20));
                 lbIdentificacion.setText("Identificación:");
-                panelEditarEmpleado.add(lbIdentificacion,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, 40));
+                panelEditarEmpleado.add(lbIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, 40));
 
                 tfIdentificacion.setBackground(new java.awt.Color(231, 231, 231));
                 tfIdentificacion.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
@@ -132,13 +130,10 @@ public class CreateEmployee extends javax.swing.JFrame {
                                 tfIdentificacionKeyReleased(evt);
                         }
                 });
-                panelEditarEmpleado.add(tfIdentificacion,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 280, 40));
+                panelEditarEmpleado.add(tfIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 280, 40));
 
-                imgValidarIdentificacion.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
-                panelEditarEmpleado.add(imgValidarIdentificacion,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 30, 30));
+                imgValidarIdentificacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarEmpleado.add(imgValidarIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 30, 30));
 
                 lbNombre.setBackground(new java.awt.Color(0, 0, 0));
                 lbNombre.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
@@ -157,10 +152,8 @@ public class CreateEmployee extends javax.swing.JFrame {
                 });
                 panelEditarEmpleado.add(tfNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 280, 40));
 
-                imgValidarNombre.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
-                panelEditarEmpleado.add(imgValidarNombre,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 30, 30));
+                imgValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarEmpleado.add(imgValidarNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 30, 30));
 
                 lbApellido.setBackground(new java.awt.Color(0, 0, 0));
                 lbApellido.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
@@ -177,13 +170,10 @@ public class CreateEmployee extends javax.swing.JFrame {
                                 tfApellidoKeyReleased(evt);
                         }
                 });
-                panelEditarEmpleado.add(tfApellido,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 280, 40));
+                panelEditarEmpleado.add(tfApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 280, 40));
 
-                imgValidarApellido.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
-                panelEditarEmpleado.add(imgValidarApellido,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 30, 30));
+                imgValidarApellido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarEmpleado.add(imgValidarApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 30, 30));
 
                 lbCorreo.setBackground(new java.awt.Color(0, 0, 0));
                 lbCorreo.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
@@ -202,10 +192,8 @@ public class CreateEmployee extends javax.swing.JFrame {
                 });
                 panelEditarEmpleado.add(tfCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 280, 40));
 
-                imgValidarCorreo.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
-                panelEditarEmpleado.add(imgValidarCorreo,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 30, 30));
+                imgValidarCorreo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarEmpleado.add(imgValidarCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 30, 30));
 
                 lbCargo.setBackground(new java.awt.Color(0, 0, 0));
                 lbCargo.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
@@ -216,8 +204,7 @@ public class CreateEmployee extends javax.swing.JFrame {
                 cbCargo.setBackground(new java.awt.Color(231, 231, 231));
                 cbCargo.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
                 cbCargo.setForeground(new java.awt.Color(20, 20, 20));
-                cbCargo.setModel(new javax.swing.DefaultComboBoxModel<>(
-                                new String[] { "Seleccionar", "Admin", "Empleado", "Cliente" }));
+                cbCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Admin", "Empleado" }));
                 cbCargo.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 cbCargoActionPerformed(evt);
@@ -225,10 +212,8 @@ public class CreateEmployee extends javax.swing.JFrame {
                 });
                 panelEditarEmpleado.add(cbCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 280, 40));
 
-                imgValidarCargo.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
-                panelEditarEmpleado.add(imgValidarCargo,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 30, 30));
+                imgValidarCargo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarEmpleado.add(imgValidarCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 30, 30));
 
                 lbTelefono.setBackground(new java.awt.Color(0, 0, 0));
                 lbTelefono.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
@@ -245,13 +230,10 @@ public class CreateEmployee extends javax.swing.JFrame {
                                 tfTelefonoKeyReleased(evt);
                         }
                 });
-                panelEditarEmpleado.add(tfTelefono,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 280, 40));
+                panelEditarEmpleado.add(tfTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 280, 40));
 
-                imgValidarTelefono.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
-                panelEditarEmpleado.add(imgValidarTelefono,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 30, 30));
+                imgValidarTelefono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarEmpleado.add(imgValidarTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 30, 30));
 
                 lbSalario.setBackground(new java.awt.Color(0, 0, 0));
                 lbSalario.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
@@ -268,20 +250,16 @@ public class CreateEmployee extends javax.swing.JFrame {
                                 tfSalarioKeyReleased(evt);
                         }
                 });
-                panelEditarEmpleado.add(tfSalario,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 520, 280, 40));
+                panelEditarEmpleado.add(tfSalario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 520, 280, 40));
 
-                imgValidarSalario.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
-                panelEditarEmpleado.add(imgValidarSalario,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 520, 30, 30));
+                imgValidarSalario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarEmpleado.add(imgValidarSalario, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 520, 30, 30));
 
                 lbFechaContrato.setBackground(new java.awt.Color(0, 0, 0));
                 lbFechaContrato.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
                 lbFechaContrato.setForeground(new java.awt.Color(20, 20, 20));
                 lbFechaContrato.setText("Fecha Contrato:");
-                panelEditarEmpleado.add(lbFechaContrato,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 590, -1, 40));
+                panelEditarEmpleado.add(lbFechaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 590, -1, 40));
 
                 tfFechaContrato.setBackground(new java.awt.Color(231, 231, 231));
                 tfFechaContrato.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
@@ -292,18 +270,13 @@ public class CreateEmployee extends javax.swing.JFrame {
                                 tfFechaContratoKeyReleased(evt);
                         }
                 });
-                panelEditarEmpleado.add(tfFechaContrato,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 280, 40));
+                panelEditarEmpleado.add(tfFechaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 280, 40));
 
-                imgValidarFechaContrato.setIcon(
-                                new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
-                panelEditarEmpleado.add(imgValidarFechaContrato,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 590, 30, 30));
+                imgValidarFechaContrato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarEmpleado.add(imgValidarFechaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 590, 30, 30));
 
-                imgCrearEmpleado.setIcon(new javax.swing.ImageIcon(
-                                getClass().getResource("/main/resources/images/agregarUsuario.png"))); // NOI18N
-                panelEditarEmpleado.add(imgCrearEmpleado,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 660, 40, 60));
+                imgCrearEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/agregarUsuario.png"))); // NOI18N
+                panelEditarEmpleado.add(imgCrearEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 660, 40, 60));
 
                 btnCrearEmpleado.setBackground(new java.awt.Color(93, 0, 0));
                 btnCrearEmpleado.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
@@ -315,17 +288,18 @@ public class CreateEmployee extends javax.swing.JFrame {
                                 btnCrearEmpleadoActionPerformed(evt);
                         }
                 });
-                panelEditarEmpleado.add(btnCrearEmpleado,
-                                new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 660, 300, 60));
+                panelEditarEmpleado.add(btnCrearEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 660, 300, 60));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
-                layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(panelEditarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 675,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE));
-                layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(panelEditarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 749,
-                                                Short.MAX_VALUE));
+                layout.setHorizontalGroup(
+                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(panelEditarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)
+                );
+                layout.setVerticalGroup(
+                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(panelEditarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 749, Short.MAX_VALUE)
+                );
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents

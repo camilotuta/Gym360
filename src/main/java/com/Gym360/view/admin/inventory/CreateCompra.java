@@ -10,12 +10,16 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import main.java.com.Gym360.controller.Verificar;
+import main.java.com.Gym360.model.classes.Contabilidad;
 import main.java.com.Gym360.model.classes.DetalleCompra;
 import main.java.com.Gym360.model.classes.InventarioCompra;
 import main.java.com.Gym360.model.classes.Producto;
+import main.java.com.Gym360.model.classes.Transaccion;
+import main.java.com.Gym360.model.dao.ContabilidadDAO;
 import main.java.com.Gym360.model.dao.DetalleCompraDAO;
 import main.java.com.Gym360.model.dao.InventarioComprasDAO;
 import main.java.com.Gym360.model.dao.ProductoDAO;
+import main.java.com.Gym360.model.dao.TransaccionDAO;
 import main.java.com.Gym360.model.security.VerificarCampo;
 import main.java.com.Gym360.util.ui.CambiarIU;
 import main.java.com.Gym360.util.ui.ObtenerIU;
@@ -267,8 +271,8 @@ public class CreateCompra extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void cbProductoActionPerformed(java.awt.event.ActionEvent evt) {
-                mostrarErrores();
                 ponerDescripcionProducto();
+                mostrarErrores();
                 btnCrearCompra.setEnabled(datosValidos());
         }
 
@@ -409,6 +413,21 @@ public class CreateCompra extends javax.swing.JFrame {
                         DetalleCompra detalleCom = new DetalleCompra(0, ultimaCompra.getIdCompra(), idProducto,
                                         cantidad, precio);
                         detalleComDao.insertar(detalleCom);
+
+                        ContabilidadDAO contDao = new ContabilidadDAO();
+                        Contabilidad cont = new Contabilidad(0, 0, total);
+                        contDao.insertar(cont);
+
+                        // Transacción
+                        var movimientos = contDao.obtenerTodos();
+
+                        var ultimoMovimiento = movimientos.get(movimientos.size() - 1);
+
+                        TransaccionDAO transDao = new TransaccionDAO();
+                        Transaccion nuevaTransaccion = new Transaccion(0, ultimoMovimiento.getIdContabilidad(),
+                                        String.format("Compra de %s por el total de %.2f",
+                                                        datosProductoSeleccionado[1].trim(), total));
+                        transDao.insertar(nuevaTransaccion);
 
                         JOptionPane.showMessageDialog(this, "La compra se registró correctamente.",
                                         "Actualización exitosa", JOptionPane.INFORMATION_MESSAGE);

@@ -2,27 +2,40 @@ package main.java.com.Gym360.model.classes;
 
 public class Cliente {
 
-    private String id; // Cambiado a String
+    private String id; // cédula
     private String nombre;
     private String apellido;
     private String telefono;
     private String email;
+    private String contraseña; // Nuevo campo
     private double saldo;
-    private String tipoMembresia; // Tipo de membresía ('1 año', '3 meses', '6 meses')
+    private String tipoMembresia; // '1 año', '3 meses', '6 meses'
+    private String estado; // 'Activo', 'Inactivo'
 
-    // Constructor
+    // Constructor vacío
     public Cliente() {
     }
 
-    public Cliente(String id, String nombre, String apellido, String telefono, String email, double saldo,
-            String tipoMembresia) {
+    // Constructor completo
+    public Cliente(String id, String nombre, String apellido, String telefono, String email, String contraseña,
+            double saldo, String tipoMembresia, String estado) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
+        this.contraseña = contraseña;
         this.saldo = saldo;
         this.tipoMembresia = tipoMembresia;
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     // Getters y Setters
@@ -66,6 +79,14 @@ public class Cliente {
         this.email = email;
     }
 
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
     public double getSaldo() {
         return saldo;
     }
@@ -84,14 +105,8 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", email='" + email + '\'' +
-                ", saldo=" + saldo +
-                ", tipoMembresia='" + tipoMembresia + '\'' +
-                '}';
+        return "Cliente{" + "id='" + id + '\'' + ", nombre='" + nombre + '\'' + ", apellido='" + apellido + '\''
+                + ", telefono='" + telefono + '\'' + ", email='" + email + '\'' + ", contraseña='" + contraseña + '\''
+                + ", saldo=" + saldo + ", tipoMembresia='" + tipoMembresia + '\'' + '}';
     }
 }

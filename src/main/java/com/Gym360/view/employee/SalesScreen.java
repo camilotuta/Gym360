@@ -1,4 +1,4 @@
-// cSpell:ignore metodo
+// cSpell:ignore metodo efecty transaccion debito credito
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -18,14 +18,12 @@ import main.java.com.Gym360.model.classes.Contabilidad;
 import main.java.com.Gym360.model.classes.DetalleVenta;
 import main.java.com.Gym360.model.classes.Producto;
 import main.java.com.Gym360.model.classes.Transaccion;
-import main.java.com.Gym360.model.classes.Usuario;
 import main.java.com.Gym360.model.classes.Venta;
 import main.java.com.Gym360.model.dao.ClienteDAO;
 import main.java.com.Gym360.model.dao.ContabilidadDAO;
 import main.java.com.Gym360.model.dao.DetalleVentaDAO;
 import main.java.com.Gym360.model.dao.ProductoDAO;
 import main.java.com.Gym360.model.dao.TransaccionDAO;
-import main.java.com.Gym360.model.dao.UsuarioDAO;
 import main.java.com.Gym360.model.dao.VentaDAO;
 import main.java.com.Gym360.model.security.VerificarCampo;
 import main.java.com.Gym360.util.dates.Dates;

@@ -1,3 +1,4 @@
+//cSpell:ignore membresia telefono
 package main.java.com.Gym360.model.classes;
 
 public class Cliente {

@@ -1,5 +1,5 @@
 /*
-cSpell:ignore identificacion 
+cSpell:ignore identificacion actualizacion contáctanos
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -21,8 +21,6 @@ import main.java.com.Gym360.util.ui.ObtenerIU;
  *
  * @author tutaa
  */
-// TODO: enviar un correo con la modificación y mostrarle el usuario y
-// contraseña
 public class EditUser extends javax.swing.JFrame {
 
         /**

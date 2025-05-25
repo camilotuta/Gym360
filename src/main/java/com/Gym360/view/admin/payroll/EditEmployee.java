@@ -1,11 +1,10 @@
 /*
-cSpell:ignore identificacion telefono
+cSpell:ignore identificacion telefono contratacion
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package main.java.com.Gym360.view.admin.payroll;
 
-import main.java.com.Gym360.view.admin.users.*;
 import java.awt.Toolkit;
 
 import javax.swing.JOptionPane;

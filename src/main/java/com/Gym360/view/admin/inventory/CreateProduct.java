@@ -13,7 +13,6 @@ import main.java.com.Gym360.controller.Verificar;
 import main.java.com.Gym360.model.classes.Producto;
 import main.java.com.Gym360.model.dao.ProductoDAO;
 import main.java.com.Gym360.model.security.VerificarCampo;
-import main.java.com.Gym360.util.ui.CambiarIU;
 import main.java.com.Gym360.util.ui.ObtenerIU;
 
 /**

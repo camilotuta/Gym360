@@ -2,6 +2,7 @@ package main.java.com.Gym360.util.ui;
 
 import static main.java.com.Gym360.util.dates.Dates.formatter;
 import java.awt.Image;
+import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.JPasswordField;
@@ -12,26 +13,33 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.SwingUtilities;
+
 import raven.datetime.component.date.DatePicker;
 
 public class CambiarIU {
 
+<<<<<<< HEAD
     // Función para poner imagen en el JLabel
+=======
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
     public void setImageLabel(JLabel labelName, String path) {
-        new Thread(() -> {
-            ImageIcon image = new ImageIcon(getClass().getResource(path));
-            Icon icon = new ImageIcon(
-                    image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(),
-                            Image.SCALE_DEFAULT));
-            labelName.setIcon(icon);
-        }).start();
+        SwingUtilities.invokeLater(() -> {
+            URL imageURL = getClass().getResource(path);
+            if (imageURL != null) {
+                ImageIcon image = new ImageIcon(imageURL);
+                Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(),
+                        labelName.getHeight(), Image.SCALE_SMOOTH));
+                labelName.setIcon(icon);
+            } else {
+                System.err.println("No se encontró la imagen: " + path);
+            }
+        });
     }
 
     public static void setImageLabelSize(JLabel labelName, String root, int width, int height) {
         ImageIcon image = new ImageIcon(root);
-        Icon icon = new ImageIcon(
-                image.getImage().getScaledInstance(width, height,
-                        Image.SCALE_DEFAULT));
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
         labelName.setIcon(icon);
     }
 
@@ -72,7 +80,11 @@ public class CambiarIU {
     }
 
     // Función para vaciar el JComboBox
+<<<<<<< HEAD
     @SuppressWarnings({"rawtypes", "unchecked"})
+=======
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
     public static void vaciarCombo(JComboBox comboBox) {
         comboBox.removeAllItems();
         comboBox.addItem("Seleccionar");
@@ -90,6 +102,10 @@ public class CambiarIU {
     // Función para añadir un elemento al JComboBox
     public static void ponerSeleccionCombo(JComboBox comboBox, String elemento) {
         comboBox.setSelectedItem(elemento);
+<<<<<<< HEAD
 	comboBox.setSelectedItem(elemento);
+=======
+        comboBox.setSelectedItem(elemento);
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
     }
 }

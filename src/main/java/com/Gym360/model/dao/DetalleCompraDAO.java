@@ -1,3 +1,4 @@
+// cSpell:ignore descripcion
 package main.java.com.Gym360.model.dao;
 
 import java.sql.Connection;
@@ -23,6 +24,7 @@ public class DetalleCompraDAO {
 
         try {
             conn = DatabaseConnection.conectar();
+<<<<<<< HEAD
             String sql = "SELECT dc.idDetalleCompra, "
                     + "dc.idCompra, "
                     + "p.nombre AS nombreProducto, "
@@ -33,6 +35,13 @@ public class DetalleCompraDAO {
                     + "FROM DetalleCompra dc "
                     + "JOIN Producto p ON dc.idProducto = p.idProducto "
                     + "WHERE p.nombre LIKE ?"; // Filtro por nombre del producto
+=======
+            String sql = "SELECT dc.idDetalleCompra, " + "dc.idCompra, " + "p.nombre AS nombreProducto, "
+                    + "p.descripcion, " + "dc.cantidad, " + "dc.precioUnitario, "
+                    + "(dc.cantidad * dc.precioUnitario) AS totalProducto " + "FROM DetalleCompra dc "
+                    + "JOIN Producto p ON dc.idProducto = p.idProducto " + "WHERE p.nombre LIKE ?"; // Filtro por nombre
+                                                                                                    // del producto
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, "%" + filtro + "%"); // El "%" permite hacer una búsqueda parcial
@@ -68,6 +77,7 @@ public class DetalleCompraDAO {
 
         try {
             conn = DatabaseConnection.conectar();
+<<<<<<< HEAD
             String sql = "SELECT dc.idDetalleCompra, "
                     + "dc.idCompra, "
                     + "p.nombre AS nombreProducto, "
@@ -76,6 +86,11 @@ public class DetalleCompraDAO {
                     + "dc.precioUnitario, "
                     + "(dc.cantidad * dc.precioUnitario) AS totalProducto "
                     + "FROM DetalleCompra dc "
+=======
+            String sql = "SELECT dc.idDetalleCompra, " + "dc.idCompra, " + "p.nombre AS nombreProducto, "
+                    + "p.descripcion, " + "dc.cantidad, " + "dc.precioUnitario, "
+                    + "(dc.cantidad * dc.precioUnitario) AS totalProducto " + "FROM DetalleCompra dc "
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
                     + "JOIN Producto p ON dc.idProducto = p.idProducto";
 
             pst = conn.prepareStatement(sql);
@@ -105,7 +120,12 @@ public class DetalleCompraDAO {
 
     // Método para llenar un JTable con los detalles obtenidos
     public DefaultTableModel obtenerModeloTablaDetalles() {
+<<<<<<< HEAD
         String[] columnas = {"ID Detalle", "ID Compra", "Producto", "Descripción", "Cantidad", "Precio Unitario", "Total Producto"};
+=======
+        String[] columnas = { "ID Detalle", "ID Compra", "Producto", "Descripción", "Cantidad", "Precio Unitario",
+                "Total Producto" };
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
         List<Object[]> detalles = obtenerDetallesDeCompras();
 
         // Crear el modelo de la tabla
@@ -276,11 +296,18 @@ public class DetalleCompraDAO {
         return detalles;
     }
 
+<<<<<<< HEAD
     public List<DetalleCompra> obtenerPorCompra(int idCompra) {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
         List<DetalleCompra> detalles = new ArrayList<>();
+=======
+    public DetalleCompra obtenerPorIdCompra(int idCompra) {
+        Connection conn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
         try {
             conn = DatabaseConnection.conectar();
@@ -298,7 +325,11 @@ public class DetalleCompraDAO {
                 detalleCompra.setCantidad(rs.getInt("cantidad"));
                 detalleCompra.setPrecioUnitario(rs.getDouble("precioUnitario"));
 
+<<<<<<< HEAD
                 detalles.add(detalleCompra);
+=======
+                return detalleCompra;
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
             }
 
         } catch (SQLException e) {
@@ -307,7 +338,11 @@ public class DetalleCompraDAO {
             DatabaseConnection.cerrarConexion(conn, pst, rs);
         }
 
+<<<<<<< HEAD
         return detalles;
+=======
+        return null;
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
     }
 
     public List<DetalleCompra> obtenerPorProducto(int idProducto) {

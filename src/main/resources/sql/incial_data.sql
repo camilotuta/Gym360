@@ -226,22 +226,17 @@ VALUES (
         'Proveedor',
         450.00
     );
-INSERT INTO InventarioCompras (
-        idCompra,
-        fecha,
-        totalCompras,
-        idClienteProveedor
-    )
-VALUES (1, '2025-02-10', 500.00, 6),
-    (2, '2025-02-12', 150.75, 7),
-    (3, '2025-02-15', 980.00, 8),
-    (4, '2025-02-18', 120.00, 9),
-    (5, '2025-02-20', 450.00, 10),
-    (6, '2025-03-01', 700.50, 6),
-    (7, '2025-03-03', 340.90, 7),
-    (8, '2025-03-05', 1000.00, 8),
-    (9, '2025-03-06', 200.00, 9),
-    (10, '2025-03-07', 650.00, 10);
+INSERT INTO InventarioCompras (idCompra, fecha, totalCompras)
+VALUES (1, '2025-02-10', 500.00),
+    (2, '2025-02-12', 150.75),
+    (3, '2025-02-15', 980.00),
+    (4, '2025-02-18', 120.00),
+    (5, '2025-02-20', 450.00),
+    (6, '2025-03-01', 700.50),
+    (7, '2025-03-03', 340.90),
+    (8, '2025-03-05', 1000.00),
+    (9, '2025-03-06', 200.00),
+    (10, '2025-03-07', 650.00);
 INSERT INTO Venta (
         idVenta,
         fecha,
@@ -332,7 +327,10 @@ VALUES -- Contabilidad 1
     -- Contabilidad 10
     (19, 10, 'Cobro de proyecto'),
     (20, 10, 'Pago de impuestos');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 -- (Opcional) Reiniciar el contador de ID
 ALTER TABLE Usuario AUTO_INCREMENT = 1;
 -- Insertar Admins y Empleados
@@ -439,10 +437,14 @@ VALUES (
         'cliente',
         'carolina.rivas@empresa.com'
     );
+<<<<<<< HEAD
 
 
 
     INSERT INTO Producto (
+=======
+INSERT INTO Producto (
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
         nombre,
         descripcion,
         precioUnitario,
@@ -530,9 +532,13 @@ VALUES (
         'Accesorios',
         '0123456789012'
     );
+<<<<<<< HEAD
 
 
     INSERT INTO DetalleCompra (idCompra, idProducto, cantidad, precioUnitario)
+=======
+INSERT INTO DetalleCompra (idCompra, idProducto, cantidad, precioUnitario)
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 VALUES (1, 1, 2, 35.50),
     (1, 3, 1, 24.99),
     (2, 4, 5, 14.99),
@@ -542,4 +548,508 @@ VALUES (1, 1, 2, 35.50),
     (4, 7, 1, 599.99),
     (4, 8, 2, 199.99),
     (5, 9, 4, 69.99),
+<<<<<<< HEAD
     (5, 10, 20, 6.99);
+=======
+    (5, 10, 20, 6.99);
+INSERT INTO Usuario (
+        idEmpleado,
+        nombreUsuario,
+        contraseña,
+        cargo,
+        correo
+    )
+VALUES (
+        1002457890,
+        'carlos.perez',
+        'Carlos360@',
+        'empleado',
+        'carlos.perez@empresa.com'
+    ),
+    (
+        1003789123,
+        'maria.lopez',
+        'Maria360@',
+        'empleado',
+        'maria.lopez@empresa.com'
+    ),
+    (
+        1004567123,
+        'javier.garcia',
+        'Javier360@',
+        'empleado',
+        'javier.garcia@empresa.com'
+    ),
+    (
+        1005678234,
+        'ana.martinez',
+        'Ana360@',
+        'admin',
+        'ana.martinez@empresa.com'
+    ),
+    (
+        1006789345,
+        'lucia.rodriguez',
+        'Lucia360@',
+        'empleado',
+        'lucia.rodriguez@empresa.com'
+    ),
+    (
+        1007890456,
+        'david.fernandez',
+        'David360@',
+        'empleado',
+        'david.fernandez@empresa.com'
+    ),
+    (
+        1008901567,
+        'marta.gomez',
+        'Marta360@',
+        'empleado',
+        'marta.gomez@empresa.com'
+    ),
+    (
+        1010012678,
+        'sofia.sanchez',
+        'Sofia360@',
+        'admin',
+        'sofia.sanchez@empresa.com'
+    ),
+    (
+        1011123789,
+        'raul.hernandez',
+        'Raul360@',
+        'empleado',
+        'raul.hernandez@empresa.com'
+    ),
+    (
+        1012234890,
+        'elena.jimenez',
+        'Elena360@',
+        'empleado',
+        'elena.jimenez@empresa.com'
+    ),
+    (
+        1013345901,
+        'pedro.gonzalez',
+        'Pedro360@',
+        'cliente',
+        'pedro.gonzalez@empresa.com'
+    ),
+    (
+        1014456012,
+        'laura.morales',
+        'Laura360@',
+        'cliente',
+        'laura.morales@empresa.com'
+    ),
+    (
+        1015567123,
+        'andres.castillo',
+        'Andres360@',
+        'cliente',
+        'andres.castillo@empresa.com'
+    ),
+    (
+        1016678234,
+        'carolina.rivas',
+        'Carolina360@',
+        'cliente',
+        'carolina.rivas@empresa.com'
+    );
+INSERT INTO Empleado (
+        idEmpleado,
+        nombre,
+        apellido,
+        salario,
+        fechaContratacion,
+        cargo,
+        telefono,
+        email
+    )
+VALUES (
+        1002457890,
+        'Carlos',
+        'Perez',
+        2500000,
+        '2022-05-10',
+        'empleado',
+        '3001234567',
+        'carlos.perez@empresa.com'
+    ),
+    (
+        1003789123,
+        'Maria',
+        'Lopez',
+        2400000,
+        '2022-06-15',
+        'empleado',
+        '3007654321',
+        'maria.lopez@empresa.com'
+    ),
+    (
+        1005893211,
+        'Javier',
+        'Garcia',
+        2550000,
+        '2021-11-20',
+        'empleado',
+        '3012345678',
+        'javier.garcia@empresa.com'
+    ),
+    (
+        1008234567,
+        'Ana',
+        'Martinez',
+        3500000,
+        '2020-02-28',
+        'admin',
+        '3023456789',
+        'ana.martinez@empresa.com'
+    ),
+    (
+        1009345678,
+        'Lucia',
+        'Rodriguez',
+        2450000,
+        '2022-01-17',
+        'empleado',
+        '3034567890',
+        'lucia.rodriguez@empresa.com'
+    ),
+    (
+        1010456789,
+        'David',
+        'Fernandez',
+        2600000,
+        '2023-03-05',
+        'empleado',
+        '3045678901',
+        'david.fernandez@empresa.com'
+    ),
+    (
+        1011567890,
+        'Marta',
+        'Gomez',
+        2350000,
+        '2022-09-09',
+        'empleado',
+        '3056789012',
+        'marta.gomez@empresa.com'
+    ),
+    (
+        1012678901,
+        'Sofia',
+        'Sanchez',
+        3600000,
+        '2019-12-12',
+        'admin',
+        '3067890123',
+        'sofia.sanchez@empresa.com'
+    ),
+    (
+        1013789012,
+        'Raul',
+        'Hernandez',
+        2480000,
+        '2023-06-21',
+        'empleado',
+        '3078901234',
+        'raul.hernandez@empresa.com'
+    ),
+    (
+        1014890123,
+        'Elena',
+        'Jimenez',
+        2430000,
+        '2022-08-08',
+        'empleado',
+        '3089012345',
+        'elena.jimenez@empresa.com'
+    );
+DELETE FROM Usuario;
+INSERT INTO Usuario (
+        idEmpleado,
+        nombreUsuario,
+        contraseña,
+        cargo,
+        correo
+    )
+VALUES (
+        1002457890,
+        'carlos perez',
+        'Carlos360@',
+        'empleado',
+        'carlos.perez@empresa.com'
+    ),
+    (
+        1003789123,
+        'maria lopez',
+        'Maria360@',
+        'empleado',
+        'maria.lopez@empresa.com'
+    ),
+    (
+        1004567123,
+        'javier garcia',
+        'Javier360@',
+        'empleado',
+        'javier.garcia@empresa.com'
+    ),
+    (
+        1005678234,
+        'ana martinez',
+        'Ana360@',
+        'admin',
+        'ana.martinez@empresa.com'
+    ),
+    (
+        1006789345,
+        'lucia rodriguez',
+        'Lucia360@',
+        'empleado',
+        'lucia.rodriguez@empresa.com'
+    ),
+    (
+        1007890456,
+        'david fernandez',
+        'David360@',
+        'empleado',
+        'david.fernandez@empresa.com'
+    ),
+    (
+        1008901567,
+        'marta gomez',
+        'Marta360@',
+        'empleado',
+        'marta.gomez@empresa.com'
+    ),
+    (
+        1010012678,
+        'sofia sanchez',
+        'Sofia360@',
+        'admin',
+        'sofia.sanchez@empresa.com'
+    ),
+    (
+        1011123789,
+        'raul hernandez',
+        'Raul360@',
+        'empleado',
+        'raul.hernandez@empresa.com'
+    ),
+    (
+        1012234890,
+        'elena jimenez',
+        'Elena360@',
+        'empleado',
+        'elena.jimenez@empresa.com'
+    ),
+    (
+        1013345901,
+        'pedro gonzalez',
+        'Pedro360@',
+        'cliente',
+        'pedro.gonzalez@empresa.com'
+    ),
+    (
+        1014456012,
+        'laura morales',
+        'Laura360@',
+        'cliente',
+        'laura.morales@empresa.com'
+    ),
+    (
+        1015567123,
+        'andres castillo',
+        'Andres360@',
+        'cliente',
+        'andres.castillo@empresa.com'
+    ),
+    (
+        1016678234,
+        'carolina rivas',
+        'Carolina360@',
+        'cliente',
+        'carolina.rivas@empresa.com'
+    );
+INSERT INTO ClienteProveedor (
+        id,
+        nombre,
+        apellido,
+        telefono,
+        email,
+        tipo,
+        saldo
+    )
+VALUES (
+        '1723456789',
+        'María',
+        'Gómez',
+        '0987654321',
+        'maria.gomez@email.com',
+        'Cliente',
+        120.50
+    ),
+    (
+        '0912345678',
+        'Carlos',
+        'Pérez',
+        '0991122334',
+        'carlos.perez@email.com',
+        'Cliente',
+        0.00
+    ),
+    (
+        '1009876543',
+        'Andrea',
+        'Martínez',
+        '0989988776',
+        'andrea.martinez@email.com',
+        'Proveedor',
+        -250.00
+    ),
+    (
+        '0601122334',
+        'Luis',
+        'Ramírez',
+        '0977432100',
+        'luis.ramirez@email.com',
+        'Cliente',
+        45.75
+    ),
+    (
+        '1503344556',
+        'Sofía',
+        'Lozano',
+        '0983344556',
+        'sofia.lozano@email.com',
+        'Proveedor',
+        -180.00
+    ),
+    (
+        '1102233445',
+        'Jorge',
+        'Salazar',
+        '0961234567',
+        'jorge.salazar@email.com',
+        'Cliente',
+        75.00
+    ),
+    (
+        '0809876543',
+        'Daniela',
+        'Ríos',
+        '0987112233',
+        'daniela.rios@email.com',
+        'Proveedor',
+        -100.00
+    ),
+    (
+        '1301122334',
+        'Esteban',
+        'Cedeño',
+        '0955566778',
+        'esteban.cedeno@email.com',
+        'Cliente',
+        200.00
+    ),
+    (
+        '1712345678',
+        'Valeria',
+        'Navarrete',
+        '0986543210',
+        'valeria.navarrete@email.com',
+        'Proveedor',
+        -320.75
+    ),
+    (
+        '1205566778',
+        'Pedro',
+        'Mendoza',
+        '0969988776',
+        'pedro.mendoza@email.com',
+        'Cliente',
+        0.00
+    );
+
+DELETE FROM usuario
+WHERE LOWER(cargo) LIKE 'cliente';
+
+
+
+INSERT INTO Cliente(
+        id,
+        nombre,
+        apellido,
+        telefono,
+        email,
+        contraseña,
+        saldo,
+        tipo_membresia
+    )
+VALUES (
+        '1012345678',
+        'Juan',
+        'Pérez',
+        '3001234567',
+        'juan.perez@email.com',
+        'Juan123@',
+        150000,
+        '1 año'
+    ),
+    (
+        '1023456789',
+        'Ana',
+        'Gómez',
+        '3002345678',
+        'ana.gomez@email.com',
+        'Ana456$G',
+        250000,
+        '3 meses'
+    ),
+    (
+        '1034567890',
+        'Carlos',
+        'Martínez',
+        '3003456789',
+        'carlos.martinez@email.com',
+        'Carl0s!M',
+        80000,
+        '6 meses'
+    ),
+    (
+        '1045678901',
+        'Laura',
+        'López',
+        '3004567890',
+        'laura.lopez@email.com',
+        'Lau321&x',
+        40000,
+        '1 año'
+    ),
+    (
+        '1056789012',
+        'Pedro',
+        'Sánchez',
+        '3005678901',
+        'pedro.sanchez@email.com',
+        'Pedr0$S1',
+        220000,
+        '3 meses'
+    ),
+    (
+        '1067890123',
+        'María',
+        'Ramírez',
+        '3006789012',
+        'maria.ramirez@email.com',
+        'Maria987!',
+        180000,
+        '6 meses'
+    );
+
+
+
+insert into contabilidad(ingresos,egresos) values (10000000,0);
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3

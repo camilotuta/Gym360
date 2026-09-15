@@ -1,4 +1,4 @@
-// cSpell:ignore descripcion categoria codigo
+// cSpell:ignore descripcion categoria codigo telefono contratacion
 package main.java.com.Gym360.model.dao;
 
 import java.sql.Connection;
@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import main.java.com.Gym360.model.classes.Producto;
 import main.java.com.Gym360.util.database.DatabaseConnection;
 
@@ -21,7 +22,12 @@ public class ProductoDAO {
 
 		try {
 			conn = DatabaseConnection.conectar();
+<<<<<<< HEAD
 			String sql = "SELECT * FROM Producto WHERE nombre LIKE ? OR descripcion LIKE ?"; // Filtrar por nombre o descripción
+=======
+			String sql = "SELECT * FROM Producto WHERE nombre LIKE ? OR descripcion LIKE ?"; // Filtrar por nombre o
+																								// descripción
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, "%" + filtro + "%"); // Filtro para nombre
@@ -59,7 +65,11 @@ public class ProductoDAO {
 		try {
 			conn = DatabaseConnection.conectar();
 			String sql = "INSERT INTO Producto (nombre, descripcion, precioUnitario, stock, categoria, codigoBarras) "
+<<<<<<< HEAD
 				+ "VALUES (?, ?, ?, ?, ?, ?)";
+=======
+					+ "VALUES (?, ?, ?, ?, ?, ?)";
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
 			pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			pst.setString(1, producto.getNombre());
@@ -95,7 +105,11 @@ public class ProductoDAO {
 		try {
 			conn = DatabaseConnection.conectar();
 			String sql = "UPDATE Producto SET nombre = ?, descripcion = ?, precioUnitario = ?, "
+<<<<<<< HEAD
 				+ "stock = ?, categoria = ?, codigoBarras = ? WHERE idProducto = ?";
+=======
+					+ "stock = ?, categoria = ?, codigoBarras = ? WHERE idProducto = ?";
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, producto.getNombre());

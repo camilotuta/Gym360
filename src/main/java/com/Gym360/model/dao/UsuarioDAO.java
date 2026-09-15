@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import main.java.com.Gym360.model.classes.Usuario;
@@ -15,11 +14,11 @@ public class UsuarioDAO {
     public boolean insertar(Usuario usuario) {
         Connection conn = null;
         PreparedStatement pst = null;
-        ResultSet rs = null;
         boolean resultado = false;
 
         try {
             conn = DatabaseConnection.conectar();
+<<<<<<< HEAD
             String sql = "INSERT INTO Usuario (nombreUsuario, contraseña, cargo, correo, idEmpleado) VALUES (?, ?, ?, ?, ?)";
 
             pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -28,20 +27,29 @@ public class UsuarioDAO {
             pst.setString(3, usuario.getCargo());
             pst.setString(4, usuario.getCorreo());
             pst.setInt(5, usuario.getIdEmpleado());
+=======
+            // La clave primaria ahora es idEmpleado y no hay idUsuario como campo separado
+            String sql = "INSERT INTO Usuario (idEmpleado, nombreUsuario, contraseña, cargo, correo) VALUES (?, ?, ?, ?, ?)";
+
+            pst = conn.prepareStatement(sql);
+            pst.setInt(1, usuario.getIdEmpleado());
+            pst.setString(2, usuario.getNombreUsuario());
+            pst.setString(3, usuario.getContraseña());
+            pst.setString(4, usuario.getCargo());
+            pst.setString(5, usuario.getCorreo());
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
             int filas = pst.executeUpdate();
             if (filas > 0) {
                 resultado = true;
-                rs = pst.getGeneratedKeys();
-                if (rs.next()) {
-                    usuario.setIdUsuario(rs.getInt(1));
-                }
+                // Ya no necesitamos recuperar un ID generado, ya que usamos idEmpleado
+                // existente
             }
 
         } catch (SQLException e) {
             System.err.println("Error al insertar usuario: " + e.getMessage());
         } finally {
-            DatabaseConnection.cerrarConexion(conn, pst, rs);
+            DatabaseConnection.cerrarConexion(conn, pst, null);
         }
 
         return resultado;
@@ -54,7 +62,12 @@ public class UsuarioDAO {
 
         try {
             conn = DatabaseConnection.conectar();
+<<<<<<< HEAD
             String sql = "UPDATE Usuario SET nombreUsuario = ?, contraseña = ?, cargo = ?, correo = ?, idEmpleado = ? WHERE idUsuario = ?";
+=======
+            // Actualización usando idEmpleado como identificador
+            String sql = "UPDATE Usuario SET nombreUsuario = ?, contraseña = ?, cargo = ?, correo = ? WHERE idEmpleado = ?";
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, usuario.getNombreUsuario());
@@ -62,7 +75,10 @@ public class UsuarioDAO {
             pst.setString(3, usuario.getCargo());
             pst.setString(4, usuario.getCorreo());
             pst.setInt(5, usuario.getIdEmpleado());
+<<<<<<< HEAD
             pst.setInt(6, usuario.getIdUsuario());
+=======
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
             int filas = pst.executeUpdate();
             if (filas > 0) {
@@ -78,17 +94,22 @@ public class UsuarioDAO {
         return resultado;
     }
 
-    public boolean eliminar(int id) {
+    public boolean eliminar(int idEmpleado) {
         Connection conn = null;
         PreparedStatement pst = null;
         boolean resultado = false;
 
         try {
             conn = DatabaseConnection.conectar();
+<<<<<<< HEAD
             String sql = "DELETE FROM Usuario WHERE idUsuario = ?";
+=======
+            // Eliminación usando idEmpleado como identificador
+            String sql = "DELETE FROM Usuario WHERE idEmpleado = ?";
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
             pst = conn.prepareStatement(sql);
-            pst.setInt(1, id);
+            pst.setInt(1, idEmpleado);
 
             int filas = pst.executeUpdate();
             if (filas > 0) {
@@ -104,7 +125,7 @@ public class UsuarioDAO {
         return resultado;
     }
 
-    public Usuario obtenerPorId(int id) {
+    public Usuario obtenerPorIdEmpleado(int idEmpleado) {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
@@ -112,20 +133,28 @@ public class UsuarioDAO {
 
         try {
             conn = DatabaseConnection.conectar();
+<<<<<<< HEAD
             String sql = "SELECT * FROM Usuario WHERE idUsuario = ?";
+=======
+            // Búsqueda por idEmpleado en lugar de idUsuario
+            String sql = "SELECT * FROM Usuario WHERE idEmpleado = ?";
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
             pst = conn.prepareStatement(sql);
-            pst.setInt(1, id);
+            pst.setInt(1, idEmpleado);
 
             rs = pst.executeQuery();
             if (rs.next()) {
                 usuario = new Usuario();
-                usuario.setIdUsuario(rs.getInt("idUsuario"));
+                usuario.setIdEmpleado(rs.getInt("idEmpleado"));
                 usuario.setNombreUsuario(rs.getString("nombreUsuario"));
                 usuario.setContraseña(rs.getString("contraseña"));
                 usuario.setCargo(rs.getString("cargo"));
                 usuario.setCorreo(rs.getString("correo"));
+<<<<<<< HEAD
                 usuario.setIdEmpleado(rs.getInt("idEmpleado"));
+=======
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
             }
 
         } catch (SQLException e) {
@@ -152,18 +181,56 @@ public class UsuarioDAO {
 
             while (rs.next()) {
                 Usuario usuario = new Usuario();
-                usuario.setIdUsuario(rs.getInt("idUsuario"));
+                usuario.setIdEmpleado(rs.getInt("idEmpleado"));
                 usuario.setNombreUsuario(rs.getString("nombreUsuario"));
                 usuario.setContraseña(rs.getString("contraseña"));
                 usuario.setCargo(rs.getString("cargo"));
                 usuario.setCorreo(rs.getString("correo"));
+<<<<<<< HEAD
                 usuario.setIdEmpleado(rs.getInt("idEmpleado"));
+=======
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
                 usuarios.add(usuario);
             }
 
         } catch (SQLException e) {
             System.err.println("Error al obtener todos los usuarios: " + e.getMessage());
+        } finally {
+            DatabaseConnection.cerrarConexion(conn, pst, rs);
+        }
+
+        return usuarios;
+    }
+
+    public List<Usuario> obtenerPorNombreUsuarioFiltro(String filtro) {
+        Connection conn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        List<Usuario> usuarios = new ArrayList<>();
+
+        try {
+            conn = DatabaseConnection.conectar();
+            // Usamos LIKE para hacer una búsqueda parcial en el nombre de usuario
+            String sql = "SELECT * FROM Usuario WHERE nombreUsuario LIKE ?";
+
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, "%" + filtro + "%"); // Agregamos % para buscar el filtro en cualquier parte del nombre
+
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setIdEmpleado(rs.getInt("idEmpleado"));
+                usuario.setNombreUsuario(rs.getString("nombreUsuario"));
+                usuario.setContraseña(rs.getString("contraseña"));
+                usuario.setCargo(rs.getString("cargo"));
+                usuario.setCorreo(rs.getString("correo"));
+
+                usuarios.add(usuario);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error al obtener usuarios por filtro de nombre: " + e.getMessage());
         } finally {
             DatabaseConnection.cerrarConexion(conn, pst, rs);
         }
@@ -187,12 +254,15 @@ public class UsuarioDAO {
             rs = pst.executeQuery();
             if (rs.next()) {
                 usuario = new Usuario();
-                usuario.setIdUsuario(rs.getInt("idUsuario"));
+                usuario.setIdEmpleado(rs.getInt("idEmpleado"));
                 usuario.setNombreUsuario(rs.getString("nombreUsuario"));
                 usuario.setContraseña(rs.getString("contraseña"));
                 usuario.setCargo(rs.getString("cargo"));
                 usuario.setCorreo(rs.getString("correo"));
+<<<<<<< HEAD
                 usuario.setIdEmpleado(rs.getInt("idEmpleado"));
+=======
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
             }
 
         } catch (SQLException e) {
@@ -220,12 +290,15 @@ public class UsuarioDAO {
             rs = pst.executeQuery();
             while (rs.next()) {
                 Usuario usuario = new Usuario();
-                usuario.setIdUsuario(rs.getInt("idUsuario"));
+                usuario.setIdEmpleado(rs.getInt("idEmpleado"));
                 usuario.setNombreUsuario(rs.getString("nombreUsuario"));
                 usuario.setContraseña(rs.getString("contraseña"));
                 usuario.setCargo(rs.getString("cargo"));
                 usuario.setCorreo(rs.getString("correo"));
+<<<<<<< HEAD
                 usuario.setIdEmpleado(rs.getInt("idEmpleado"));
+=======
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 
                 usuarios.add(usuario);
             }
@@ -238,4 +311,40 @@ public class UsuarioDAO {
 
         return usuarios;
     }
+<<<<<<< HEAD
 }
+=======
+
+    public Usuario obtenerPorCorreo(String correo) {
+        Connection conn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        Usuario usuario = null;
+
+        try {
+            conn = DatabaseConnection.conectar();
+            String sql = "SELECT * FROM Usuario WHERE correo = ?";
+
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, correo);
+
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                usuario = new Usuario();
+                usuario.setIdEmpleado(rs.getInt("idEmpleado"));
+                usuario.setNombreUsuario(rs.getString("nombreUsuario"));
+                usuario.setContraseña(rs.getString("contraseña"));
+                usuario.setCargo(rs.getString("cargo"));
+                usuario.setCorreo(rs.getString("correo"));
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error al obtener usuario por correo: " + e.getMessage());
+        } finally {
+            DatabaseConnection.cerrarConexion(conn, pst, rs);
+        }
+
+        return usuario;
+    }
+}
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3

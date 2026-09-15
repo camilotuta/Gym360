@@ -3,16 +3,16 @@
 -- =========================================
 DROP TABLE IF EXISTS Empleado;
 CREATE TABLE Empleado (
-    idEmpleado INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombre               TEXT NOT NULL,
-    apellido             TEXT NOT NULL,
-    salario              REAL,
-    fechaContratacion    TEXT,       -- Se puede guardar como 'YYYY-MM-DD' o similar
-    cargo                TEXT,
-    telefono             TEXT,
-    email                TEXT
+    idEmpleado INTEGER PRIMARY KEY,
+    -- Ya no AUTOINCREMENT
+    nombre TEXT NOT NULL,
+    apellido TEXT NOT NULL,
+    salario REAL,
+    fechaContratacion TEXT,
+    cargo TEXT,
+    telefono TEXT,
+    email TEXT
 );
-
 -- =========================================
 -- 2. Tabla Nomina
 --  (Relacionada con Empleado)
@@ -31,15 +31,25 @@ CREATE TABLE Nomina (
 -- =========================================
 -- 3. Tabla ClienteProveedor
 -- =========================================
-DROP TABLE IF EXISTS ClienteProveedor;
-CREATE TABLE ClienteProveedor (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombre    TEXT NOT NULL,
-    apellido  TEXT NOT NULL,
-    telefono  TEXT,
-    email     TEXT,
-    tipo      TEXT,   -- 'Cliente' o 'Proveedor'
-    saldo     REAL
+ALTER TABLE Cliente
+ALTER COLUMN estado
+SET DEFAULT 'inactivo';
+ALTER TABLE Cliente
+ADD COLUMN estado TEXT;
+DROP TABLE IF EXISTS Cliente;
+CREATE TABLE Cliente (
+    id TEXT PRIMARY KEY,
+    -- Ahora se usa como cédula
+    nombre TEXT NOT NULL,
+    apellido TEXT NOT NULL,
+    telefono TEXT,
+    email TEXT,
+    contraseña TEXT NOT NULL,
+    -- Nuevo campo para almacenar la contraseña
+    saldo REAL,
+    tipo_membresia TEXT CHECK(
+        tipo_membresia IN ('1 año', '3 meses', '6 meses')
+    )
 );
 
 -- =========================================
@@ -50,9 +60,7 @@ DROP TABLE IF EXISTS InventarioCompras;
 CREATE TABLE InventarioCompras (
     idCompra           INTEGER PRIMARY KEY AUTOINCREMENT,
     fecha              TEXT,
-    totalCompras       REAL,
-    idClienteProveedor INTEGER, -- FK a ClienteProveedor
-    FOREIGN KEY (idClienteProveedor) REFERENCES ClienteProveedor(id)
+    totalCompras       REAL
 );
 
 -- =========================================
@@ -78,8 +86,9 @@ DROP TABLE IF EXISTS DetalleVenta;
 CREATE TABLE DetalleVenta (
     idDetalleVenta INTEGER PRIMARY KEY AUTOINCREMENT,
     idVenta        INTEGER NOT NULL,  -- FK a Venta
-    producto       TEXT NOT NULL,
-    FOREIGN KEY (idVenta) REFERENCES Venta(idVenta)
+    idProducto       INTEGER NOT NULL,
+    FOREIGN KEY (idVenta) REFERENCES Venta(idVenta),
+    FOREIGN KEY (idVenta) REFERENCES Producto(idProducto)
 );
 
 -- =========================================
@@ -154,14 +163,71 @@ CREATE TABLE DetalleVenta (
 
 
 DROP TABLE IF EXISTS Usuario;
+<<<<<<< HEAD
 CREATE TABLE Usuario (
     idUsuario INTEGER PRIMARY KEY AUTOINCREMENT,
+=======
+
+CREATE TABLE Usuario (
+    idEmpleado INTEGER PRIMARY KEY, -- actúa como cédula, PK y es único por definición
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
     nombreUsuario TEXT NOT NULL UNIQUE,
     contraseña TEXT NOT NULL,
     cargo TEXT NOT NULL,
     correo TEXT NOT NULL UNIQUE,
+<<<<<<< HEAD
     -- Ejemplos: 'admin', 'vendedor', 'supervisor', 'gerente', etc.
     idEmpleado INTEGER NULL,
     -- FK a la tabla Empleado (campo idEmpleado)
     FOREIGN KEY (idEmpleado) REFERENCES Empleado(idEmpleado)
 );
+=======
+    FOREIGN KEY (idEmpleado) REFERENCES Empleado(idEmpleado)
+);
+
+
+
+
+
+CREATE TABLE Cliente_temp (
+    id TEXT PRIMARY KEY,
+    nombre TEXT,
+    apellido TEXT,
+    telefono TEXT,
+    email TEXT,
+    contraseña TEXT,
+    saldo REAL,
+    tipo_membresia TEXT,
+    estado TEXT DEFAULT 'inactivo'
+);
+
+
+INSERT INTO Cliente_temp (
+        id,
+        nombre,
+        apellido,
+        telefono,
+        email,
+        contraseña,
+        saldo,
+        tipo_membresia,
+        estado
+    )
+SELECT id,
+    nombre,
+    apellido,
+    telefono,
+    email,
+    contraseña,
+    saldo,
+    tipo_membresia,
+    COALESCE(estado, 'inactivo')
+FROM Cliente;
+
+
+DROP TABLE Cliente;
+
+
+ALTER TABLE Cliente_temp
+    RENAME TO Cliente;
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3

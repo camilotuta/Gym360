@@ -1,6 +1,5 @@
 package main.java.com.Gym360.model.dao;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +21,7 @@ public class NominaDAO {
 		try {
 			conn = DatabaseConnection.conectar();
 			String sql = "INSERT INTO Nomina (fecha, salarioBase, deducciones, bonificaciones, idEmpleado) "
-				+ "VALUES (?, ?, ?, ?, ?)";
+					+ "VALUES (?, ?, ?, ?, ?)";
 
 			pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			pst.setString(1, nomina.getFecha());
@@ -49,6 +48,63 @@ public class NominaDAO {
 		return resultado;
 	}
 
+	public Nomina obtenerPorEmpleado(int idEmpleado) {
+		Connection conn = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		Nomina nomina = null;
+
+		try {
+			conn = DatabaseConnection.conectar();
+			String sql = "SELECT * FROM Nomina WHERE idEmpleado = ?";
+
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, idEmpleado);
+			rs = pst.executeQuery();
+
+			if (rs.next()) {
+				nomina = new Nomina();
+				nomina.setIdNomina(rs.getInt("idNomina"));
+				nomina.setFecha(rs.getString("fecha"));
+				nomina.setSalarioBase(rs.getDouble("salarioBase"));
+				nomina.setDeducciones(rs.getDouble("deducciones"));
+				nomina.setBonificaciones(rs.getDouble("bonificaciones"));
+				nomina.setIdEmpleado(rs.getInt("idEmpleado"));
+			}
+
+		} catch (SQLException e) {
+			System.err.println("Error al obtener nómina por empleado: " + e.getMessage());
+		} finally {
+			DatabaseConnection.cerrarConexion(conn, pst, rs);
+		}
+
+		return nomina;
+	}
+
+	public boolean eliminarPorEmpleado(int idEmpleado) {
+		Connection conn = null;
+		PreparedStatement pst = null;
+		boolean resultado = false;
+
+		try {
+			conn = DatabaseConnection.conectar();
+			String sql = "DELETE FROM Nomina WHERE idEmpleado = ?";
+
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, idEmpleado);
+
+			int filas = pst.executeUpdate();
+			resultado = filas > 0;
+
+		} catch (SQLException e) {
+			System.err.println("Error al eliminar nóminas del empleado: " + e.getMessage());
+		} finally {
+			DatabaseConnection.cerrarConexion(conn, pst, null);
+		}
+
+		return resultado;
+	}
+
 	public boolean actualizar(Nomina nomina) {
 		Connection conn = null;
 		PreparedStatement pst = null;
@@ -57,7 +113,7 @@ public class NominaDAO {
 		try {
 			conn = DatabaseConnection.conectar();
 			String sql = "UPDATE Nomina SET fecha = ?, salarioBase = ?, deducciones = ?, "
-				+ "bonificaciones = ?, idEmpleado = ? WHERE idNomina = ?";
+					+ "bonificaciones = ?, idEmpleado = ? WHERE idNomina = ?";
 
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, nomina.getFecha());

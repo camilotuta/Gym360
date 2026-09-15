@@ -18,7 +18,11 @@ import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import main.java.com.Gym360.controller.Verificar;
+<<<<<<< HEAD
 import main.java.com.Gym360.model.classes.DatosUsuario;
+=======
+import main.java.com.Gym360.model.security.DatosUsuario;
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
 import main.java.com.Gym360.model.security.Desencriptar;
 import main.java.com.Gym360.util.ui.ObtenerIU;
 
@@ -31,6 +35,8 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    public static String idGuardar = "";
+
     public Login() {
         initComponents();
         this.setTitle("Ingresar");
@@ -171,11 +177,15 @@ public class Login extends javax.swing.JFrame {
 
         if (Ingresar.UsuarioValido(correo, contraseña)) {
 
+<<<<<<< HEAD
             if (Ingresar.obtenerCargo(correo, contraseña).equals("cliente")) {
                 DashboardClientScreen dashboardC = new DashboardClientScreen();
                 dashboardC.setVisible(true);
                 this.setVisible(false);
             } else if (Ingresar.obtenerCargo(correo, contraseña).equals("empleado")) {
+=======
+            if (Ingresar.obtenerCargo(correo, contraseña).equals("empleado")) {
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
                 DashboardEmployeeScreen dashboardE = new DashboardEmployeeScreen();
                 dashboardE.setVisible(true);
                 this.setVisible(false);
@@ -187,6 +197,13 @@ public class Login extends javax.swing.JFrame {
 
             guardarDatos();
 
+<<<<<<< HEAD
+=======
+        } else if (Ingresar.ClienteValido(correo, contraseña)) {
+            DashboardClientScreen dashboardC = new DashboardClientScreen();
+            dashboardC.setVisible(true);
+            this.setVisible(false);
+>>>>>>> 70a63f6aa761c84ebea74d562a15e606472b20a3
         } else {
 
             JOptionPane.showMessageDialog(this, "CORREO O CONTRASEÑA NO VALIDOS \n", "AVISO!",

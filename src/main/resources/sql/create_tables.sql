@@ -107,18 +107,6 @@ CREATE TABLE Transaccion (
     FOREIGN KEY (idContabilidad) REFERENCES Contabilidad(idContabilidad)
 );
 
-DROP TABLE IF EXISTS Usuario;
-CREATE TABLE Usuario (
-    idUsuario INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombreUsuario TEXT NOT NULL UNIQUE,
-    contraseña TEXT NOT NULL,
-    cargo TEXT NOT NULL,
-    -- Ejemplos: 'admin', 'vendedor', 'supervisor', 'gerente', etc.
-    idEmpleado INTEGER,
-    -- FK a la tabla Empleado (campo idEmpleado)
-    FOREIGN KEY (idEmpleado) REFERENCES Empleado(idEmpleado)
-);
-
 
 -- =========================================
 -- Tabla Producto
@@ -162,4 +150,18 @@ CREATE TABLE DetalleVenta (
     precioUnitario REAL NOT NULL,
     FOREIGN KEY (idVenta) REFERENCES Venta(idVenta),
     FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
+);
+
+
+DROP TABLE IF EXISTS Usuario;
+CREATE TABLE Usuario (
+    idUsuario INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombreUsuario TEXT NOT NULL UNIQUE,
+    contraseña TEXT NOT NULL,
+    cargo TEXT NOT NULL,
+    correo TEXT NOT NULL UNIQUE,
+    -- Ejemplos: 'admin', 'vendedor', 'supervisor', 'gerente', etc.
+    idEmpleado INTEGER NULL,
+    -- FK a la tabla Empleado (campo idEmpleado)
+    FOREIGN KEY (idEmpleado) REFERENCES Empleado(idEmpleado)
 );

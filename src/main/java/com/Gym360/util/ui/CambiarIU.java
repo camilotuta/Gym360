@@ -1,12 +1,13 @@
 package main.java.com.Gym360.util.ui;
 
-import static main.java.com.casinoRoyal.util.dates.Dates.formatter;
+import static main.java.com.Gym360.util.dates.Dates.formatter;
 import java.awt.Image;
 
 import javax.swing.Icon;
 import javax.swing.JPasswordField;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -14,6 +15,8 @@ import javax.swing.JTextPane;
 import raven.datetime.component.date.DatePicker;
 
 public class CambiarIU {
+
+    // Función para poner imagen en el JLabel
     public void setImageLabel(JLabel labelName, String path) {
         new Thread(() -> {
             ImageIcon image = new ImageIcon(getClass().getResource(path));
@@ -66,5 +69,27 @@ public class CambiarIU {
         for (JButton b : args) {
             b.setEnabled(true);
         }
+    }
+
+    // Función para vaciar el JComboBox
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public static void vaciarCombo(JComboBox comboBox) {
+        comboBox.removeAllItems();
+        comboBox.addItem("Seleccionar");
+    }
+
+    // Función para poner el índice seleccionado en el JComboBox
+    public static void ponerIndiceCombo(JComboBox comboBox, int indice) {
+        if (indice >= 0 && indice < comboBox.getItemCount()) {
+            comboBox.setSelectedIndex(indice);
+        } else {
+            System.out.println("Índice fuera de rango.");
+        }
+    }
+
+    // Función para añadir un elemento al JComboBox
+    public static void ponerSeleccionCombo(JComboBox comboBox, String elemento) {
+        comboBox.setSelectedItem(elemento);
+	comboBox.setSelectedItem(elemento);
     }
 }

@@ -251,31 +251,31 @@ public class DashboardEmployeeScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-		// TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+		
 		Login login = new Login();
 		login.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarVentaActionPerformed
-		// TODO add your handling code here:
+        private void btnRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {
+		
 		SalesScreen ss = new SalesScreen();
 		ss.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnRegistrarVentaActionPerformed
+        }
 
-        private void btnRegistrarAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarAsistenciaActionPerformed
+        private void btnRegistrarAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {
 		AttendanceRegisterScreen at = new AttendanceRegisterScreen();
 		at.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnRegistrarAsistenciaActionPerformed
+        }
 
-        private void btnConsultarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarClienteActionPerformed
+        private void btnConsultarClienteActionPerformed(java.awt.event.ActionEvent evt) {
 		ClientManagementScreen cc = new ClientManagementScreen();
 		cc.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnConsultarClienteActionPerformed
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

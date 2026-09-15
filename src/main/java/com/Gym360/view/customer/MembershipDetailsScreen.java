@@ -1,4 +1,4 @@
-//cSpell:ignore membresia expiracion renovacion
+// cSpell:ignore membresia expiracion renovacion
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -209,24 +209,24 @@ public class MembershipDetailsScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-		// TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+		
 		DashboardClientScreen dc = new DashboardClientScreen();
 		dc.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
+        private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {
 		PaymentHistoryScreen ph = new PaymentHistoryScreen();
 		ph.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnVerHistorialActionPerformed
+        }
 
-        private void btnActualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarDatosActionPerformed
+        private void btnActualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {
 		EditClient ec = new EditClient();
 		ec.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnActualizarDatosActionPerformed
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

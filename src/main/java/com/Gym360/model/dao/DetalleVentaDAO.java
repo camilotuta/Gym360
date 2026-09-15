@@ -20,7 +20,7 @@ public class DetalleVentaDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "INSERT INTO DetallesVenta (idVenta, idProducto, cantidad, precioUnitario) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO DetalleVenta (idVenta, idProducto, cantidad, precioUnitario) VALUES (?, ?, ?, ?)";
 
             pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pst.setInt(1, detalleVenta.getIdVenta());
@@ -53,7 +53,7 @@ public class DetalleVentaDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "UPDATE DetallesVenta SET idVenta = ?, idProducto = ?, cantidad = ?, precioUnitario = ? WHERE idDetalleVenta = ?";
+            String sql = "UPDATE DetalleVenta SET idVenta = ?, idProducto = ?, cantidad = ?, precioUnitario = ? WHERE idDetalleVenta = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setInt(1, detalleVenta.getIdVenta());
@@ -83,7 +83,7 @@ public class DetalleVentaDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "DELETE FROM DetallesVenta WHERE idDetalleVenta = ?";
+            String sql = "DELETE FROM DetalleVenta WHERE idDetalleVenta = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setInt(1, id);
@@ -110,7 +110,7 @@ public class DetalleVentaDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "SELECT * FROM DetallesVenta WHERE idDetalleVenta = ?";
+            String sql = "SELECT * FROM DetalleVenta WHERE idDetalleVenta = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setInt(1, id);
@@ -142,7 +142,7 @@ public class DetalleVentaDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "SELECT * FROM DetallesVenta WHERE idVenta = ?";
+            String sql = "SELECT * FROM DetalleVenta WHERE idVenta = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setInt(1, idVenta);
@@ -176,7 +176,7 @@ public class DetalleVentaDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "SELECT * FROM DetallesVenta";
+            String sql = "SELECT * FROM DetalleVenta";
 
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();

@@ -1,4 +1,4 @@
-//cSpell:ignore membresia expiracion rapidas dias
+// cSpell:ignore membresia expiracion rapidas dias
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -235,29 +235,29 @@ public class DashboardClientScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-		// TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+		
 		Login login = new Login();
 		login.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnRenovarMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenovarMembresiaActionPerformed
-		// TODO add your handling code here:
+        private void btnRenovarMembresiaActionPerformed(java.awt.event.ActionEvent evt) {
+		
 		MembershipDetailsScreen md = new MembershipDetailsScreen();
 		md.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnRenovarMembresiaActionPerformed
+        }
 
-        private void btnVerClasesDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerClasesDisponiblesActionPerformed
+        private void btnVerClasesDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {
 		ClassScheduleScreen cs = new ClassScheduleScreen();
 		cs.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_btnVerClasesDisponiblesActionPerformed
+        }
 
-        private void btnContactarSoporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactarSoporteActionPerformed
+        private void btnContactarSoporteActionPerformed(java.awt.event.ActionEvent evt) {
 		
-        }//GEN-LAST:event_btnContactarSoporteActionPerformed
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

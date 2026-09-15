@@ -1,7 +1,7 @@
 
 // cSpell:ignore desencriptar 
 
-package main.java.com.casinoRoyal.core.security;
+package main.java.com.Gym360.model.security;
 
 public class Desencriptar {
 

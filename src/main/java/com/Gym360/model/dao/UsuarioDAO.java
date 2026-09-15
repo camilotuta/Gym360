@@ -20,13 +20,14 @@ public class UsuarioDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "INSERT INTO Usuarios (nombreUsuario, contraseña, cargo, idEmpleado) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO Usuario (nombreUsuario, contraseña, cargo, correo, idEmpleado) VALUES (?, ?, ?, ?, ?)";
 
             pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pst.setString(1, usuario.getNombreUsuario());
             pst.setString(2, usuario.getContraseña());
             pst.setString(3, usuario.getCargo());
-            pst.setInt(4, usuario.getIdEmpleado());
+            pst.setString(4, usuario.getCorreo());
+            pst.setInt(5, usuario.getIdEmpleado());
 
             int filas = pst.executeUpdate();
             if (filas > 0) {
@@ -53,14 +54,15 @@ public class UsuarioDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "UPDATE Usuarios SET nombreUsuario = ?, contraseña = ?, cargo = ?, idEmpleado = ? WHERE idUsuario = ?";
+            String sql = "UPDATE Usuario SET nombreUsuario = ?, contraseña = ?, cargo = ?, correo = ?, idEmpleado = ? WHERE idUsuario = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, usuario.getNombreUsuario());
             pst.setString(2, usuario.getContraseña());
             pst.setString(3, usuario.getCargo());
-            pst.setInt(4, usuario.getIdEmpleado());
-            pst.setInt(5, usuario.getIdUsuario());
+            pst.setString(4, usuario.getCorreo());
+            pst.setInt(5, usuario.getIdEmpleado());
+            pst.setInt(6, usuario.getIdUsuario());
 
             int filas = pst.executeUpdate();
             if (filas > 0) {
@@ -83,7 +85,7 @@ public class UsuarioDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "DELETE FROM Usuarios WHERE idUsuario = ?";
+            String sql = "DELETE FROM Usuario WHERE idUsuario = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setInt(1, id);
@@ -110,7 +112,7 @@ public class UsuarioDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "SELECT * FROM Usuarios WHERE idUsuario = ?";
+            String sql = "SELECT * FROM Usuario WHERE idUsuario = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setInt(1, id);
@@ -122,6 +124,7 @@ public class UsuarioDAO {
                 usuario.setNombreUsuario(rs.getString("nombreUsuario"));
                 usuario.setContraseña(rs.getString("contraseña"));
                 usuario.setCargo(rs.getString("cargo"));
+                usuario.setCorreo(rs.getString("correo"));
                 usuario.setIdEmpleado(rs.getInt("idEmpleado"));
             }
 
@@ -142,7 +145,7 @@ public class UsuarioDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "SELECT * FROM Usuarios";
+            String sql = "SELECT * FROM Usuario";
 
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -153,6 +156,7 @@ public class UsuarioDAO {
                 usuario.setNombreUsuario(rs.getString("nombreUsuario"));
                 usuario.setContraseña(rs.getString("contraseña"));
                 usuario.setCargo(rs.getString("cargo"));
+                usuario.setCorreo(rs.getString("correo"));
                 usuario.setIdEmpleado(rs.getInt("idEmpleado"));
 
                 usuarios.add(usuario);
@@ -175,7 +179,7 @@ public class UsuarioDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "SELECT * FROM Usuarios WHERE nombreUsuario = ?";
+            String sql = "SELECT * FROM Usuario WHERE nombreUsuario = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, nombreUsuario);
@@ -187,6 +191,7 @@ public class UsuarioDAO {
                 usuario.setNombreUsuario(rs.getString("nombreUsuario"));
                 usuario.setContraseña(rs.getString("contraseña"));
                 usuario.setCargo(rs.getString("cargo"));
+                usuario.setCorreo(rs.getString("correo"));
                 usuario.setIdEmpleado(rs.getInt("idEmpleado"));
             }
 
@@ -207,7 +212,7 @@ public class UsuarioDAO {
 
         try {
             conn = DatabaseConnection.conectar();
-            String sql = "SELECT * FROM Usuarios WHERE cargo = ?";
+            String sql = "SELECT * FROM Usuario WHERE cargo = ?";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, cargo);
@@ -219,6 +224,7 @@ public class UsuarioDAO {
                 usuario.setNombreUsuario(rs.getString("nombreUsuario"));
                 usuario.setContraseña(rs.getString("contraseña"));
                 usuario.setCargo(rs.getString("cargo"));
+                usuario.setCorreo(rs.getString("correo"));
                 usuario.setIdEmpleado(rs.getInt("idEmpleado"));
 
                 usuarios.add(usuario);

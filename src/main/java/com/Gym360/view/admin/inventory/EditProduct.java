@@ -6,6 +6,11 @@
 package main.java.com.Gym360.view.admin.inventory;
 
 import java.awt.Toolkit;
+import main.java.com.Gym360.model.classes.Producto;
+import main.java.com.Gym360.model.dao.ProductoDAO;
+import main.java.com.Gym360.model.security.VerificarDato;
+import main.java.com.Gym360.util.ui.CambiarIU;
+import main.java.com.Gym360.util.ui.ObtenerIU;
 
 /**
  *
@@ -22,6 +27,8 @@ public class EditProduct extends javax.swing.JFrame {
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/main/resources/images/logo.png")));
+		cargarDatosProducto(ManageInventoryScreen.idProductoSeleccionado);
+		mostrarErrores();
 	}
 
 	/**
@@ -39,15 +46,20 @@ public class EditProduct extends javax.swing.JFrame {
                 lbEditarProducto = new javax.swing.JLabel();
                 lbNombre = new javax.swing.JLabel();
                 tfNombre = new javax.swing.JTextField();
+                imgValidarNombre = new javax.swing.JLabel();
                 lbDescripcion = new javax.swing.JLabel();
                 spDescripcion = new javax.swing.JScrollPane();
                 taDescripcion = new javax.swing.JTextArea();
+                imgValidarDescripcion = new javax.swing.JLabel();
                 lbPrecioUnidad = new javax.swing.JLabel();
                 tfPrecioUnidad = new javax.swing.JTextField();
+                imgValidarPrecio = new javax.swing.JLabel();
                 lbStock = new javax.swing.JLabel();
                 tfStock = new javax.swing.JTextField();
+                imgValidarStock = new javax.swing.JLabel();
                 lbCategoria = new javax.swing.JLabel();
                 cbCategoria = new javax.swing.JComboBox<>();
+                imgValidarCategoria = new javax.swing.JLabel();
                 imgEditarProducto = new javax.swing.JLabel();
                 btnEditarProducto = new javax.swing.JButton();
 
@@ -93,6 +105,9 @@ public class EditProduct extends javax.swing.JFrame {
                 tfNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
                 panelEditarProducto.add(tfNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 280, 40));
 
+                imgValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarProducto.add(imgValidarNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, -1, 40));
+
                 lbDescripcion.setBackground(new java.awt.Color(0, 0, 0));
                 lbDescripcion.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
                 lbDescripcion.setForeground(new java.awt.Color(20, 20, 20));
@@ -109,6 +124,9 @@ public class EditProduct extends javax.swing.JFrame {
 
                 panelEditarProducto.add(spDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 280, -1));
 
+                imgValidarDescripcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarProducto.add(imgValidarDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, -1, 40));
+
                 lbPrecioUnidad.setBackground(new java.awt.Color(0, 0, 0));
                 lbPrecioUnidad.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
                 lbPrecioUnidad.setForeground(new java.awt.Color(20, 20, 20));
@@ -121,6 +139,9 @@ public class EditProduct extends javax.swing.JFrame {
                 tfPrecioUnidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
                 panelEditarProducto.add(tfPrecioUnidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 280, 40));
 
+                imgValidarPrecio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarProducto.add(imgValidarPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, -1, 40));
+
                 lbStock.setBackground(new java.awt.Color(0, 0, 0));
                 lbStock.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
                 lbStock.setForeground(new java.awt.Color(20, 20, 20));
@@ -131,7 +152,10 @@ public class EditProduct extends javax.swing.JFrame {
                 tfStock.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
                 tfStock.setForeground(new java.awt.Color(20, 20, 20));
                 tfStock.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-                panelEditarProducto.add(tfStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, 50, 40));
+                panelEditarProducto.add(tfStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, 90, 40));
+
+                imgValidarStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarProducto.add(imgValidarStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, -1, 40));
 
                 lbCategoria.setBackground(new java.awt.Color(0, 0, 0));
                 lbCategoria.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
@@ -142,8 +166,11 @@ public class EditProduct extends javax.swing.JFrame {
                 cbCategoria.setBackground(new java.awt.Color(231, 231, 231));
                 cbCategoria.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
                 cbCategoria.setForeground(new java.awt.Color(20, 20, 20));
-                cbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+                cbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Suplementos", "Accesorios", "Ropa", "Equipos" }));
                 panelEditarProducto.add(cbCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 520, 280, 40));
+
+                imgValidarCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/error.png"))); // NOI18N
+                panelEditarProducto.add(imgValidarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 520, -1, 40));
 
                 imgEditarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/editar.png"))); // NOI18N
                 panelEditarProducto.add(imgEditarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 670, 40, 60));
@@ -174,15 +201,75 @@ public class EditProduct extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void btnEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {
-                
-        }
+	private void btnEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
-                
+	}
+
+	private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+
 		ManageInventoryScreen mi = new ManageInventoryScreen();
 		mi.setVisible(true);
 		this.setVisible(false);
+	}
+
+	public void cargarDatosProducto(int idProducto) {
+		// Crear una instancia del DAO para obtener el producto por su ID
+		ProductoDAO productoDAO = new ProductoDAO();
+		Producto producto = productoDAO.obtenerPorId(idProducto);
+
+		// Si el producto existe, cargar los datos en los campos
+		if (producto != null) {
+			CambiarIU.ponerTextoCampo(tfNombre, producto.getNombre());
+			CambiarIU.ponerTextoCampo(tfPrecioUnidad, String.valueOf(producto.getPrecioUnitario()));
+			CambiarIU.ponerTextoCampo(tfStock, String.valueOf(producto.getStock()));
+			CambiarIU.ponerTextoArea(taDescripcion, producto.getDescripcion());
+
+			CambiarIU.ponerSeleccionCombo(cbCategoria, producto.getCategoria());
+			
+		} else {
+			System.out.println("Producto no encontrado.");
+		}
+	}
+	 private void mostrarErrores() {
+
+                // tfNombre
+                VerificarDato.verificarCampo(ObtenerIU.obtenerTextoCampo(tfNombre).length() < 8,
+                                lbErrorNombre, "El nombre tiene mínimo 8 caracteres.",
+                                "El nombre debe tener mínimo 8 caracteres.");
+
+                // fechaNacimiento
+                VerificarDato.verificarFechaNacimiento(ftFechaNacimiento.getText().equals("--/--/----"),
+                                lbErrorFechaNacimiento, "Ha seleccionado una fecha.", "Debe ser mayor de edad.");
+
+                // comboDepartamento
+                VerificarDato.verificarCampo(
+                                ObtenerIU.obtenerIndiceSeleccionCombo(comboDepartamento) == 0, lbErrorDepartamento,
+                                "Ha seleccionado un departamento.", "Debe seleccionar un departamento.");
+
+                // comboCiudad
+                VerificarDato.verificarCampo(ObtenerIU.obtenerIndiceSeleccionCombo(comboCiudad) == 0,
+                                lbErrorCiudad, "Ha seleccionado una ciudad.", "Debe seleccionar una ciudad.");
+
+                // tfCorreo
+                VerificarDato.verificarCampo(!ObtenerIU.obtenerTextoCampo(tfCorreo)
+                                .contains("@"), lbErrorCorreo, "El correo es válido.", "El correo no es válido.");
+
+                // pfContraseña
+                VerificarDato.verificarCampo(
+                                Desencriptar.desencriptarContra(ObtenerIU.obtenerContraseña(pfContraseña)).length() < 8,
+                                lbErrorContraseña, "La contraseña tiene mínimo 8 caracteres.",
+                                "La contraseña debe tener mínimo 8 caracteres.");
+
+                // pfConfContraseña
+                VerificarDato.verificarCampo(
+                                (!Desencriptar.desencriptarContra(ObtenerIU.obtenerContraseña(pfConfirmarContraseña))
+                                                .equals(Desencriptar.desencriptarContra(
+                                                                ObtenerIU.obtenerContraseña(pfContraseña))))
+                                                || Desencriptar.desencriptarContra(
+                                                                ObtenerIU.obtenerContraseña(pfConfirmarContraseña))
+                                                                .equals(""),
+                                lbErrorConfContraseña, "Las contraseñas son iguales.",
+                                "Las contraseñas deben ser iguales.");
         }
 
 
@@ -190,6 +277,11 @@ public class EditProduct extends javax.swing.JFrame {
         private javax.swing.JButton btnEditarProducto;
         private javax.swing.JComboBox<String> cbCategoria;
         private javax.swing.JLabel imgEditarProducto;
+        private javax.swing.JLabel imgValidarCategoria;
+        private javax.swing.JLabel imgValidarDescripcion;
+        private javax.swing.JLabel imgValidarNombre;
+        private javax.swing.JLabel imgValidarPrecio;
+        private javax.swing.JLabel imgValidarStock;
         private javax.swing.JLabel lbBackButton;
         private javax.swing.JLabel lbCategoria;
         private javax.swing.JLabel lbDescripcion;

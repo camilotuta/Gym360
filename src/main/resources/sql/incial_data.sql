@@ -332,80 +332,214 @@ VALUES -- Contabilidad 1
     -- Contabilidad 10
     (19, 10, 'Cobro de proyecto'),
     (20, 10, 'Pago de impuestos');
+
+-- (Opcional) Reiniciar el contador de ID
+ALTER TABLE Usuario AUTO_INCREMENT = 1;
+-- Insertar Admins y Empleados
 INSERT INTO Usuario (
-        idUsuario,
         nombreUsuario,
         contraseña,
         cargo,
+        correo,
         idEmpleado
     )
 VALUES (
-        1,
-        'carlos_perez',
-        'pwdCarlos123',
-        'vendedor',
+        'carlos.perez',
+        'Carlos360@',
+        'empleado',
+        'carlos.perez@empresa.com',
         1
     ),
     (
-        2,
-        'maria_lopez',
-        'pwdMaria456',
-        'vendedor',
+        'maria.lopez',
+        'Maria360@',
+        'empleado',
+        'maria.lopez@empresa.com',
         2
     ),
     (
-        3,
-        'javier_garcia',
-        'pwdJavier789',
-        'supervisor',
+        'javier.garcia',
+        'Javier360@',
+        'empleado',
+        'javier.garcia@empresa.com',
         3
     ),
     (
-        4,
-        'ana_martinez',
-        'pwdAnaABC',
-        'gerente',
+        'ana.martinez',
+        'Ana360@',
+        'admin',
+        'ana.martinez@empresa.com',
         4
     ),
     (
-        5,
-        'lucia_rodriguez',
-        'pwdLuciaDEF',
-        'vendedor',
+        'lucia.rodriguez',
+        'Lucia360@',
+        'empleado',
+        'lucia.rodriguez@empresa.com',
         5
     ),
     (
-        6,
-        'david_fernandez',
-        'pwdDavidGHI',
-        'supervisor',
+        'david.fernandez',
+        'David360@',
+        'empleado',
+        'david.fernandez@empresa.com',
         6
     ),
     (
-        7,
-        'marta_gomez',
-        'pwdMartaJKL',
-        'vendedor',
+        'marta.gomez',
+        'Marta360@',
+        'empleado',
+        'marta.gomez@empresa.com',
         7
     ),
     (
-        8,
-        'sofia_sanchez',
-        'pwdSofiaMNO',
+        'sofia.sanchez',
+        'Sofia360@',
         'admin',
+        'sofia.sanchez@empresa.com',
         8
     ),
     (
-        9,
-        'raul_hernandez',
-        'pwdRaulPQR',
-        'vendedor',
+        'raul.hernandez',
+        'Raul360@',
+        'empleado',
+        'raul.hernandez@empresa.com',
         9
     ),
     (
-        10,
-        'elena_jimenez',
-        'pwdElenaSTU',
-        'admin',
+        'elena.jimenez',
+        'Elena360@',
+        'empleado',
+        'elena.jimenez@empresa.com',
         10
     );
+-- Insertar Clientes (sin idEmpleado)
+INSERT INTO Usuario (nombreUsuario, contraseña, cargo, correo)
+VALUES (
+        'pedro.gonzalez',
+        'Pedro360@',
+        'cliente',
+        'pedro.gonzalez@empresa.com'
+    ),
+    (
+        'laura.morales',
+        'Laura360@',
+        'cliente',
+        'laura.morales@empresa.com'
+    ),
+    (
+        'andres.castillo',
+        'Andres360@',
+        'cliente',
+        'andres.castillo@empresa.com'
+    ),
+    (
+        'carolina.rivas',
+        'Carolina360@',
+        'cliente',
+        'carolina.rivas@empresa.com'
+    );
+
+
+
+    INSERT INTO Producto (
+        nombre,
+        descripcion,
+        precioUnitario,
+        stock,
+        categoria,
+        codigoBarras
+    )
+VALUES (
+        'Proteína Whey',
+        'Proteína de suero de leche sabor vainilla',
+        35.50,
+        100,
+        'Suplementos',
+        '1234567890123'
+    ),
+    (
+        'Creatina Monohidrato',
+        'Creatina pura en polvo para aumentar fuerza',
+        19.99,
+        50,
+        'Suplementos',
+        '2345678901234'
+    ),
+    (
+        'BCAA 2:1:1',
+        'Aminoácidos ramificados para recuperación muscular',
+        24.99,
+        200,
+        'Suplementos',
+        '3456789012345'
+    ),
+    (
+        'Guantes de entrenamiento',
+        'Guantes para levantar pesas con agarre antideslizante',
+        14.99,
+        150,
+        'Accesorios',
+        '4567890123456'
+    ),
+    (
+        'Silla de abdominales',
+        'Silla ergonómica para ejercicios de abdominales',
+        120.00,
+        10,
+        'Equipos',
+        '5678901234567'
+    ),
+    (
+        'Banda elástica',
+        'Banda de resistencia para entrenamiento funcional',
+        9.99,
+        300,
+        'Accesorios',
+        '6789012345678'
+    ),
+    (
+        'Cinta de correr',
+        'Cinta de correr eléctrica, 12 niveles de velocidad',
+        599.99,
+        5,
+        'Equipos',
+        '7890123456789'
+    ),
+    (
+        'Barra olímpica',
+        'Barra de acero para levantamiento de pesas',
+        199.99,
+        20,
+        'Equipos',
+        '8901234567890'
+    ),
+    (
+        'Zapatillas de running',
+        'Zapatillas deportivas para correr, ligeras y cómodas',
+        69.99,
+        100,
+        'Ropa',
+        '9012345678901'
+    ),
+    (
+        'Botellas de agua',
+        'Botellas deportivas de 750ml, diseño ergonómico',
+        6.99,
+        500,
+        'Accesorios',
+        '0123456789012'
+    );
+
+
+    INSERT INTO DetalleCompra (idCompra, idProducto, cantidad, precioUnitario)
+VALUES (1, 1, 2, 35.50),
+    (1, 3, 1, 24.99),
+    (2, 4, 5, 14.99),
+    (2, 2, 3, 19.99),
+    (3, 5, 1, 120.00),
+    (3, 6, 10, 9.99),
+    (4, 7, 1, 599.99),
+    (4, 8, 2, 199.99),
+    (5, 9, 4, 69.99),
+    (5, 10, 20, 6.99);

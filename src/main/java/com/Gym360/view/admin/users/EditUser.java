@@ -140,16 +140,16 @@ public class EditUser extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuarioActionPerformed
-                // TODO add your handling code here:
-        }//GEN-LAST:event_btnEditarUsuarioActionPerformed
+        private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {
+                
+        }
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
-                // TODO add your handling code here:
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
+                
 		ManageUsersScreen mu = new ManageUsersScreen();
 		mu.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

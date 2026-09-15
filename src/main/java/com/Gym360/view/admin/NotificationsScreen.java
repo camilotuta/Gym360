@@ -329,15 +329,15 @@ public class NotificationsScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBackButtonMouseClicked
+        private void lbBackButtonMouseClicked(java.awt.event.MouseEvent evt) {
 		DashboardAdminScreen dashboard = new DashboardAdminScreen();
 		dashboard.setVisible(true);
 		this.setVisible(false);
-        }//GEN-LAST:event_lbBackButtonMouseClicked
+        }
 
-        private void btnLimpiarNotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarNotificacionesActionPerformed
-                // TODO add your handling code here:
-        }//GEN-LAST:event_btnLimpiarNotificacionesActionPerformed
+        private void btnLimpiarNotificacionesActionPerformed(java.awt.event.ActionEvent evt) {
+                
+        }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnLimpiarNotificaciones;
